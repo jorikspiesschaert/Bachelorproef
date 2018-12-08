@@ -1,0 +1,111 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.0 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{apa/global//global/global}
+    \entry{Cisco2018}{online}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,uniquepart=base,hash=7b1d1185b835814de783483f686e9825}{%
+           family={Cisco},
+           familyi={C\bibinitperiod}}}%
+      }
+      \name{editor}{1}{}{%
+        {{hash=c431168374e1e31e617f0e40f64183a1}{%
+           family={Pra},
+           familyi={P\bibinitperiod},
+           given={Hugues\bibnamedelima De},
+           giveni={H\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+      }
+      \strng{namehash}{7b1d1185b835814de783483f686e9825}
+      \strng{fullhash}{7b1d1185b835814de783483f686e9825}
+      \strng{bibnamehash}{7b1d1185b835814de783483f686e9825}
+      \strng{authorbibnamehash}{7b1d1185b835814de783483f686e9825}
+      \strng{authornamehash}{7b1d1185b835814de783483f686e9825}
+      \strng{authorfullhash}{7b1d1185b835814de783483f686e9825}
+      \strng{editorbibnamehash}{c431168374e1e31e617f0e40f64183a1}
+      \strng{editornamehash}{c431168374e1e31e617f0e40f64183a1}
+      \strng{editorfullhash}{c431168374e1e31e617f0e40f64183a1}
+      \field{sortinit}{C}
+      \field{sortinithash}{963e9d84a3da2344e8833203de5aed05}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{26}
+      \field{journaltitle}{Belux blog}
+      \field{month}{2}
+      \field{title}{Cisco Belgie organiseert de eerste Python-challenge in ons land}
+      \field{year}{2018}
+      \field{dateera}{ce}
+      \verb{urlraw}
+      \verb https://gblogs.cisco.com/be/cisco-belgie-organiseert-de-eerste-python-challenge-in-ons-land/
+      \endverb
+      \verb{url}
+      \verb https://gblogs.cisco.com/be/cisco-belgie-organiseert-de-eerste-python-challenge-in-ons-land/
+      \endverb
+    \endentry
+    \entry{SO2017}{online}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,uniquepart=base,hash=42a6c387e6c733bd0db8180d2bbacd30}{%
+           family={Robinson},
+           familyi={R\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+      }
+      \name{editor}{1}{}{%
+        {{hash=42a6c387e6c733bd0db8180d2bbacd30}{%
+           family={Robinson},
+           familyi={R\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{42a6c387e6c733bd0db8180d2bbacd30}
+      \strng{fullhash}{42a6c387e6c733bd0db8180d2bbacd30}
+      \strng{bibnamehash}{42a6c387e6c733bd0db8180d2bbacd30}
+      \strng{authorbibnamehash}{42a6c387e6c733bd0db8180d2bbacd30}
+      \strng{authornamehash}{42a6c387e6c733bd0db8180d2bbacd30}
+      \strng{authorfullhash}{42a6c387e6c733bd0db8180d2bbacd30}
+      \strng{editorbibnamehash}{42a6c387e6c733bd0db8180d2bbacd30}
+      \strng{editornamehash}{42a6c387e6c733bd0db8180d2bbacd30}
+      \strng{editorfullhash}{42a6c387e6c733bd0db8180d2bbacd30}
+      \field{sortinit}{R}
+      \field{sortinithash}{da6b42bd3ab22fee61abed031ee405f7}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{6}
+      \field{month}{9}
+      \field{title}{The Incredible Growth of Python}
+      \field{year}{2017}
+      \field{dateera}{ce}
+      \verb{urlraw}
+      \verb https://stackoverflow.blog/2017/09/06/incredible-growth-python/
+      \endverb
+      \verb{url}
+      \verb https://stackoverflow.blog/2017/09/06/incredible-growth-python/
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
