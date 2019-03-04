@@ -1,5 +1,5 @@
 % $ biblatex auxiliary file $
-% $ biblatex bbl format version 2.9 $
+% $ biblatex bbl format version 3.0 $
 % Do not modify the above lines!
 %
 % This is an auxiliary file used by the 'biblatex' package.
@@ -19,129 +19,78 @@
 
 \refsection{0}
   \datalist[entry]{apa/global//global/global}
-    \entry{Cisco2018}{online}{}
+    \entry{Jukic2006}{article}{}
       \name{author}{1}{}{%
-        {{uniquename=0,uniquepart=base,hash=7b1d1185b835814de783483f686e9825}{%
-           family={Cisco},
-           familyi={C\bibinitperiod}}}%
-      }
-      \name{editor}{1}{}{%
-        {{hash=500f7d792c48fad0e0f01304659a1dae}{%
-           family={Pra},
-           familyi={P\bibinitperiod},
-           given={Hugues\bibnamedelima De},
-           giveni={H\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
-      }
-      \strng{namehash}{7b1d1185b835814de783483f686e9825}
-      \strng{fullhash}{7b1d1185b835814de783483f686e9825}
-      \strng{bibnamehash}{7b1d1185b835814de783483f686e9825}
-      \strng{authorbibnamehash}{7b1d1185b835814de783483f686e9825}
-      \strng{authornamehash}{7b1d1185b835814de783483f686e9825}
-      \strng{authorfullhash}{7b1d1185b835814de783483f686e9825}
-      \strng{editorbibnamehash}{500f7d792c48fad0e0f01304659a1dae}
-      \strng{editornamehash}{500f7d792c48fad0e0f01304659a1dae}
-      \strng{editorfullhash}{500f7d792c48fad0e0f01304659a1dae}
-      \field{sortinit}{C}
-      \field{sortinithash}{963e9d84a3da2344e8833203de5aed05}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{}
-      \true{uniqueprimaryauthor}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{day}{26}
-      \field{journaltitle}{Belux blog}
-      \field{month}{2}
-      \field{title}{Cisco Belgie organiseert de eerste Python-challenge in ons land}
-      \field{year}{2018}
-      \field{dateera}{ce}
-      \verb{urlraw}
-      \verb https://gblogs.cisco.com/be/cisco-belgie-organiseert-de-eerste-python-challenge-in-ons-land/
-      \endverb
-      \verb{url}
-      \verb https://gblogs.cisco.com/be/cisco-belgie-organiseert-de-eerste-python-challenge-in-ons-land/
-      \endverb
-    \endentry
-    \entry{SO2017}{online}{}
-      \name{author}{1}{}{%
-        {{uniquename=0,uniquepart=base,hash=42a6c387e6c733bd0db8180d2bbacd30}{%
-           family={Robinson},
-           familyi={R\bibinitperiod},
-           given={David},
-           giveni={D\bibinitperiod},
+        {{uniquename=0,uniquepart=base,hash=623d030ad9e5c76ca9b3bd5452a91dcb}{%
+           family={Jukic},
+           familyi={J\bibinitperiod},
+           given={Nenad},
+           giveni={N\bibinitperiod},
            givenun=0}}%
       }
-      \name{editor}{1}{}{%
-        {{hash=42a6c387e6c733bd0db8180d2bbacd30}{%
-           family={Robinson},
-           familyi={R\bibinitperiod},
-           given={David},
-           giveni={D\bibinitperiod}}}%
-      }
-      \strng{namehash}{42a6c387e6c733bd0db8180d2bbacd30}
-      \strng{fullhash}{42a6c387e6c733bd0db8180d2bbacd30}
-      \strng{bibnamehash}{42a6c387e6c733bd0db8180d2bbacd30}
-      \strng{authorbibnamehash}{42a6c387e6c733bd0db8180d2bbacd30}
-      \strng{authornamehash}{42a6c387e6c733bd0db8180d2bbacd30}
-      \strng{authorfullhash}{42a6c387e6c733bd0db8180d2bbacd30}
-      \strng{editorbibnamehash}{42a6c387e6c733bd0db8180d2bbacd30}
-      \strng{editornamehash}{42a6c387e6c733bd0db8180d2bbacd30}
-      \strng{editorfullhash}{42a6c387e6c733bd0db8180d2bbacd30}
-      \field{sortinit}{R}
-      \field{sortinithash}{da6b42bd3ab22fee61abed031ee405f7}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{}
-      \true{uniqueprimaryauthor}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{day}{6}
-      \field{month}{9}
-      \field{title}{The Incredible Growth of Python}
-      \field{year}{2017}
-      \field{dateera}{ce}
-      \verb{urlraw}
-      \verb https://stackoverflow.blog/2017/09/06/incredible-growth-python/
-      \endverb
-      \verb{url}
-      \verb https://stackoverflow.blog/2017/09/06/incredible-growth-python/
-      \endverb
-    \endentry
-    \entry{GVR2016}{online}{}
-      \name{author}{2}{}{%
-        {{uniquename=0,uniquepart=base,hash=5577f9d25d04b38dd73b2850bc8e320c}{%
-           family={Rossum},
-           familyi={R\bibinitperiod},
-           given={Guido},
-           giveni={G\bibinitperiod},
-           givenun=0,
-           prefix={van},
-           prefixi={v\bibinitperiod}}}%
-        {{uniquename=0,uniquepart=base,hash=45917914fa7fe3e567868dd69038dfed}{%
-           family={Python\bibnamedelimb development\bibnamedelima team},
-           familyi={P\bibinitperiod\bibinitdelim d\bibinitperiod\bibinitdelim t\bibinitperiod},
-           prefix={the},
-           prefixi={t\bibinitperiod}}}%
-      }
-      \strng{namehash}{6569115f46338613099c9fa50e731912}
-      \strng{fullhash}{6569115f46338613099c9fa50e731912}
-      \strng{bibnamehash}{6569115f46338613099c9fa50e731912}
-      \strng{authorbibnamehash}{6569115f46338613099c9fa50e731912}
-      \strng{authornamehash}{6569115f46338613099c9fa50e731912}
-      \strng{authorfullhash}{6569115f46338613099c9fa50e731912}
-      \field{sortinit}{v}
-      \field{sortinithash}{75dd7385c90b2252c3ae853a80ca853b}
+      \strng{namehash}{623d030ad9e5c76ca9b3bd5452a91dcb}
+      \strng{fullhash}{623d030ad9e5c76ca9b3bd5452a91dcb}
+      \strng{bibnamehash}{623d030ad9e5c76ca9b3bd5452a91dcb}
+      \strng{authorbibnamehash}{623d030ad9e5c76ca9b3bd5452a91dcb}
+      \strng{authornamehash}{623d030ad9e5c76ca9b3bd5452a91dcb}
+      \strng{authorfullhash}{623d030ad9e5c76ca9b3bd5452a91dcb}
+      \field{sortinit}{J}
+      \field{sortinithash}{fce5f8d0bd05e8d93f3dbe21c78897ca}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{year}
       \true{uniqueprimaryauthor}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{title}{Python tutorial}
-      \field{year}{2016}
-      \verb{urlraw}
-      \verb https://dev.rbcafe.com/python/python-3.5.1-pdf/tutorial.pdf
-      \endverb
-      \verb{url}
-      \verb https://dev.rbcafe.com/python/python-3.5.1-pdf/tutorial.pdf
-      \endverb
+      \field{journaltitle}{Communications of the ACM}
+      \field{title}{Modeling strategies and alternatives for dat warehousing projects}
+      \field{year}{2006}
+    \endentry
+    \entry{Linstedt2015}{book}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,uniquepart=base,hash=7841d29254493e2f2495308f79aed9e1}{%
+           family={Linstedt},
+           familyi={L\bibinitperiod}}}%
+      }
+      \strng{namehash}{7841d29254493e2f2495308f79aed9e1}
+      \strng{fullhash}{7841d29254493e2f2495308f79aed9e1}
+      \strng{bibnamehash}{7841d29254493e2f2495308f79aed9e1}
+      \strng{authorbibnamehash}{7841d29254493e2f2495308f79aed9e1}
+      \strng{authornamehash}{7841d29254493e2f2495308f79aed9e1}
+      \strng{authorfullhash}{7841d29254493e2f2495308f79aed9e1}
+      \field{sortinit}{L}
+      \field{sortinithash}{2c7981aaabc885868aba60f0c09ee20f}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Building a Scalable Data Warehouse with Data Vault 2.0}
+      \field{year}{2015}
+    \endentry
+    \entry{Stroobants2018}{article}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,uniquepart=base,hash=f2dca37c0606a5dde403edb629f45833}{%
+           family={Stroobants},
+           familyi={S\bibinitperiod},
+           given={Jochen},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{f2dca37c0606a5dde403edb629f45833}
+      \strng{fullhash}{f2dca37c0606a5dde403edb629f45833}
+      \strng{bibnamehash}{f2dca37c0606a5dde403edb629f45833}
+      \strng{authorbibnamehash}{f2dca37c0606a5dde403edb629f45833}
+      \strng{authornamehash}{f2dca37c0606a5dde403edb629f45833}
+      \strng{authorfullhash}{f2dca37c0606a5dde403edb629f45833}
+      \field{sortinit}{S}
+      \field{sortinithash}{322b1d5276f2f6c1bccdcd15920dbee6}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Modern data warehousing with data vault in SAP HANA}
+      \field{year}{2018}
     \endentry
   \enddatalist
 \endrefsection

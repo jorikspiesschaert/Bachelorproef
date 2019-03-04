@@ -12,7 +12,7 @@
   year   = {2018},
 }
 
-@Article{Jukic2006,
+@Article{J,
   author  = {Nenad Jukic},
   title   = {Modeling strategies and alternatives for dat warehousing projects},
   journal = {Communications of the ACM},

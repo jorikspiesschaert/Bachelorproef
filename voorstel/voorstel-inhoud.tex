@@ -3,33 +3,42 @@
 \section{Introductie} % The \section*{} command stops section numbering
 \label{sec:introductie}
 
-In 1991 werd Python voor het eerst uitgebracht door Guido Van Rossum. Zijn visie over de scriptingtaal was duidelijk:
+Wanneer het management in het bedrijf een strategische of tactische beslissing wil maken, is deze beslissing gebaseerd op data afkomstig uit verschillende databronnen. Daarom is er bij grote ondernemingen (en tegenwoordig ook bij KMO’s) nood aan een rapporteringssysteem. Voor het opstellen en onderhouden van datawarehouses wordt een bepaald budget voorzien. Relaties leggen tussen verschillende data is dan ook een grote uitdaging. Daarom is het dus belangrijk dat het model op de juiste manier ontworpen wordt om kosten te beperken wanneer men de datawarehouse wil onderhouden/uitbreiden. Hiervoor bestaan verschillende modelleertechnieken. In dit onderzoek worden enkel het Kimball dimensioneel modelleren  en Data Vault 2.0 vergeleken. We proberen in dit onderzoek de volgende vraag te beantwoorden: \textbf{Waar zitten de verschillen bij het modelleren met Data Vault 2.0 en het dimensioneel modelleren?}
+
+Ook zal er een antwoord trachten gevonden te worden op volgende deelvragen:
+
 \begin{itemize}
-	\item Gemakkelijk aan te leren
-	\item Krachtig
-	\item Open-source
+	\item Zijn er verschillende manieren van aanpak mogelijk?
+	\item Hoe flexibel/schaalbaar zijn beide systemen?
+	\item Is er een verschil in performantie?
+	\item Hoe verschillen de technieken naar onderhoud toe?
 \end{itemize}
-\autocite{GVR2016}. Enkele jaren terug zien we dat Pyhon terug aan een sterke opmars bezig is \autocite{SO2017}. Dat komt door de komst van enkele nieuwe technologieën zoals: Machine Learning, Artificiële Intelligentie, Data mining, analyse van datagegevens, … Niet alleen wordt de scriptingtaal gebruikt voor nieuwere technologieën, maar ook bijvoorbeeld voor web development en hacking.
- 
-Maar hoe zit het bij de kennis van Python bij de studenten die afgestudeerd zijn in de Toegepaste Informatica? Is deze voldoende om het werkveld te betreden? Of merken we dat werkgevers nog moeten investeren in opleidingen voor Python? 
 
-Dit onderzoek zal uitwijzen of de kennis van Python wel degelijk een toegevoegde waarde is in de opleidingen Toegepaste Informatica. Hoeddit zal onderzocht worden, wordt besproken in het onderdeel 'Methodologie'.
-
+Bij DHL Pharma Logistics gebeurt het berekenen van de KPI's (Key Performance Indicators) nog altijd manueel. Zo worden de KPI's berekend via een rekenmachine en handmatig ingevoerd in een Excel-bestand. De informatie die nodig is om verschillende berekeningen te maken is afkomstig uit verschillende databronnen (mainframe, Cronos, Excel-sheets, ..). Dit neemt veel tijd in beslag, dus beslist de firma om een deel van de KPI's te automatiseren. Hiervoor zal een datawarehouse moeten opgezet worden. Deze zal gemodeleerd worden in Data Vault 2.0. Maar is dit wel de beste oplossing? Dit onderzoek zal uitwijzen of Data Vault 2.0 wel degelijk de beste oplossing is.
 %---------- Stand van zaken ---------------------------------------------------
 
-\section{State-of-the-art}
+\section{Literatuurstudie}
 \label{sec:state-of-the-art}
+\subsection{Data Vault 2.0}
+\subsubsection{Architectuur}
+De architectuur van Data vault bestaat voornamelijk uit 3 lagen: De staging area, de raw data vault area en de Business vault. De staging area wordt gebruikt om alle data tijdelijk te stockeren. Deze wordt opgeslagen in de architectuur van het bronsysteem. Daarna wordt de data doorgezonden naar de volgende laag: de raw data vault. Hierbij wordt de architectuur omgevormd naar een data vault. Hierop worden dan data manipulaties gemaakt en wordt de data doorgezonden naar de volgende laag, de business vault. Data marts worden gecreërt op de business vault \autocite{Linstedt2015}.
 
-Een specifiek onderzoek naar hoe de kennis van Python is bij afgestudeerde studenten van de opleiding Toegepaste Informatica (in België) is voor zover ik weet nog niet gebeurd. Wel zijn er wellicht statistieken over de community rond Python (op populaire fora). Ook zal ik op zoek gaan naar de vraag naar werknemers die een degelijke Python kennis hebben.
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.345]{images/DVArchitectuur.png}
+	\caption{Data Vault architectuur voorgesteld door \textcite{Stroobants2018}.}
+	\label{fig:dvarch}
+\end{figure}
 
-Wanneer we het artikel er bij nemen van \textcite{Cisco2018}, lezen we letterlijk: “Python is nog altijd een grote onbekende in bachelor- en masteropleidingen informatica. Hoewel inmiddels al bijna dertig jaar oud, is Python toch een van de programmeertalen van de toekomst.”. Cisco organiseerde daarom dit jaar een eerste Python-challenge in België. Hun doel is om de taal meer onder de aandacht te brengen. 
+\subsubsection{Entiteittype's}
+Bij data vault wordt er een onderscheid gemaakt tussen 3 verschillende entiteiten: hub, link en satteliet. In een hub wordt een hash sleutel opgeslagen die gebaseerd is op de identifier van die entiteit en metadata (zoals de bron en wanneer de record is ingevoerd). Een link is entiteit die verantwoordelijk is om verschillende hubs met elkaar te verbinden. Hierin worden de hash sleutels van de verbonden entiteiten in opgeslaan. Sattelieten kunnen verbonden worden met hubs en links. Deze bevatten de inhoudelijke data van de entiteit.  
 
-\includegraphics{graph.png}
+\subsection{Dimensioneel modelleren}
+\subsubsection{Architectuur}
+Bij het dimensioneel modelleren via Kimbell is er 1 enkele laag, hierin worden alle operaties uitgevoerd (ETL: Extraction, Transaction en Load). De data wordt ingeladen in een ster-schema. Op deze laag worden dan datamarts gebouwd. \autocite{Jukic2006}
 
-Als we bovenstaande grafiek er bij nemen \autocite{SO2017}, zien we dat de groei van het aantal topics rond Python op Stackoverflow afgelopen jaren toeneemt. Op deze grafiek wordt ook een voorspelling gemaakt naar hoe dit zal zijn naar de toekomst. Hieruit kunnen we toch concluderen dat Python nog steeds een sterke groei zal hebben wat betreft het aantal gestelde vragen op het forum. Dit kan betekenen dat de populariteit van Python nog steeds exponentieel zal stijgen. 
-
-
-
+\subsubsection{Entiteittype's}
+Bij deze techniek bestaan er 2 entiteittype's: feit tabellen en dimensionele tabellen. De feit tabellen bevatten alle transactionele data, data waarop je eigenlijk berekeningen kan maken. Dimensionele tabellen bevatten meer informatie over de transactionele data.
 
 % Voor literatuurverwijzingen zijn er twee belangrijke commando's:
 % \autocite{KEY} => (Auteur, jaartal) Gebruik dit als de naam van de auteur
@@ -42,23 +51,32 @@ Als we bovenstaande grafiek er bij nemen \autocite{SO2017}, zien we dat de groei
 %---------- Methodologie ------------------------------------------------------
 \section{Methodologie}
 \label{sec:methodologie}
+Voor dit onderzoek zullen er twee datawarehouses opgezet worden in een SAP HANA-omgeving. De eerste datawarehouse zal gemodelleerd worden in Data Vault 2.0, de andere in een dimensioneel model. De SAP HANA omgeving is 'on-premise' die draait in een Microsoft Azure omgeving. Het modelleren zal deels gebeuren in Eclipse (die een romote-verbinding maakt met Azure) en deels via een web IDE voor HANA (Xsengine). Wanneer beide datawarehouses operationeel zijn, kan er gestart worden met de vergelijking. De datawarehouses zullen gebaseerd zijn op KPI's die gedefinieerd zijn bij DHL Pharma Logistics.
 
-Dit onderzoek zullen we op delen in een aantal delen. Het eerste deel omvat een onderzoek van het aanbod van de hogescholen. Krijgen de studenten wel degelijk Python in hun studies? Bekijken ze Python in de algemene opleidingsonderdelen, of enkel in bepaalde specialisatierichtingen? Hoe uitgebreid zien deze studenten deze topic? Hiervoor zullen de studiefiche's bestudeerd worden van verschillende hogescholen die de opleiding bachelor Toegepaste Informatica aanbieden. 
+\subsection{Performatie}
+Om de performantie van beide systemen te vergelijken, zullen er een aantal verschillende queries uitgevoerd worden op datamarts gebaseerd op deze datawarehouses. Op basis van uitvoeringstijd kunnen we deze dan met elkaar vergelijken. Zo kunnen we te weten komen of er wel degelijk een verschil is tussen beide architecturen in performantie en hoe groot de verschillen zijn. 
 
-In het tweede deel van het onderzoek zullen we bekijken hoe de situatie is naar de vraag van de kennis en beheersing van Python. Zien we hier een significante stijging doorheen de jaren? Hoe zal dit zijn naar de toekomst toe? Hiervoor zullen enkele studenten van verschillende hogescholen geïnterviewd worden en bevraagd worden naar hun beheersing en ervaringen met Python. Daarnaast zullen er een aantal interviews afgenomen worden met werkgevers die op zoek zijn naar profielen met de kennis van Python. Enkele vragen die kunnen gesteld worden zijn: Zijn de juiste profielen makkelijk te vinden op de arbeidsmarkt? Hebben schoolverlaters een degelijke kennis van Python? Moet er nog veel geïnvesteerd worden in het opleiden van werknemers?
+\subsection{Audit}
+Stel dat er op 2 verschillende databronnen klantengegevens opgeslagen wordt, zal er een keuze moeten gemaakt worden. Van welke bron haal ik mijn gegevens? Indien er verschillende problemen optreden met data, willen we graag kunnen onderzoeken waar het probleem zich heeft voorgedaan. Hiervoor voegen we META-data toe aan de data die ons verteld waar en wanneer de data werd opgehaald. 
 
-Het laatste deel van het onderzoek bestaat dan uit het bestuderen van de scriptingtaal zelf. Wat zijn nu de mogelijkheden met Python? Is deze taal makkelijk aan te leren? Wat brengt de toekomst? Is er een degelijke community opgebouwd rond Python?  Zijn IT’ers geïnteresseerd om deze taal aan te leren? Welke frameworks zijn er beschikbaar en wat zijn de mogelijkheden hiervan? Na deze studie kan er een curriculum opgesteld worden die de vraag van het werkveld zal opvangen en kan dienen als ondersteuning voor hogescholen bij het opstellen van de lesinhoud van een opleidingsonderdeel rond Python.
+\subsection{Schaalbaarheid}
+Hoe wordt er omgegaan met grote hoeveelheden data in beide architecturen? Merken we hier een significant verschil? Zien we de uitvoeringstijden lineair/exponentiëel stijgen? 
+
+\subsection{Flexibiliteit}
+De vereisten voor rapportering verandert vaak bij bedrijven. Soms moeten KPI's worden toegevoegd, soms moeten deze gewijzigd worden. Maar wat als er databronnen in het bedrijfsnetwerk toegevoegd? Hoe gemakkelijk kunnen deze wijzigingen gemaakt worden in beide architecturen? Dit zullen we onderzoeken door een nieuwe KPI toe te voegen aan het systeem. 
+ 
 
 
 %---------- Verwachte resultaten ----------------------------------------------
 \section{Verwachte resultaten}
 \label{sec:verwachte_resultaten}
 
-Op basis van het uitgevoerde onderzoek zullen we hiervan een resultaat kunnen opstellen. De resultaten die in verwacht zijn dat er niet genoeg tijd en middelen geïnvesteerd worden in het opbouwen van een goede kennis rond Python op de hogescholen als je dit vergelijkt met het aanbod van de werkelijke jobs op de arbeidsmarkt. Volgens mij moeten werkgevers wel nog degelijk schoolverlaters opleiden op gebied van hun Python kennis en dat de vraag naar ervaren programmeurs hierin groot is en zal blijven groeien.
+Op basis van het uitgevoerde onderzoek zullen we hiervan een resultaat kunnen opstellen. Ik verwacht dat beide technieken zijn voordelen en nadelen zullen hebben. Zo zal Data Vault 2.0 een modelleertechniek zijn die zeer flexibel is, maar dit zal ten koste gaan van de performantie. Het dimensionele model zal zo performanter zijn, maar weinig flexibiliteit bieden.
 
 %---------- Verwachte conclusies ----------------------------------------------
 \section{Verwachte conclusies}
 \label{sec:verwachte_conclusies}
 
-Voor Hogescholen en Universiteiten zal het uiteraard een afweging zijn om Python uitgebreid aan te bieden in hun gamma. In de informatica heb je veel deeldomeinen en veel verschillende technologieën. Ik verwacht dat Python toch wel een aandeel zal hebben in veel van deze domeinen, en dus toch wel een enorme toegevoegde waarde kan zijn in de opleiding Toegepaste Informatica. Zowel bij programmeren, web development als bij netwerken kan Python gebruikt worden. Het is een zeer krachtige en eenvoudige taal, waarbij er heel wat mogelijk is. Het aanbod in het werkveld zal ook een grote rol spelen op de gemaakte conclusie.
+Aangezien Data Vault 2.0 veel flexibiliteit te bieden heeft, zal dit de beste oplossing zijn wanneer alle data verspreidt staat op verschillende systemen. Bij Data Vault 2.0 is het namelijk mogelijk gemakkelijk nieuwe databronnen toe te voegen in een datawarehouse. Maar wanneer men de de datamarts wil ontwerpen, zal men nog steeds moetn gebruik maken van dimensioneel modelleren. Wanneer een bedrijf weinig databronnen heeft en deze weinig veranderen, is dimensioneel modelleren de betere oplossing. 
 
+Voor DHL Pharma Logistics zal Data Vault 2.0 dan ook de beste oplossing zijn, aangezien hun data verspreidt staat over enkele systemen. Zo kunnen ze hun KPI's ook nog beter definiëren en makkelijker aanpassen in het systeem. 
