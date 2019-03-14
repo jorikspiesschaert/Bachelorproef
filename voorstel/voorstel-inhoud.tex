@@ -21,11 +21,11 @@ Bij DHL Pharma Logistics gebeurt het berekenen van de KPI's (Key Performance Ind
 \label{sec:state-of-the-art}
 \subsection{Data Vault 2.0}
 \subsubsection{Architectuur}
-De architectuur van Data vault bestaat voornamelijk uit 3 lagen: De staging area, de raw data vault area en de Business vault. De staging area wordt gebruikt om alle data tijdelijk te stockeren. Deze wordt opgeslagen in de architectuur van het bronsysteem. Daarna wordt de data doorgezonden naar de volgende laag: de raw data vault. Hierbij wordt de architectuur omgevormd naar een data vault. Hierop worden dan data manipulaties gemaakt en wordt de data doorgezonden naar de volgende laag, de business vault. Data marts worden gecreëerd op de business vault \autocite{Linstedt2015}.
+De architectuur van Data vault bestaat voornamelijk uit 3 lagen: De staging area, de raw data vault area en de Business vault. De staging area wordt gebruikt om alle data tijdelijk te stockeren. Daarna wordt de data doorgezonden naar de volgende laag: de raw data vault. Hierbij wordt de architectuur omgevormd naar een data vault. Hierop worden dan data manipulaties gemaakt en wordt de data doorgezonden naar de volgende laag, de business vault. Data marts worden gecreëerd op de business vault \autocite{Linstedt2015}.
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[scale=0.345]{images/DVArchitectuur.png}
+	\includegraphics[scale=0.345]{../images/DVArchitectuur.png}
 	\caption{Data Vault architectuur voorgesteld door \textcite{Stroobants2018}.}
 	\label{fig:dvarch}
 \end{figure}
@@ -35,7 +35,7 @@ Bij data vault wordt er een onderscheid gemaakt tussen 3 verschillende entiteite
 
 \subsection{Dimensioneel modelleren}
 \subsubsection{Architectuur}
-Bij het dimensioneel modelleren via Kimbell is er 1 enkele laag, hierin worden alle operaties uitgevoerd (ETL: Extraction, Transaction en Load). De data wordt ingeladen in een ster-schema. Op deze laag worden dan data marts gebouwd. \autocite{Jukic2006}
+Bij het dimensioneel modelleren via Kimball is er 1 enkele laag, hierin worden alle operaties uitgevoerd (ETL: Extraction, Transaction en Load). De data wordt ingeladen in een ster-schema. Op deze laag worden dan data marts gebouwd. \autocite{Jukic2006}
 
 \subsubsection{Entiteittype's}
 Bij deze techniek bestaan er 2 entiteittype's: feit tabellen en dimensionele tabellen. De feit tabellen bevatten alle transactionele data, data waarop je eigenlijk berekeningen kan maken. Dimensionele tabellen bevatten meer informatie over de transactionele data.

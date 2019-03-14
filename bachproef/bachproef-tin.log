@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.6960 64-bit) (preloaded format=pdflatex 2019.2.25)  27 FEB 2019 14:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.6960 64-bit) (preloaded format=pdflatex 2019.2.25)  14 MAR 2019 15:25
 entering extended mode
 **./bachproef-tin.tex
 (bachproef-tin.tex
@@ -1791,13 +1791,17 @@ LaTeX Font Info:    Font shape `T1/pag/bx/n' in size <12> not available
 (Font)              Font shape `T1/pag/b/n' tried instead on input line 4.
 LaTeX Font Info:    Font shape `T1/pag/b/n' in size <12> not available
 (Font)              Font shape `T1/pag/db/n' tried instead on input line 4.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
  [7
 
 ])
 \tf@toc=\write6
 \openout6 = `bachproef-tin.toc'.
 
- [8] (bachproef-tin.lof)
+
+[8] (bachproef-tin.lof)
 \tf@lof=\write7
 \openout7 = `bachproef-tin.lof'.
 
@@ -1810,15 +1814,11 @@ LaTeX Font Info:    Font shape `T1/pag/b/n' in size <12> not available
 \tf@lot=\write8
 \openout8 = `bachproef-tin.lot'.
 
- (inleiding.tex [11] [12
+ (inleiding.tex [11]
+[12
 
 ]
 Hoofdstuk 1.
-
-LaTeX Warning: Citation 'Pollefliet2011' on page 13 undefined on input line 8.
-
-LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 8.
 LaTeX Font Info:    Try loading font information for OMS+ptm on input line 11.
 ("C:\Users\Owner\AppData\Local\Programs\MiKTeX 2.9\tex/latex/psnfss\omsptm.fd"
 File: omsptm.fd 
@@ -1831,10 +1831,6 @@ Underfull \vbox (badness 5133) has occurred while \output is active []
  [13])
 (standvanzaken.tex [14]
 Hoofdstuk 2.
-
-LaTeX Warning: Citation 'Pollefliet2011' on page 15 undefined on input line 10.
-
-
 LaTeX Font Info:    Try loading font information for OT1+ztmcm on input line 12
 .
 ("C:\Users\Owner\AppData\Local\Programs\MiKTeX 2.9\tex/latex/psnfss\ot1ztmcm.fd
@@ -1893,13 +1889,6 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmtt' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-
-
-LaTeX Warning: Citation 'Knuth1998' on page 15 undefined on input line 15.
-
-
-LaTeX Warning: Citation 'Creeger2009' on page 15 undefined on input line 15.
-
 )
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
@@ -1931,53 +1920,60 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 [22]
 B"ylage A.
 (../voorstel/voorstel-inhoud.tex
-Underfull \vbox (badness 6927) has occurred while \output is active []
-
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 6.
  [23
 
-])
+]
+LaTeX Font Info:    Font shape `T1/pag/bx/n' in size <10.95> not available
+(Font)              Font shape `T1/pag/b/n' tried instead on input line 23.
+LaTeX Font Info:    Font shape `T1/pag/b/n' in size <10.95> not available
+(Font)              Font shape `T1/pag/db/n' tried instead on input line 23.
+<../images/DVArchitectuur.png, id=203, 688.82344pt x 329.73187pt>
+File: ../images/DVArchitectuur.png Graphic file (type png)
+<use ../images/DVArchitectuur.png>
+Package pdftex.def Info: ../images/DVArchitectuur.png  used on input line 28.
+(pdftex.def)             Requested size: 237.64435pt x 113.75761pt.
 
-LaTeX Warning: Empty bibliography on input line 121.
+Underfull \vbox (badness 5954) has occurred while \output is active []
 
-[24]
+ [24 <../images/DVArchitectuur.png>]
+Underfull \vbox (badness 3039) has occurred while \output is active []
+
+ [25])
+[26] [27
+
+]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 124.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 124.
  (bachproef-tin.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 124.
 Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 124.
-
-
-LaTeX Warning: There were undefined references.
-
-
-Package biblatex Warning: Please (re)run Biber on the file:
-(biblatex)                bachproef-tin
-(biblatex)                and rerun LaTeX afterwards.
-
 Package logreq Info: Writing requests to 'bachproef-tin.run.xml'.
 \openout1 = `bachproef-tin.run.xml'.
 
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 124.
  ) 
 Here is how much of TeX's memory you used:
- 39775 strings out of 492946
- 747585 string characters out of 3126266
- 1348762 words of memory out of 3000000
- 42900 multiletter control sequences out of 15000+200000
- 579930 words of font info for 158 fonts, out of 3000000 for 9000
+ 39919 strings out of 492946
+ 750016 string characters out of 3126266
+ 1349427 words of memory out of 3000000
+ 42976 multiletter control sequences out of 15000+200000
+ 593017 words of font info for 189 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,12n,63p,985b,3844s stack positions out of 5000i,500n,10000p,200000b,50000s
- <C:\Users\Owner\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\
-ectt1200.pk>{C:/Users/Owner/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/b
-ase/8r.enc}<C:/Users/Owner/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public
+ 57i,12n,63p,1011b,3844s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Users/Owner/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc
+} <C:\Users\Owner\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\e
+ctt1200.pk><C:/Users/Owner/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public
 /amsfonts/cm/cmsy10.pfb><C:/Users/Owner/AppData/Local/Programs/MiKTeX 2.9/fonts
 /type1/urw/avantgar/uagd8a.pfb><C:/Users/Owner/AppData/Local/Programs/MiKTeX 2.
 9/fonts/type1/urw/avantgar/uagk8a.pfb><C:/Users/Owner/AppData/Local/Programs/Mi
 KTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Users/Owner/AppData/Local/Program
-s/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb>
-Output written on bachproef-tin.pdf (26 pages, 172998 bytes).
+s/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Users/Owner/AppData/Local/Pro
+grams/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
+Output written on bachproef-tin.pdf (29 pages, 307606 bytes).
 PDF statistics:
- 258 PDF objects out of 1000 (max. 8388607)
- 44 named destinations out of 1000 (max. 500000)
- 23170 words of extra memory for PDF output out of 24883 (max. 10000000)
+ 343 PDF objects out of 1000 (max. 8388607)
+ 65 named destinations out of 1000 (max. 500000)
+ 33983 words of extra memory for PDF output out of 35830 (max. 10000000)
 

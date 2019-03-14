@@ -21,11 +21,33 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {A.1}Introductie}{23}{section.A.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.2}State-of-the-art}{24}{section.A.2}% 
+\contentsline {section}{\numberline {A.2}Literatuurstudie}{24}{section.A.2}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.3}Methodologie}{24}{section.A.3}% 
+\contentsline {subsection}{\numberline {A.2.1}Data Vault 2.0}{24}{subsection.A.2.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.4}Verwachte resultaten}{24}{section.A.4}% 
+\contentsline {subsubsection}{Architectuur}{24}{section*.6}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.5}Verwachte conclusies}{24}{section.A.5}% 
+\contentsline {subsubsection}{Entiteittype's}{24}{section*.7}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {A.2.2}Dimensioneel modelleren}{25}{subsection.A.2.2}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Architectuur}{25}{section*.8}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Entiteittype's}{25}{section*.9}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {A.3}Methodologie}{25}{section.A.3}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {A.3.1}Performatie}{25}{subsection.A.3.1}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {A.3.2}Audit}{25}{subsection.A.3.2}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {A.3.3}Schaalbaarheid}{26}{subsection.A.3.3}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {A.3.4}Flexibiliteit}{26}{subsection.A.3.4}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {A.4}Verwachte resultaten}{26}{section.A.4}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {A.5}Verwachte conclusies}{26}{section.A.5}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Bibliografie}{27}{appendix*.10}% 
 \contentsfinish 
