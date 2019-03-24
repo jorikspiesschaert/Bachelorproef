@@ -2147,12 +2147,10 @@
   </bcf:bibdata>
   <bcf:section number="0">
     <bcf:citekey order="3">Pollefliet2011</bcf:citekey>
-    <bcf:citekey order="4">Pollefliet2011</bcf:citekey>
-    <bcf:citekey order="5">Knuth1998</bcf:citekey>
-    <bcf:citekey order="6">Creeger2009</bcf:citekey>
-    <bcf:citekey order="7">Linstedt2015</bcf:citekey>
-    <bcf:citekey order="8">Stroobants2018</bcf:citekey>
-    <bcf:citekey order="9">Jukic2006</bcf:citekey>
+    <bcf:citekey order="4">Panos2000</bcf:citekey>
+    <bcf:citekey order="5">Linstedt2015</bcf:citekey>
+    <bcf:citekey order="6">Stroobants2018</bcf:citekey>
+    <bcf:citekey order="7">Jukic2006</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="apa">

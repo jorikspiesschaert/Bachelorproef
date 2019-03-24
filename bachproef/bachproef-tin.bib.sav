@@ -25,7 +25,7 @@
   year = {2009}
 }
 
-@PhdThesis{Panos2000,
+@PhdThesis{P,
   author = {Panos Vassiliadis},
   title  = {Data Warehouse Modeling and Quality Issues},
   school = {NATIONAL TECHNICAL UNIVERSITY OF ATHENS},
