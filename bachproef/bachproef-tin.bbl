@@ -19,36 +19,6 @@
 
 \refsection{0}
   \datalist[entry]{apa/global//global/global}
-    \entry{Creeger2009}{article}{}
-      \name{author}{1}{}{%
-        {{uniquename=0,uniquepart=base,hash=e888aba3556efbb8063540e3e2ae69b4}{%
-           family={Creeger},
-           familyi={C\bibinitperiod},
-           given={Mache},
-           giveni={M\bibinitperiod},
-           givenun=0}}%
-      }
-      \strng{namehash}{e888aba3556efbb8063540e3e2ae69b4}
-      \strng{fullhash}{e888aba3556efbb8063540e3e2ae69b4}
-      \strng{bibnamehash}{e888aba3556efbb8063540e3e2ae69b4}
-      \strng{authorbibnamehash}{e888aba3556efbb8063540e3e2ae69b4}
-      \strng{authornamehash}{e888aba3556efbb8063540e3e2ae69b4}
-      \strng{authorfullhash}{e888aba3556efbb8063540e3e2ae69b4}
-      \field{sortinit}{C}
-      \field{sortinithash}{963e9d84a3da2344e8833203de5aed05}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{year}
-      \true{uniqueprimaryauthor}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Communications of the ACM}
-      \field{number}{8}
-      \field{title}{{CTO Roundtable: Cloud Computing}}
-      \field{volume}{52}
-      \field{year}{2009}
-      \field{pages}{50\bibrangedash 56}
-      \range{pages}{7}
-    \endentry
     \entry{Jukic2006}{article}{}
       \name{author}{1}{}{%
         {{uniquename=0,uniquepart=base,hash=623d030ad9e5c76ca9b3bd5452a91dcb}{%
@@ -75,36 +45,33 @@
       \field{title}{Modeling strategies and alternatives for dat warehousing projects}
       \field{year}{2006}
     \endentry
-    \entry{Knuth1998}{book}{}
+    \entry{Langseth2005}{article}{}
       \name{author}{1}{}{%
-        {{uniquename=0,uniquepart=base,hash=ec08e6f01da5f3814f28a70c89c64656}{%
-           family={Knuth},
-           familyi={K\bibinitperiod},
-           given={Donald\bibnamedelima E.},
-           giveni={D\bibinitperiod\bibinitdelim E\bibinitperiod},
-           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=a3f24d5adbb6125a0ab439c59545e0ec}{%
+           family={Justin\bibnamedelima Langseth},
+           familyi={J\bibinitperiod\bibinitdelim L\bibinitperiod},
+           given={Gene\bibnamedelima Sohn},
+           giveni={G\bibinitperiod\bibinitdelim S\bibinitperiod},
+           givenun=0,
+           suffix={Nithi\bibnamedelima Vivatrat},
+           suffixi={N\bibinitperiod\bibinitdelim V\bibinitperiod},
+           suffixun=0}}%
       }
-      \list{location}{1}{%
-        {Redwood City, CA, USA}%
-      }
-      \list{publisher}{1}{%
-        {Addison Wesley Longman Publishing Co., Inc.}%
-      }
-      \strng{namehash}{ec08e6f01da5f3814f28a70c89c64656}
-      \strng{fullhash}{ec08e6f01da5f3814f28a70c89c64656}
-      \strng{bibnamehash}{ec08e6f01da5f3814f28a70c89c64656}
-      \strng{authorbibnamehash}{ec08e6f01da5f3814f28a70c89c64656}
-      \strng{authornamehash}{ec08e6f01da5f3814f28a70c89c64656}
-      \strng{authorfullhash}{ec08e6f01da5f3814f28a70c89c64656}
-      \field{sortinit}{K}
-      \field{sortinithash}{9fd838a31ba64d981e8f44562bd33f89}
+      \strng{namehash}{a3f24d5adbb6125a0ab439c59545e0ec}
+      \strng{fullhash}{a3f24d5adbb6125a0ab439c59545e0ec}
+      \strng{bibnamehash}{a3f24d5adbb6125a0ab439c59545e0ec}
+      \strng{authorbibnamehash}{a3f24d5adbb6125a0ab439c59545e0ec}
+      \strng{authornamehash}{a3f24d5adbb6125a0ab439c59545e0ec}
+      \strng{authorfullhash}{a3f24d5adbb6125a0ab439c59545e0ec}
+      \field{sortinit}{J}
+      \field{sortinithash}{fce5f8d0bd05e8d93f3dbe21c78897ca}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{year}
       \true{uniqueprimaryauthor}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{title}{The art of computer programming, volume 3: (2nd ed.) sorting and searching}
-      \field{year}{1998}
+      \field{title}{SCHEMA AND ETL TOOLS FOR STRUCTURED AND UNSTRUCTURED DATA}
+      \field{year}{2005}
     \endentry
     \entry{Linstedt2015}{book}{}
       \name{author}{1}{}{%
@@ -127,6 +94,34 @@
       \field{labeltitlesource}{title}
       \field{title}{Building a Scalable Data Warehouse with Data Vault 2.0}
       \field{year}{2015}
+    \endentry
+    \entry{Helfert2002}{article}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,uniquepart=base,hash=efcc5df2c55c1d830db7671744033a7e}{%
+           family={Markus\bibnamedelima Helfert},
+           familyi={M\bibinitperiod\bibinitdelim H\bibinitperiod},
+           given={Carlos\bibnamedelima Sousa},
+           giveni={C\bibinitperiod\bibinitdelim S\bibinitperiod},
+           givenun=0,
+           suffix={Gregor\bibnamedelima Zellner},
+           suffixi={G\bibinitperiod\bibinitdelim Z\bibinitperiod},
+           suffixun=0}}%
+      }
+      \strng{namehash}{efcc5df2c55c1d830db7671744033a7e}
+      \strng{fullhash}{efcc5df2c55c1d830db7671744033a7e}
+      \strng{bibnamehash}{efcc5df2c55c1d830db7671744033a7e}
+      \strng{authorbibnamehash}{efcc5df2c55c1d830db7671744033a7e}
+      \strng{authornamehash}{efcc5df2c55c1d830db7671744033a7e}
+      \strng{authorfullhash}{efcc5df2c55c1d830db7671744033a7e}
+      \field{sortinit}{M}
+      \field{sortinithash}{cfd219b90152c06204fab207bc6c7cab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Data Quality Problems and Proactive Data Quality Management in Data-Warehouse-Systems}
+      \field{year}{2002}
     \endentry
     \entry{Pollefliet2011}{book}{}
       \name{author}{1}{}{%
@@ -158,6 +153,32 @@
       \field{labeltitlesource}{title}
       \field{title}{Schrijven van verslag tot eindwerk: do's en don'ts}
       \field{year}{2011}
+    \endentry
+    \entry{Satyanarayana2010}{article}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,uniquepart=base,hash=f8f1b1e56bcd8c69b93084f6a02bf4de}{%
+           family={Satyanarayana},
+           familyi={S\bibinitperiod},
+           given={Reddy},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{f8f1b1e56bcd8c69b93084f6a02bf4de}
+      \strng{fullhash}{f8f1b1e56bcd8c69b93084f6a02bf4de}
+      \strng{bibnamehash}{f8f1b1e56bcd8c69b93084f6a02bf4de}
+      \strng{authorbibnamehash}{f8f1b1e56bcd8c69b93084f6a02bf4de}
+      \strng{authornamehash}{f8f1b1e56bcd8c69b93084f6a02bf4de}
+      \strng{authorfullhash}{f8f1b1e56bcd8c69b93084f6a02bf4de}
+      \field{sortinit}{S}
+      \field{sortinithash}{322b1d5276f2f6c1bccdcd15920dbee6}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International Journal on Computer Science and Engineering}
+      \field{title}{DATA WAREHOUSING, DATA MINING, OLAP AND OLTP TECHNOLOGIES ARE ESSENTIAL ELEMENTS TO SUPPORT DECISION-MAKING PROCESS IN INDUSTRIES}
+      \field{year}{2010}
     \endentry
     \entry{Stroobants2018}{article}{}
       \name{author}{1}{}{%

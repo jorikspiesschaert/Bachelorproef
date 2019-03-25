@@ -7,14 +7,23 @@
 
 % Pas na deze inleidende paragraaf komt de eerste sectiehoofding.
 
-Dit hoofdstuk bevat een literatuurstudie omtrent data warehousing. Na het lezen van dit hoofdstuk zullen begrippen zoals dimensioneel modelleren, data vault 2.0 en data warehousing jou niet meer onbekend zijn. Ook zullen beide modelleertechnieken dieper bekeken worden.
+Dit hoofdstuk bevat een literatuurstudie omtrent data warehousing. Na het lezen van dit hoofdstuk zullen begrippen zoals dimensioneel modelleren, data vault 2.0 en data warehousing jou niet meer onbekend zijn en waarom er nood is aan data warehousing. Ook zullen beide modelleertechnieken dieper bekeken worden.
 
 %\textcite{Knuth1998}
-\section{Inleiding data warehouse}
+\section{Inleiding data warehousing}
 
 \epigraph{Torture the data, and it will confess to anything. }{\textit{Ronald Coase \\ Winnaar Nobelprijs in Economie (1991)}}
 
-Veel moderne, digitale bedrijven genereren tegenwoordig enorme volumes data. Deze data kan afkomstig zijn uit verschillende bronnen: CRM-systeem, flat-files (vb. rekenbladen), Twitter-feeds, ... Bestuursleden gebruiken deze data om beslissingen te nemen die de onderneming toelaat om te (blijven) groeien of om bepaalde problemen op te sporen. Stel dat een onderneming meer kosten maakt dan opbrengsten. Op basis van alle gegevens die het bedrijf bezit, kan hieruit dan een analyse gemaakt worden. Zijn er overbodige kosten? Worden onze producten/diensten aan een te lage prijs verkocht? Dit zijn maar enkele vragen die kunnen opgelost worden wanneer het bestuur de correcte rapporteringen ontvangt. 
+Veel moderne, digitale bedrijven genereren tegenwoordig enorme volumes data. Deze data kan afkomstig zijn uit verschillende bronnen: CRM-systeem, flat-files (vb. rekenbladen), Twitter-feeds, ... Bestuursleden gebruiken data om beslissingen te nemen die de onderneming toelaat om te (blijven) groeien of om bepaalde problemen op te sporen. Stel dat een onderneming meer kosten maakt dan opbrengsten. Op basis van alle gegevens die het bedrijf bezit, kan hieruit dan een analyse gemaakt worden. Zijn er overbodige kosten? Worden onze producten/diensten aan een te lage prijs verkocht? Dit zijn maar enkele vragen die kunnen opgelost worden wanneer het bestuur de correcte rapporteringen ontvangt. 
+
+\subsection{Soorten data}
+Er kan een onderscheid gemaakt worden tussen verschillende soorten data. Voornamelijk kunnen we informatie opdelen in 2 categorieën: gestructureerde en ongestructureerde data. Volgens een artikel van ~\textcite{Langseth2005}, bestaat 95\% van de globale informatie uit ongestructureerde data. 
+
+\subsubsection{Gestructureerde data}
+Data afkomstig uit een relationele databank (RDBMS) is meestal gestructureerd. Deze data is meestal ingedeeld in categorieën, denk bijvoorbeeld maar aan postcode, naam, klantennummer, ... Hieruit volgt dat deze data heel gemakkelijk te doorzoeken is. 
+
+\subsubsection{Ongestructureerde data}
+Deze informatie kan niet gemakkelijk worden opgeslagen in databanken. Denk maar aan rekenbladen, emails, tweets, muziek, ... Data afkomstig uit IoT-apparaten zijn meestal ook ongestructureerd. Deze data bevat vaak ook heel nuttige informatie die organisaties graag willen benuttigen. Denk bijvoorbeeld maar aan tweets: hoe gelukkig zijn klanten over een bepaald product? Hoeveel mails worden er maandelijks ontvangen met klachten?
 
 \subsection{Wat is een data warehouse?}
 De definitie van een data warehouse luidt als volgt: \textit{"een subject-georiënteerde, geïntegreerde, tijd-variante, niet-vluchtige collectie van gegevens dat in eerste instantie gebruikt wordt bij organisaties om beslissingen te nemen"} ~\autocite{Panos2000}.
@@ -33,21 +42,64 @@ Alle data van het verleden, moet terug te vinden zijn in de data warehouse. Dit 
 De data die in het systeem zit, moet onveranderlijk zijn, ook al zijn deze fout. Om de foutieve data toch aan te passen, zal er een nieuwe rij moeten toegevoegd worden die de juiste data bevat, die een hogere versie bevat dan de vorige rij. 
 
 \paragraph{Conclusie}
-We kunnen dus uit de definitie van een data warehouse afleiden dat het een grote databron is die alle gegevens bevat die een organisatie bezit vanaf het moment waarbij de data warehouse geïmplementeerd is tot het heden. Op deze databron worden dan analyses gemaakt.
+We kunnen dus uit de definitie van een data warehouse afleiden dat het een grote databron is die alle (gestructureerde en ongestructureerde (indien mogelijk)) gegevens bevat die een organisatie bezit vanaf het moment waarbij de data warehouse geïmplementeerd is tot het heden. Op deze databron worden dan analyses gemaakt.
 
 \subsection{Waarom is er nood aan een data warehouse?}
-Volume data
-apart van transactioneel sys
+Een organisatie heeft tegenwoordig heel wat data ter beschikking. Vaak is deze data gefragmenteerd over verschillende systemen. Wanneer men een analyse wil opmaken op basis van de verspreide data, zal dat niet evident zijn. 
+
+Om deze reden wordt een data warehouse ontworpen. Hierin worden gegevens, verspreidt over meerdere bronnen, in één bron verzameld. Zo kunnen rapporteringen makkelijk en flexibel opgebouwd worden. 
+
+Een andere reden voor het opbouwen van een data warehouse is dat je de historiek van alle data kan bijhouden. Wanneer er bijvoorbeeld gegevens aangepast zijn in het transactionele systeem, dan zijn de oude gegevens vaak moeilijk te achterhalen (omdat deze dat vaak overschreven wordt). Door verschillende versies bij te houden van entiteiten, kan je oudere data makkelijk opzoeken.
+
+Wanneer men rapporteringen wil opvragen aan het transactionele systeem, vergt dit ook extra belasting van de server. Dit komt doordat het datamodel die opgebouwd werd niet geoptimaliseerd is om zware SELECT-queries af te handelen. Dit zou niet alleen de server meer belasten, bovendien zal dit ook zorgen voor een tragere rapportering. 
+
 
 \subsection{Wat is het doel van een data warehouse?}
-Lalalalalalallalala
+Het belangrijkste doel dat een data warehouse heeft is om een \textbf{correcte} rapportering op te leveren. Beslissingen in organisaties worden genomen op basis van rapporten.
+
+\paragraph{Data kwaliteit}
+Zoals eerder aangekaart, is het belangrijk dat rapporten de juiste gegevens bevat. Hieruit volgt dat data kwaliteit een heel belangrijk aspect is. Vaak zijn er verschillende oorzaken waarom de data kwaliteit niet voldoet:
+
+\begin{itemize}
+	\item Inconsistente data tussen verschillende systemen
+	\item Incorrecte gegevens
+	\item Onvoldoende validatie bij het invoeren van gegevens
+	\item Onjuiste gegevensbewerkingen
+	\item \ldots
+\end{itemize}  
+~\autocite{Helfert2002}
+
+Gegevens die in een data warehouse geladen worden, ondergaan een proces (zie paragraaf \ref{sec:etl}). In dit proces wordt de data gemanipuleerd zodat de data kwaliteit verhoogd wordt.
+
+\paragraph{Performantie}
+We kunnen een onderscheid maken tussen 3 verschillende soorten beslissingen: operationele (dagelijks), tactische (jaarlijks) en strategische (lange termijn) beslissingen. Wanneer we operationele rapporten nodig hebben, verwachten we dan ook dat deze onmiddelijk kunnen opgeleverd worden. Het datamodel van een data warehouse wordt geoptimaliseerd voor het ophalen van data in plaats van het te kunnen stockeren. De data wordt 's nachts ingeladen zodat werknemers geen performantieproblemen hieromtrend ondervinden. 
+
+\subparagraph{De toekomst}
+Door de komst van in-memory databanken merken we op dat een deel van de (operationele) rapportering opnieuw verhuist naar de transactionele databanken. Dit heeft enerzijds te maken met de snelheid van de databanken en anderzijds met het feit dat queries om operationele rapporten op te vragen gebruikelijk niet zo belastend zijn. Zo kan er gewerkt worden met \textbf{live data} (doordat deze niet 's nachts moet ingeladen worden in de data warehouse). De voorwaarde hiervoor is dat alle benodigde data beschikbaar is binnen dat geïntegreerd systeem. Een voorbeeld van een in-memory databank is HANA, een technologie ontwikkelt door SAP.
+
+\paragraph{Automatisering}
+Doordat alle rapporteringsnoden geautomatiseerd kunnen worden, heeft dit natuurlijk als voordeel dat personeelsleden deze niet meer manueel hoeven te maken/berekenen. Zo kunnen ze hun tijd spenderen aan andere prioriteiten. Deze data kan dan worden voorgesteld in een overzichtelijke omgeving (zie sectie \ref{sec:omgeving}).
 
 \subsection{Wat is OLTP en wat zijn de verschillen met OLAP?}
 \label{sec:oltp-vs-olap}
-Lalalalalalallalala
+On-line transactional processing (OLTP) systemen zijn voornamelijk klantgericht. Het datamodel is opgebouwd rond het efficiënt verwerken van transacties. On-line analytical processing (OLAP) systemen zijn martkgericht. De data in een OLAP-systemen worden gebruikt om analyses op uit te voeren ~\autocite{Satyanarayana2010}.
+
+\paragraph{Inhoudelijk}
+Bij OLAP systemen worden meta data opgeslagen bij de entiteiten. Voorbeelden hiervan zijn: tijdstip van inladen, van welke bron de data komt, ... Het grote voordeel hierbij is dat wanneer een fout gebeurt, er gemakkelijker kan achterhaalt worden waar het fout liep. Ook wordt de historische data ook bewaard, in tegenstelling tot OLTP. Bij OLTP wordt de te wijzigen data overschreven. Het gevolg hiervan is dat de volume data bij OLAP doorgaans groter zal zijn.
+
+\paragraph{Toegankelijkheid}
+Wanneer men data wil verkrijgen/wijzigen in een OLTP systeem, moet er rekening gehouden met een aantal aspecten. Een transactie in een OLTP omgeving moet voldoen aan enkele eisen:
+\begin{itemize}
+	\item \textbf{Atomic:} Wanneer een transactie afgebroken is, mag er niets gewijzigd zijn in de databank.
+	\item \textbf{Consistent:} Als een deel van de transactie faalt, zullen alle doorgevoerde wijzigingen in die transactie ongedaan gemaakt worden en zal de databank terugkeren naar een consistente staat.
+	\item \textbf{Isolated:} Transacties worden geïsoleerd, transacties mogen in geen enkel geval elkaar beïnvloeden.
+	\item \textbf{Durable:} Wanneer een transactie is doorgevoerd, kan deze niet meer ongedaan gemaakt worden.
+\end{itemize}  
+
+Bij een OLAP-systeem worden geen transacties doorgevoerd, enkel leesopdrachten. Dat vermindert de complexiteit en verhoogt de snelheid van de queries ~\autocite{Satyanarayana2010}. 
 
 \subsection{Wat zijn de benodigdheden voor een data warehouse?}
-Lalalalalalallalala
+Voor er kan begonnen worden met het opbouwen van een data warehouse, zijn er enkele benodigdheden. Zo zal er een keuze moeten gemaakt worden voor een methodologie, een architectuur, welke databank er zal gebruikt worden, en welke software er zal gebruikt worden om data te kunnen integreren. Ook zal er fysieke opslagplaats nodig zijn. Hiervoor kan gebruik gemaakt worden van Cloud oplossingen of een on-premise server.
 
 \subsubsection{Methodologie}
 Lalalalalalallalala
@@ -56,6 +108,8 @@ Lalalalalalallalala
 Lalalalalalallalala
 
 \subsubsection{Technologie}
+\paragraph{ETL}
+\label{sec:etl}
 Lalalalalalallalala
 
 \paragraph{Databank}
@@ -123,6 +177,7 @@ Lalalalalalallalala
 Lalalalalalallalala
 
 \section{Rapporteringsomgevingen}
+\label{sec:omgeving}
 Inleiding enzoooooo
 
 \subsection{SAP Analytics Cloud}
