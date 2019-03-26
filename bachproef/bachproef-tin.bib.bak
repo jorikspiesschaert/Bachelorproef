@@ -28,4 +28,18 @@
   year    = {2010},
 }
 
+@Article{Langseth2005,
+  author = {Justin Langseth, Nithi Vivatrat, Gene Sohn},
+  title  = {SCHEMA AND ETL TOOLS FOR STRUCTURED AND UNSTRUCTURED DATA},
+  year   = {2005},
+}
+
+@Book{Linstedt2016,
+  title     = {Building a scalable data warehouse with data vault 2.0},
+  publisher = {Todd Green},
+  year      = {2016},
+  author    = {Daniel Linstedt, Michael Olschimke},
+  editor    = {Amy Invernizzi},
+}
+
 @Comment{jabref-meta: databaseType:bibtex;}

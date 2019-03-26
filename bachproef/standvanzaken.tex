@@ -84,6 +84,7 @@ Doordat alle rapporteringsnoden geautomatiseerd kunnen worden, heeft dit natuurl
 \label{sec:oltp-vs-olap}
 On-line transactional processing (OLTP) systemen zijn voornamelijk klantgericht. Het datamodel is opgebouwd rond het efficiënt verwerken van transacties. On-line analytical processing (OLAP) systemen zijn martkgericht. De data in een OLAP-systemen worden gebruikt om analyses op uit te voeren ~\autocite{Satyanarayana2010}.
 
+
 \paragraph{Inhoudelijk}
 Bij OLAP systemen worden meta data opgeslagen bij de entiteiten. Voorbeelden hiervan zijn: tijdstip van inladen, van welke bron de data komt, ... Het grote voordeel hierbij is dat wanneer een fout gebeurt, er gemakkelijker kan achterhaalt worden waar het fout liep. Ook wordt de historische data ook bewaard, in tegenstelling tot OLTP. Bij OLTP wordt de te wijzigen data overschreven. Het gevolg hiervan is dat de volume data bij OLAP doorgaans groter zal zijn.
 
@@ -101,26 +102,17 @@ Bij een OLAP-systeem worden geen transacties doorgevoerd, enkel leesopdrachten. 
 \subsection{Wat zijn de benodigdheden voor een data warehouse?}
 Voor er kan begonnen worden met het opbouwen van een data warehouse, zijn er enkele benodigdheden. Zo zal er een keuze moeten gemaakt worden voor een methodologie, een architectuur, welke databank er zal gebruikt worden, en welke software er zal gebruikt worden om data te kunnen integreren. Ook zal er fysieke opslagplaats nodig zijn. Hiervoor kan gebruik gemaakt worden van Cloud oplossingen of een on-premise server.
 
-\subsubsection{Methodologie}
-Lalalalalalallalala
-
-\subsubsection{Architectuur}
-Lalalalalalallalala
-
 \subsubsection{Technologie}
-\paragraph{ETL}
-\label{sec:etl}
 Lalalalalalallalala
 
 \paragraph{Databank}
 Lalalalalalallalala
 
 \paragraph{Data integratie software}
+\label{sec:etl}
 Lalalalalalallalala
 
 \section{Dimensioneel modelleren via Kimball}
-
-\subsection{Inleiding}
 Lalalalalalallalala
 
 \subsection{Architectuur}
@@ -145,49 +137,118 @@ Lalalalalalallalala
 Lalalalalalallalala
 
 \section{Modelleren via Data Vault 2.0}
-
-\subsection{Inleiding}
-Lalalalalalallalala
-
+Data Vault 2.0 is een modelleertechniek die ontworpen is door Daniel Linstedt. Het model zorgt ervoor dat dimensies gemakkelijk uitgebreidt kunnen worden en dat databronnen toevoegen vlot moet gaan. Linstedt is van mening dat business requirements vaak veranderen, dus moet het model waarin de data warehouse ontworpen is ook flexibel zijn. 
+~\autocite{Linstedt2016}
 \subsection{Architectuur}
-Lalalalalalallalala
+Data vault maakt gebruik van een 3-lagen model. Dit heeft als voordeel dat processen duidelijk kunnen onderscheiden worden per laag en blijft alles overzichtelijk. Deze architectuur ondersteunt om data op halen via een batch, maar ook om live data op te halen. NoSQL kan ook gebruikt worden om de data warehouse te ontwerpen. Wanneer de data live opgehaald wordt, valt de staging area weg en wordt de data onmiddelijk in de raw data vault geladen.  ~\autocite{Linstedt2016}
+
+
+\begin{figure}[h]
+	\includegraphics[scale=0.63]{../images/DVArchitectuur.png}
+	\caption{Data Vault architectuur voorgesteld door \textcite{Stroobants2018}.}
+	\label{fig:dvarch}
+\end{figure}
 
 \subsubsection{Staging area}
-Lalalalalalallalala
+In deze laag wordt alle data ingeladen (of een virtuele tabel gebruikt) van een bepaalde bron via een batch. Hier wordt alle data onbewerkt ingeladen. Deze data bevat dan ook nog geen historische data. De tabel worden dus gedupliceerd van de bron(nen). Deze laag is niet persistent.
 
 \subsubsection{Raw data vault}
-Lalalalalalallalala
+De data wordt overgeladen van de staging area naar de raw data vault via data integratie software. Deze laag is persistent, logisch ook wanneer we verschillende versies en de historiek behouden van onze entiteiten. Vanaf deze laag beginnen we te modelleren in Data Vault. De data wordt in deze laag gemanipuleerd (ofwel getransformeerd (ETL)). Ook wordt er metadata toegevoegd aan de records zodat er audits kunnen plaatsvinden. 
 
 \subsubsection{Business vault}
-Lalalalalalallalala
+Dit is een optionele laag. Deze laag wordt enkel en alleen toegevoegd wanneer er 'Business regels' moet toegepast worden in het model. De business vault wordt in princiepe niet opgeslagen in een aparte laag, maar vaak wordt deze opgeslagen als een uitbreiding van de raw data vault. Een voorbeeld van een 'Business rule' is dat je bijvoorbeeld geen producten wil promoten wanneer er maar minder dan 10 in voorraad zijn.
 
 \subsubsection{Information marts}
-Lalalalalalallalala
+Vertrekkend uit de business vault (of raw data vault wanneer deze niet aanwezig is) zullen er information marts moeten aangemaakt worden, ook wel bekend als data marts . ~\textcite{Linstedt2016} spreek liever over 'information' mart omdat het doel van een enterprise data warehouse duidelijk is: informatie aanbieden. 
+De information marts bestaan uit sterschema's. Hierop connecteren de eindgebruikers om hun informatie te verschaffen. 
 
 \subsection{Componenten}
-Lalalalalalallalala
+Een data vault model bestaat uit 3 soorten componenten: hubs, links en sattelieten. Elk component heeft zijn functie en zijn doel.
 
 \subsubsection{Hubs}
-Lalalalalalallalala
+~\textcite{Linstedt2016} beschrijft hubs als pilaren voor het Data Vault model. Een hub bestaat altijd uit minmaal 4 attributen:
+
+\begin{itemize}
+	\item \textbf{Hashkey (PK):} Als primaire sleutel van de entiteit wordt een gehashte identifier van de entiteit gebruikt.
+	\item \textbf{LoadDate:} Datum/tijdstip wanneer de record is ingeladen
+	\item \textbf{Record source:} Van welke databron is de record afkomstig?
+	\item \textbf{Business key(s):} De business key(s) van de bijhorende entiteit
+\end{itemize} 
+
+ De business key is een unieke sleutel, die vaak een betekenis heeft naar de business. Voorbeelden zijn: ISBN-nummers, Klantnummer, Chassisnummer, ...
+ 
+ Hubs zijn vooral heel handig wanneer er meerdere databronnen zullen zijn, zo kan je meerdere bronnen aan een hub hangen. In een hubs zit nooit andere data buiten een hash key, metadata en business keys.
 
 \subsubsection{Links}
-Lalalalalalallalala
+Wanneer we 2 hub-entiteiten willen verbinden, zullen we ze niet rechtstreeks met elkaar verbinden. Twee hub-entiteiten worden namelijk verbonden door middel van een link. Andere verantwoordelijkheden voor een link zijn hierarchieën, redefinities of business termen. De bedoeling is om een zo laag mogelijke granulariteit te creeëren. Links zorgen ervoor dat het data vault model heel flexibel wordt en makkelijk uitbreidbaar is. 
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.3]{../images/link.png}
+	\caption{Link entiteit die 2 hub entiteiten met elkaar verbindt. \autocite{Linstedt2016}.}
+	\label{fig:link}
+\end{figure}
+
+Ook bij links moeten er een aantal attributen aanwezig zijn:
+
+\begin{itemize}
+	\item \textbf{Hashkey (PK):} Als primaire sleutel van de entiteit worden alle business keys gehasht naar 1 sleutel.
+	\item \textbf{LoadDate:} Datum/tijdstip wanneer de record is ingeladen
+	\item \textbf{Record source:} Van welke databron is de record afkomstig?
+	\item \textbf{Business key(s):} Alle business key(s) van de 2 gelinkte hub-entiteiten
+\end{itemize} 
 
 \subsubsection{Sattelieten}
-Lalalalalalallalala
+In een satteliet worden alle gegevens gestockeerd dat een business object, relatie of transactie beschrijft. In de entiteit zelf is het belangrijk dat de historiek wordt bijgehouden. \autocite{Linstedt2016}
+
+Bij een satteliet vinden we minstens volgende attributen terug:
+
+\begin{itemize}
+	\item \textbf{Parent Hashkey (PK):} Als primaire sleutel van de entiteit worden alle business keys gehasht naar 1 sleutel.
+	\item \textbf{LoadDate:} Datum/tijdstip wanneer de record is ingeladen
+	\item \textbf{Record source:} Van welke databron is de record afkomstig?
+	\item \textbf{End load date:} Hierin wordt het moment geladen wanneer de entiteit niet meer gebruikt wordt (belangrijk voor het bewaren van de historiek).
+\end{itemize} 
+
+Een satteliet hoort bij een hub of een link. Een hub en een satteliet vormen een bepaald business object. 
+
+\subsubsection{Data Vault schema}
+Wanneer we zowel hubs, links als sattelieten samengieten in één schema, bekomen we een data vault. Wel zijn er nog enkele belangrijke opmerkingen:
+
+\begin{itemize}
+	\item Hubs mogen nooit rechtstreeks verbonden met elkaar, dit moet altijd gebeuren via een link (anders verliest het model zijn flexibiliteit).
+	\item Sattelieten kunnen zowel met hubs als links verbonden worden.
+	\item Hubs/links kunnen meerdere sattelieten hebben: deze staan meestal voor verschillende databronnen.
+	\item Een satteliet kan maar verbonden worden met 1 hub of link. 
+\end{itemize} 
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.7]{../images/dvmodel.png}
+	\caption{Een voorbeeld van een data vault model (Bukhantsov.org)}
+	\label{fig:dvmod}
+\end{figure}
+
+Dit model heeft veel flexibiliteit te bieden. Enerzijds kan er gemakkelijk nieuwe hubs toevoegen door een nieuwe link te leggen. Ook kan er heel gemakkelijk een nieuwe gegevensbron toevoegen, dit wordt gedaan door een nieuwe satteliet toe te voegen aan een bestaande hub. 
 
 \section{Rapporteringsomgevingen}
+Inleiding enzoooooo
+
+\subsection{Verschil tussen een measure en dimensie}
+Lalalalalalallalala
+
+\subsection{Rapporteringsomgevingen}
 \label{sec:omgeving}
 Inleiding enzoooooo
 
-\subsection{SAP Analytics Cloud}
+\subsubsection{SAP Analytics Cloud}
 Lalalalalalallalala
 
-\subsection{Power BI}
+\subsubsection{Power BI}
 Lalalalalalallalala
 
-\subsection{Andere omgevingen}
-Lalalalalalallalala
+\subsubsection{Andere omgevingen}
+Naast de mogelijkheden die 2 grootmachten in de ERP-markt aanbieden, zijn er nog een aantal andere opties beschikbaar om rapporteringen visueel aantrekkelijk te maken. 
 
 
 

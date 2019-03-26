@@ -19,6 +19,44 @@
 
 \refsection{0}
   \datalist[entry]{apa/global//global/global}
+    \entry{Linstedt2016}{book}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,uniquepart=base,hash=0bcb42f29abbf44ea8f8027e3a5ccb78}{%
+           family={Daniel\bibnamedelima Linstedt},
+           familyi={D\bibinitperiod\bibinitdelim L\bibinitperiod},
+           given={Michael\bibnamedelima Olschimke},
+           giveni={M\bibinitperiod\bibinitdelim O\bibinitperiod},
+           givenun=0}}%
+      }
+      \name{editor}{1}{}{%
+        {{hash=12a37a0118b582279e6dc497f6ef9bcd}{%
+           family={Invernizzi},
+           familyi={I\bibinitperiod},
+           given={Amy},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Todd Green}%
+      }
+      \strng{namehash}{0bcb42f29abbf44ea8f8027e3a5ccb78}
+      \strng{fullhash}{0bcb42f29abbf44ea8f8027e3a5ccb78}
+      \strng{bibnamehash}{0bcb42f29abbf44ea8f8027e3a5ccb78}
+      \strng{authorbibnamehash}{0bcb42f29abbf44ea8f8027e3a5ccb78}
+      \strng{authornamehash}{0bcb42f29abbf44ea8f8027e3a5ccb78}
+      \strng{authorfullhash}{0bcb42f29abbf44ea8f8027e3a5ccb78}
+      \strng{editorbibnamehash}{12a37a0118b582279e6dc497f6ef9bcd}
+      \strng{editornamehash}{12a37a0118b582279e6dc497f6ef9bcd}
+      \strng{editorfullhash}{12a37a0118b582279e6dc497f6ef9bcd}
+      \field{sortinit}{D}
+      \field{sortinithash}{2ef1bd9a78cc71eb74d7231c635177b8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Building a scalable data warehouse with data vault 2.0}
+      \field{year}{2016}
+    \endentry
     \entry{Jukic2006}{article}{}
       \name{author}{1}{}{%
         {{uniquename=0,uniquepart=base,hash=623d030ad9e5c76ca9b3bd5452a91dcb}{%
