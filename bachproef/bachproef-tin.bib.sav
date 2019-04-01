@@ -34,12 +34,19 @@
   year   = {2005},
 }
 
-@Book{Linstedt2,
+@Book{Linstedt2016,
   title     = {Building a scalable data warehouse with data vault 2.0},
   publisher = {Todd Green},
   year      = {2016},
   author    = {Daniel Linstedt, Michael Olschimke},
   editor    = {Amy Invernizzi},
+}
+
+@Book{Kimball2013,
+  title     = {The data warehouse toolkit:},
+  publisher = {Wiley},
+  year      = {2013},
+  author    = {Ralph Kimball, Margy Ross},
 }
 
 @Comment{jabref-meta: databaseType:bibtex;}

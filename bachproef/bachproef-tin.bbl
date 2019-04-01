@@ -192,6 +192,34 @@
       \field{title}{Schrijven van verslag tot eindwerk: do's en don'ts}
       \field{year}{2011}
     \endentry
+    \entry{Kimball2013}{book}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,uniquepart=base,hash=2ea89ba75f3dfadc6a8ac7d625e20603}{%
+           family={Ralph\bibnamedelima Kimball},
+           familyi={R\bibinitperiod\bibinitdelim K\bibinitperiod},
+           given={Margy\bibnamedelima Ross},
+           giveni={M\bibinitperiod\bibinitdelim R\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Wiley}%
+      }
+      \strng{namehash}{2ea89ba75f3dfadc6a8ac7d625e20603}
+      \strng{fullhash}{2ea89ba75f3dfadc6a8ac7d625e20603}
+      \strng{bibnamehash}{2ea89ba75f3dfadc6a8ac7d625e20603}
+      \strng{authorbibnamehash}{2ea89ba75f3dfadc6a8ac7d625e20603}
+      \strng{authornamehash}{2ea89ba75f3dfadc6a8ac7d625e20603}
+      \strng{authorfullhash}{2ea89ba75f3dfadc6a8ac7d625e20603}
+      \field{sortinit}{R}
+      \field{sortinithash}{da6b42bd3ab22fee61abed031ee405f7}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{The data warehouse toolkit: Third edition}
+      \field{year}{2013}
+    \endentry
     \entry{Satyanarayana2010}{article}{}
       \name{author}{1}{}{%
         {{uniquename=0,uniquepart=base,hash=f8f1b1e56bcd8c69b93084f6a02bf4de}{%

@@ -100,41 +100,76 @@ Wanneer men data wil verkrijgen/wijzigen in een OLTP systeem, moet er rekening g
 Bij een OLAP-systeem worden geen transacties doorgevoerd, enkel leesopdrachten. Dat vermindert de complexiteit en verhoogt de snelheid van de queries ~\autocite{Satyanarayana2010}. 
 
 \subsection{Wat zijn de benodigdheden voor een data warehouse?}
-Voor er kan begonnen worden met het opbouwen van een data warehouse, zijn er enkele benodigdheden. Zo zal er een keuze moeten gemaakt worden voor een methodologie, een architectuur, welke databank er zal gebruikt worden, en welke software er zal gebruikt worden om data te kunnen integreren. Ook zal er fysieke opslagplaats nodig zijn. Hiervoor kan gebruik gemaakt worden van Cloud oplossingen of een on-premise server.
+Voor er kan begonnen worden met het opbouwen van een data warehouse, zijn er enkele benodigdheden. Zo zal er een keuze moeten gemaakt worden voor een bepaalde methodologie en een architectuur. Ook zal er fysieke opslagplaats nodig zijn. Hiervoor kan gebruik gemaakt worden van Cloud oplossingen of een on-premise server. Maar in dit hoofdstuk bespreken we welke software-aspecten er nodig zijn bij het opbouwen van de data warehouse.
 
-\subsubsection{Technologie}
-Lalalalalalallalala
+\subsubsection{RDBMS}
+Voor het opmaken en beheren van de data warehouse zal er een RDBMS moeten uitgekozen worden. Hiervoor zijn heel wat mogelijkheden beschikbaar op de markt. Bijvoorbeeld: 
 
-\paragraph{Databank}
-Lalalalalalallalala
+\begin{itemize}
+	\item Oracle DB
+	\item Microsoft SQL Server
+	\item IBM DB2
+	\item Microsoft Office Access
+	\item \ldots
+\end{itemize} 
 
-\paragraph{Data integratie software}
+Klassieke databanken slaan hun gegevens op op harde schijven en/of SSD's. Maar sinds kort zien we de komst van een nieuwe technologie, genaamd een in-memory databank. Hierbij worden de gegevens initieël opgeslagen in het RAM-geheugen. Dit zorgt voor een veel snellere lees- en schrijftijd. Het nadeel van deze nieuwe technologie is het prijskaartje.
+
+\subsubsection{Data integratie software}
 \label{sec:etl}
-Lalalalalalallalala
+Het data inladen is een proces die een verantwoordelijkheid is voor de data integratie software, al is dat niet zijn enige verantwoordelijkheid. Hij is verantwoordelijk voor het gehele ETL-proces:
+
+\begin{itemize}
+	\item Extraction: Ophalen van de data vanuit de bron
+	\item Load: Transformaties en manipulaties uitvoeren op die data
+	\item Transformation: De data wegschrijven naar de nieuwe bron
+\end{itemize} 
 
 \section{Dimensioneel modelleren via Kimball}
-Lalalalalalallalala
+Wie een consultant Business Intelligence is, heeft ongetwijfeld al gehoord van dimensioneel modelleren. Over de jaren heen is het als het ware een standaard geworden wanneer men een data warehouse wilt ontwerpen. Dimensioneel modelleren heeft als voordeel dat het model niet complex is, dus gemakkelijk te begrijpen, zelf voor niet IT-opgeleide personen. Ook is er vaak een snel resultaat beschikbaar. In deze sectie zal het dimensioneel modelleren aan de hand van Kimball dieper bekeken worden. 
+
 
 \subsection{Architectuur}
-Lalalalalalallalala
-
-\subsubsection{Staging area}
-Lalalalalalallalala
+Bij het dimensioneel modelleren wordt het proces opgedeeld in 2 soorten lagen:de data warehouselaag en de data marts. Op basis van de data warheouselaag worden de data marts opgebouwd. Rapporteringsomgevingen connecteren met de data marts om hun data op te halen.
 
 \subsubsection{Data warehouselaag}
-Lalalalalalallalala
+In deze laag wordt het ETL-proces toegepast. Eerst en vooral wordt de data vanuit (een) bron(nen) in de warehouse geladen. Daarna wordt de data bewerkt en gemanipuleerd. Bijvoorbeeld records met bepaalde lege records weglaten. De data kwaliteit (zoals eerder aangekaart) is zeer belangrijk in een data warehouse. Het doel is om de toegekomen data consistent te maken en ervoor te zorgen dat de integriteit bewaarborgd blijft ~\autocite{Kimball2013}
+
+\subsubsection{Data marts}
+In deze laag worden OLAP-cubes of relationele ster schema's gemaakt op basis van de data warehouselaag. Deze laag kan eigenlijk als de presentatielaag beschouwd worden. Deze laag moet gedetailleerde data bevatten. Een data mart moet gebaseerd zijn rond een business unit ~\autocite{Kimball2013}.
 
 \subsection{Componenten}
-Lalalalalalallalala
+Een sterschema of OLAP-cube bestaat uit dimensies en facts. Wat deze precies zijn, wordt hieronder uitgelegd. 
 
-\subsubsection{Dimenties}
-Lalalalalalallalala
+\subsubsection{Dimention tabel}
+Voor elke dimensie wordt een primaire sleutel aangemaakt (of afkomstig uit het systeem als business sleutel). Deze sleutel wordt gebruikt in een fact table als vreemde sleutel, zodat er een relatie kan worden gelegd tussen beide entiteiten.
 
-\subsubsection{Facts}
-Lalalalalalallalala
+Naast de primaire sleutel wordt in deze tabel ook de beschrijvende data bewaart voor een bepaalde rij. Deze data kan gebruikt worden om in de rapporteringsomgeving de verschillende assen te kiezen. Een typische dimensie is bijvoorbeeld 'naam' of 'Woonplaats'.
 
-\subsubsection{Sterschema's}
-Lalalalalalallalala
+\subsubsection{Fact tabel}
+In een fact table worden alle meetbare cijfers bijgehouden. Meetbare cijfers betekent dat bewerkingen moeten kunnen mogelijk zijn op die data. Een bankrekeningnummer is een getal, maar hier kunnen geen bewerkingen met uitgevoerd worden (bijvoorbeeld gemiddelde bankrekeningnummer geven). Invoice amount is wel een goed voorbeeld. Hierop kunnen enkele bewerkingen worden uitgevoerd, bijvoorbeeld: gemiddelde, minimum, maximum, totaal, .... Deze gegevens worden in vaktermen als \textbf{measures} aangeduidt. 
+
+De fact table bevat niet alleen measures, maar ook de vreemde sleutels van de dimensies waarmee het verbonden is. Zo kan je bruikbare informatie toevoegen aan je measure in de rapporteringsomgeving.
+
+\subsubsection{Ster schema}
+In een ster schema worden dimensies en fact tabellen verbonden door enerzijds de primaire sleutels in de dimensies, en anderzijds bij de vreemde sleutels in de fact tabel. Wanneer meerdere tabellen verbonden worden met elkaar zien we een centraal punt in het model, dat de fact tabel is (zie figuur \ref{fig:ster}). 
+
+\begin{figure}[h]
+	\includegraphics[scale=0.8]{../images/ster.PNG}
+	\caption{Ster sschema voorgesteld door \textcite{Kimball2013}.}
+	\label{fig:ster}
+\end{figure}
+
+\subsubsection{Verschil tussen een sterschema en een OLAP-cube}
+Het verschil tussen beide zit niet in het ontwerp, maar puur in het 'fysieke' gedeelte.
+OLAP cubes zijn geoptimaliseerd voor een drill down of een frill up te doen in de gegevensset.
+Drill down betekent dat de gegevens op een dieper detailniveau zullen bekeken worden, bijvoorbeeld vertrekkend uit een productcategorie niveau, ga je naar een productniveau. OLAP cubes zorgen ervoor dat er meer anlytische functies beschikbaar zijn in vergelijking met SQL. Maar als nadeel heeft de OLAP cubes dat het niet zo performant is als een ster schema  (zie figuur \ref{fig:stervsolap}).  \autocite{Kimball2013}. 
+
+\begin{figure}[h]
+	\includegraphics[scale=0.8]{../images/starvsolap.PNG}
+	\caption{Sterschema (links) en OLAP cube (rechts) voorgesteld door \textcite{Kimball2013}.}
+	\label{fig:stervsolap}
+\end{figure}
 
 \section{Modelleren via Data Vault 2.0}
 Data Vault 2.0 is een modelleertechniek die ontworpen is door Daniel Linstedt. Het model zorgt ervoor dat dimensies gemakkelijk uitgebreidt kunnen worden en dat databronnen toevoegen vlot moet gaan. Linstedt is van mening dat business requirements vaak veranderen, dus moet het model waarin de data warehouse ontworpen is ook flexibel zijn. 
@@ -232,23 +267,44 @@ Wanneer we zowel hubs, links als sattelieten samengieten in één schema, bekome
 Dit model heeft veel flexibiliteit te bieden. Enerzijds kan er gemakkelijk nieuwe hubs toevoegen door een nieuwe link te leggen. Ook kan er heel gemakkelijk een nieuwe gegevensbron toevoegen, dit wordt gedaan door een nieuwe satteliet toe te voegen aan een bestaande hub. 
 
 \section{Rapporteringsomgevingen}
-Inleiding enzoooooo
-
-\subsection{Verschil tussen een measure en dimensie}
-Lalalalalalallalala
-
-\subsection{Rapporteringsomgevingen}
 \label{sec:omgeving}
-Inleiding enzoooooo
+Wanneer alle data in de data warehouse ingeladen en getransformeerd is, moet het mogelijk zijn om visuele en interactieve rapporten op te stellen. Op basis van deze rapporten, kan het beleid beslissingen gaan nemen. Ook kunnen dashboards opgesteld worden voor werknemers die geen beleid voeren. De bedoeling in deze sectie is om een schets te geven over welke rapporteringsomgevingen op de markt beschikbaar zijn. 
 
-\subsubsection{SAP Analytics Cloud}
-Lalalalalalallalala
+\subsection{SAP Analytics Cloud}
+Bij SAP Analytics Cloud kan er gebruik gemaakt worden van realtime analytics. Hiervoor is live data nodig en deze wordt opgehaald in het transactionele systeem. Indien gewenst, kan er toch nog steeds gewerkt worden met een batch die 's nachts geladen wordt. 
 
-\subsubsection{Power BI}
-Lalalalalalallalala
+Analytics cloud biedt heel veel mogelijkheden om interactieve dashboards te ontwerpen. Waar SAP Analytics Cloud zich onderscheidt met de andere spelers, is dat er in deze omgeving planning kan worden toegepast. Er kunnen budgetten opgesteld worden voor de komende jaren (bijvoorbeeld IT-kosten), en deze kunnen dan vergeleken worden met de actuele kosten op dat momenten. Wanneer een bedrijf deze planning-feature wil implementeren, moeten ze hiervoor een pak meer geld op tafel leggen. 
 
-\subsubsection{Andere omgevingen}
-Naast de mogelijkheden die 2 grootmachten in de ERP-markt aanbieden, zijn er nog een aantal andere opties beschikbaar om rapporteringen visueel aantrekkelijk te maken. 
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.45]{../images/sac.png}
+	\caption{Een voorbeeld van een dashboard gemaakt met SAP Analytics Cloud (sap.com)}
+	\label{fig:sac}
+\end{figure}
+
+\subsection{Power BI}
+Power BI is het programma bij uitstek die gebruikt wordt bij datavisualisatie van ontwikkelaar Microsoft. PowerBI is een uitstekende keuze wanneer bedrijven Office 365 en microsoft Dynamics geïmplementeerd hebben in hun infrastructuur.
+
+In tegenstelling tot SAP Analytics cloud kan je Power BI wel on-premise installeren. Maar indien gewenst, kan er steeds gebruikt gemaakt worden van een cloud-omgeving.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.45]{../images/powerbi.png}
+	\caption{Een voorbeeld van een dashboard gemaakt met Power BI (microsoft.com)}
+	\label{fig:powerbi}
+\end{figure}
+
+\subsection{Andere omgevingen}
+Naast de mogelijkheden die 2 grootmachten in de ERP-markt aanbieden, zijn er nog een aantal andere opties beschikbaar om rapporteringen visueel aantrekkelijk te maken. Enkele voorbeelden zijn: 
+
+\begin{itemize}
+	\item Tableau
+	\item Sisense
+	\item Domo
+	\item IBM Watson Analytics
+	\item \ldots
+\end{itemize} 
+ 
 
 
 
