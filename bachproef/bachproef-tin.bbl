@@ -57,6 +57,32 @@
       \field{title}{Building a scalable data warehouse with data vault 2.0}
       \field{year}{2016}
     \endentry
+    \entry{Gartner2019}{report}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,uniquepart=base,hash=18bfab6309a4addeb7e1dae07d2a4b89}{%
+           family={Gartner},
+           familyi={G\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Gartner}%
+      }
+      \strng{namehash}{18bfab6309a4addeb7e1dae07d2a4b89}
+      \strng{fullhash}{18bfab6309a4addeb7e1dae07d2a4b89}
+      \strng{bibnamehash}{18bfab6309a4addeb7e1dae07d2a4b89}
+      \strng{authorbibnamehash}{18bfab6309a4addeb7e1dae07d2a4b89}
+      \strng{authornamehash}{18bfab6309a4addeb7e1dae07d2a4b89}
+      \strng{authorfullhash}{18bfab6309a4addeb7e1dae07d2a4b89}
+      \field{sortinit}{G}
+      \field{sortinithash}{5e8d2bf9d38de41b1528bd307546008f}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Magic Quadrant for Analytics and Business Intelligence Platforms}
+      \field{type}{techreport}
+      \field{year}{2019}
+    \endentry
     \entry{Jukic2006}{article}{}
       \name{author}{1}{}{%
         {{uniquename=0,uniquepart=base,hash=623d030ad9e5c76ca9b3bd5452a91dcb}{%
@@ -270,35 +296,6 @@
       \field{labeltitlesource}{title}
       \field{title}{Modern data warehousing with data vault in SAP HANA}
       \field{year}{2018}
-    \endentry
-    \entry{Panos2000}{thesis}{}
-      \name{author}{1}{}{%
-        {{uniquename=0,uniquepart=base,hash=9e7a0590d59945c560f5f4d194ea78e0}{%
-           family={Vassiliadis},
-           familyi={V\bibinitperiod},
-           given={Panos},
-           giveni={P\bibinitperiod},
-           givenun=0}}%
-      }
-      \list{institution}{1}{%
-        {NATIONAL TECHNICAL UNIVERSITY OF ATHENS}%
-      }
-      \strng{namehash}{9e7a0590d59945c560f5f4d194ea78e0}
-      \strng{fullhash}{9e7a0590d59945c560f5f4d194ea78e0}
-      \strng{bibnamehash}{9e7a0590d59945c560f5f4d194ea78e0}
-      \strng{authorbibnamehash}{9e7a0590d59945c560f5f4d194ea78e0}
-      \strng{authornamehash}{9e7a0590d59945c560f5f4d194ea78e0}
-      \strng{authorfullhash}{9e7a0590d59945c560f5f4d194ea78e0}
-      \field{sortinit}{V}
-      \field{sortinithash}{75dd7385c90b2252c3ae853a80ca853b}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{year}
-      \true{uniqueprimaryauthor}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{Data Warehouse Modeling and Quality Issues}
-      \field{type}{phdthesis}
-      \field{year}{2000}
     \endentry
   \enddatalist
 \endrefsection

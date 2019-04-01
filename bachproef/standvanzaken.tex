@@ -14,48 +14,53 @@ Dit hoofdstuk bevat een literatuurstudie omtrent data warehousing. Na het lezen 
 
 \epigraph{Torture the data, and it will confess to anything. }{\textit{Ronald Coase \\ Winnaar Nobelprijs in Economie (1991)}}
 
-Veel moderne, digitale bedrijven genereren tegenwoordig enorme volumes data. Deze data kan afkomstig zijn uit verschillende bronnen: CRM-systeem, flat-files (vb. rekenbladen), Twitter-feeds, ... Bestuursleden gebruiken data om beslissingen te nemen die de onderneming toelaat om te (blijven) groeien of om bepaalde problemen op te sporen. Stel dat een onderneming meer kosten maakt dan opbrengsten. Op basis van alle gegevens die het bedrijf bezit, kan hieruit dan een analyse gemaakt worden. Zijn er overbodige kosten? Worden onze producten/diensten aan een te lage prijs verkocht? Dit zijn maar enkele vragen die kunnen opgelost worden wanneer het bestuur de correcte rapporteringen ontvangt. 
+Veel moderne, digitale bedrijven genereren tegenwoordig enorme volumes data. Deze data kan afkomstig zijn uit verschillende bronnen: ERP/CRM-systeem, flat-files (bijvoorbeeld Excel-sheets), big data, ... Bestuursleden gebruiken data om beslissingen te nemen die de onderneming toelaat om te (blijven) groeien of om bepaalde problemen op te sporen. Stel dat een onderneming meer kosten maakt dan opbrengsten. Op basis van alle gegevens die het bedrijf bezit, kan hieruit dan een analyse gemaakt worden. Zijn er overbodige kosten? Worden onze producten/diensten aan een te lage prijs verkocht? Dit zijn maar enkele vragen die kunnen opgelost worden wanneer het bestuur de correcte rapporteringen ontvangt. Ook wordt een data warehouse gebruikt om gegevens aan te leveren om budgetten op te stellen voor de komende jaren en om van forecasting gebruik te maken. Zo kan er bijvoorbeeld een beslissing gemaakt worden welk budget er moet toegekend worden aan de verschillende afdelingen. 
+
+Om alles nog even samen te vatten: een data warehouse levert data aan een rapporteringsomgeving. Op basis van deze data worden beslissingen ondersteund.
 
 \subsection{Soorten data}
-Er kan een onderscheid gemaakt worden tussen verschillende soorten data. Voornamelijk kunnen we informatie opdelen in 2 categorieën: gestructureerde en ongestructureerde data. Volgens een artikel van ~\textcite{Langseth2005}, bestaat 95\% van de globale informatie uit ongestructureerde data. 
+Er kan een onderscheid gemaakt worden tussen verschillende soorten data. Voornamelijk kunnen we informatie opdelen in drie categorieën: gestructureerde, semi-gestructureerde en ongestructureerde data. Volgens een artikel van ~\textcite{Langseth2005}, bestaat 95\% van de globale informatie uit ongestructureerde data. 
 
 \subsubsection{Gestructureerde data}
 Data afkomstig uit een relationele databank (RDBMS) is meestal gestructureerd. Deze data is meestal ingedeeld in categorieën, denk bijvoorbeeld maar aan postcode, naam, klantennummer, ... Hieruit volgt dat deze data heel gemakkelijk te doorzoeken is. 
 
+\subsubsection{Semi-gestructureerde data}
+Data afkomstig uit IoT-apparaten of XML-bestanden zijn meestal semi-gestructureerd. In deze data is een bepaalde structuur te herkennen, maar deze data zit niet in een bepaalde tabel-structuur.
+
 \subsubsection{Ongestructureerde data}
-Deze informatie kan niet gemakkelijk worden opgeslagen in databanken. Denk maar aan rekenbladen, emails, tweets, muziek, ... Data afkomstig uit IoT-apparaten zijn meestal ook ongestructureerd. Deze data bevat vaak ook heel nuttige informatie die organisaties graag willen benuttigen. Denk bijvoorbeeld maar aan tweets: hoe gelukkig zijn klanten over een bepaald product? Hoeveel mails worden er maandelijks ontvangen met klachten?
+Deze informatie kan niet gemakkelijk worden opgeslagen in databanken. Denk maar aan Excel-sheets, emails, muziek, ... Deze data bevat vaak ook heel nuttige informatie die organisaties graag willen benuttigen. Denk bijvoorbeeld maar aan emails: hoe gelukkig zijn klanten over een bepaald product? Hoeveel mails worden er maandelijks ontvangen met klachten?
 
 \subsection{Wat is een data warehouse?}
-De definitie van een data warehouse luidt als volgt: \textit{"een subject-georiënteerde, geïntegreerde, tijd-variante, niet-vluchtige collectie van gegevens dat in eerste instantie gebruikt wordt bij organisaties om beslissingen te nemen"} ~\autocite{Panos2000}.
+De definitie van een data warehouse luidt als volgt: \textit{"een subject-georiënteerde, geïntegreerde, tijd-variante, niet-vluchtige collectie van gegevens dat in eerste instantie gebruikt wordt bij organisaties om beslissingen te nemen"} (Bill Inmon).
 
 \paragraph{Subject-georiënteerd}
 Dit begrip slaat op het feit dat een data warehouse met de reden gebouwd is om data te analyseren, niet om transacties op toe te passen. Dit wordt uitgebreid besproken in subsectie \ref{sec:oltp-vs-olap}.
 
 
 \paragraph{Geïntegreerd}
-Dit betekent dat de data warehouse een "centrale" databank is die gegevens bevat vanuit verschillende bronsystemen (bijvoorbeeld gegevens uit het klantenbestand en gegevens uit het verkoopsysteem). Deze data kan effectief ingeladen worden, maar ook opgeslagen worden in virtuele tabellen.
+Dit betekent dat de data warehouse een "centrale" databank is die gegevens bevat vanuit verschillende bronsystemen (bijvoorbeeld gegevens uit het klantenbestand en gegevens uit het verkoopsysteem). 
 
 \paragraph{Tijd-variant}
-Alle data van het verleden, moet terug te vinden zijn in de data warehouse. Dit betekent dat data uit het verleden (bijvoorbeeld een vorig adres van een klant) moet beschikbaar zijn, ook al is deze in het transactioneel systeem aangepast.
+Alle data van het verleden, moet terug te vinden zijn in de data warehouse. Dit betekent dat data uit het verleden (bijvoorbeeld een vorige factuur van een klant) moet beschikbaar zijn, ook al is de data in het transactioneel systeem aangepast. Dit wordt toegepast op transactionele data, minder op master data.
 
 \paragraph{Niet-vluchtig}
-De data die in het systeem zit, moet onveranderlijk zijn, ook al zijn deze fout. Om de foutieve data toch aan te passen, zal er een nieuwe rij moeten toegevoegd worden die de juiste data bevat, die een hogere versie bevat dan de vorige rij. 
+De data die in het systeem zit, moet onveranderlijk zijn, ook al is de data foutief. Om de foutieve data toch aan te passen, zal er een nieuwe rij moeten toegevoegd worden die de juiste data bevat, die een hogere versie bevat dan de vorige rij. 
 
 \paragraph{Conclusie}
-We kunnen dus uit de definitie van een data warehouse afleiden dat het een grote databron is die alle (gestructureerde en ongestructureerde (indien mogelijk)) gegevens bevat die een organisatie bezit vanaf het moment waarbij de data warehouse geïmplementeerd is tot het heden. Op deze databron worden dan analyses gemaakt.
+We kunnen dus uit de definitie van een data warehouse afleiden dat het een grote databron is die alle (gestructureerde semi-gestructureerde en ongestructureerde) gegevens bevat die een organisatie bezit vanaf het moment waarbij de data warehouse geïmplementeerd is tot het heden. Op deze databron worden dan analyses gemaakt.
 
 \subsection{Waarom is er nood aan een data warehouse?}
 Een organisatie heeft tegenwoordig heel wat data ter beschikking. Vaak is deze data gefragmenteerd over verschillende systemen. Wanneer men een analyse wil opmaken op basis van de verspreide data, zal dat niet evident zijn. 
 
-Om deze reden wordt een data warehouse ontworpen. Hierin worden gegevens, verspreidt over meerdere bronnen, in één bron verzameld. Zo kunnen rapporteringen makkelijk en flexibel opgebouwd worden. 
+Om deze reden wordt een data warehouse ontworpen. Hierin worden gegevens, verspreidt over meerdere bronnen, in één centrale plaats verzameld. Zo kunnen rapporteringen makkelijk en flexibel opgebouwd worden. 
 
 Een andere reden voor het opbouwen van een data warehouse is dat je de historiek van alle data kan bijhouden. Wanneer er bijvoorbeeld gegevens aangepast zijn in het transactionele systeem, dan zijn de oude gegevens vaak moeilijk te achterhalen (omdat deze dat vaak overschreven wordt). Door verschillende versies bij te houden van entiteiten, kan je oudere data makkelijk opzoeken.
 
-Wanneer men rapporteringen wil opvragen aan het transactionele systeem, vergt dit ook extra belasting van de server. Dit komt doordat het datamodel die opgebouwd werd niet geoptimaliseerd is om zware SELECT-queries af te handelen. Dit zou niet alleen de server meer belasten, bovendien zal dit ook zorgen voor een tragere rapportering. 
+Wanneer men rapporteringen wil opvragen aan het transactionele systeem, vergt dit ook extra belasting van de server. Dit komt doordat het datamodel die opgebouwd werd niet geoptimaliseerd is om zware SELECT-queries af te handelen. Dit zou niet alleen de server (van het transactionele systeem) meer belasten, bovendien zal dit ook zorgen voor een tragere rapportering. Indien de server te veel rapporteringen zou moeten opvragen, zou dit kunnen leiden tot een overbelasting waarbij transacties niet meer mogelijk zouden kunnen zijn. 
 
 
 \subsection{Wat is het doel van een data warehouse?}
-Het belangrijkste doel dat een data warehouse heeft is om een \textbf{correcte} rapportering op te leveren. Beslissingen in organisaties worden genomen op basis van rapporten.
+Het belangrijkste doel dat een data warehouse heeft is om een \textbf{correcte} rapportering op te leveren. Dit zorgt ervoor dat het beslissingsnemingsproces ondersteunt wordt die genomen wordt door het management. 
 
 \paragraph{Data kwaliteit}
 Zoals eerder aangekaart, is het belangrijk dat rapporten de juiste gegevens bevat. Hieruit volgt dat data kwaliteit een heel belangrijk aspect is. Vaak zijn er verschillende oorzaken waarom de data kwaliteit niet voldoet:
@@ -78,7 +83,7 @@ We kunnen een onderscheid maken tussen 3 verschillende soorten beslissingen: ope
 Door de komst van in-memory databanken merken we op dat een deel van de (operationele) rapportering opnieuw verhuist naar de transactionele databanken. Dit heeft enerzijds te maken met de snelheid van de databanken en anderzijds met het feit dat queries om operationele rapporten op te vragen gebruikelijk niet zo belastend zijn. Zo kan er gewerkt worden met \textbf{live data} (doordat deze niet 's nachts moet ingeladen worden in de data warehouse). De voorwaarde hiervoor is dat alle benodigde data beschikbaar is binnen dat geïntegreerd systeem. Een voorbeeld van een in-memory databank is HANA, een technologie ontwikkelt door SAP.
 
 \paragraph{Automatisering}
-Doordat alle rapporteringsnoden geautomatiseerd kunnen worden, heeft dit natuurlijk als voordeel dat personeelsleden deze niet meer manueel hoeven te maken/berekenen. Zo kunnen ze hun tijd spenderen aan andere prioriteiten. Deze data kan dan worden voorgesteld in een overzichtelijke omgeving (zie sectie \ref{sec:omgeving}).
+Doordat alle rapporteringsnoden geautomatiseerd kunnen worden, heeft dit natuurlijk als voordeel dat personeelsleden deze niet meer manueel hoeven te maken/berekenen. Zo kunnen ze hun tijd spenderen aan andere prioriteiten. Deze data kan dan worden voorgesteld in een overzichtelijke omgeving (zie sectie \ref{sec:omgeving}). Bovendien zal er ook een kleinere kans zijn op fouten.
 
 \subsection{Wat is OLTP en wat zijn de verschillen met OLAP?}
 \label{sec:oltp-vs-olap}
@@ -86,7 +91,7 @@ On-line transactional processing (OLTP) systemen zijn voornamelijk klantgericht.
 
 
 \paragraph{Inhoudelijk}
-Bij OLAP systemen worden meta data opgeslagen bij de entiteiten. Voorbeelden hiervan zijn: tijdstip van inladen, van welke bron de data komt, ... Het grote voordeel hierbij is dat wanneer een fout gebeurt, er gemakkelijker kan achterhaalt worden waar het fout liep. Ook wordt de historische data ook bewaard, in tegenstelling tot OLTP. Bij OLTP wordt de te wijzigen data overschreven. Het gevolg hiervan is dat de volume data bij OLAP doorgaans groter zal zijn.
+Bij OLAP systemen worden metadata opgeslagen bij de entiteiten. Voorbeelden hiervan zijn: tijdstip van inladen, van welke bron de data komt, ... Het grote voordeel hierbij is dat wanneer een fout gebeurt, er gemakkelijker kan achterhaalt worden waar het fout liep. Ook wordt de historische data ook bewaard, in tegenstelling tot OLTP. Bij OLTP wordt de te wijzigen data overschreven. Het gevolg hiervan is dat de volume data bij OLAP doorgaans groter zal zijn.
 
 \paragraph{Toegankelijkheid}
 Wanneer men data wil verkrijgen/wijzigen in een OLTP systeem, moet er rekening gehouden met een aantal aspecten. Een transactie in een OLTP omgeving moet voldoen aan enkele eisen:
@@ -117,7 +122,7 @@ Klassieke databanken slaan hun gegevens op op harde schijven en/of SSD's. Maar s
 
 \subsubsection{Data integratie software}
 \label{sec:etl}
-Het data inladen is een proces die een verantwoordelijkheid is voor de data integratie software, al is dat niet zijn enige verantwoordelijkheid. Hij is verantwoordelijk voor het gehele ETL-proces:
+Het data inladen is een proces die een verantwoordelijkheid is voor de data integratie software, al is dat niet zijn enige verantwoordelijkheid. De software is verantwoordelijk voor het gehele ETL-proces (zie visualisatie \ref{fig:etl}):
 
 \begin{itemize}
 	\item Extraction: Ophalen van de data vanuit de bron
@@ -125,44 +130,62 @@ Het data inladen is een proces die een verantwoordelijkheid is voor de data inte
 	\item Transformation: De data wegschrijven naar de nieuwe bron
 \end{itemize} 
 
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=1]{../images/ETL.PNG}
+	\caption{Het ETL-proces}
+	\label{fig:etl}
+\end{figure}
+
+\pagebreak
+
 \section{Dimensioneel modelleren via Kimball}
-Wie een consultant Business Intelligence is, heeft ongetwijfeld al gehoord van dimensioneel modelleren. Over de jaren heen is het als het ware een standaard geworden wanneer men een data warehouse wilt ontwerpen. Dimensioneel modelleren heeft als voordeel dat het model niet complex is, dus gemakkelijk te begrijpen, zelf voor niet IT-opgeleide personen. Ook is er vaak een snel resultaat beschikbaar. In deze sectie zal het dimensioneel modelleren aan de hand van Kimball dieper bekeken worden. 
+Wie consultant Business Intelligence is, heeft ongetwijfeld al gehoord van dimensioneel modelleren. Over de jaren heen is het als het ware een standaard geworden wanneer men een data warehouse wilt ontwerpen. Dimensioneel modelleren heeft als voordeel dat het model niet complex is, dus gemakkelijk te begrijpen, zelf voor niet IT-opgeleide personen. Ook is er vaak een snel resultaat beschikbaar. In deze sectie zal het dimensioneel modelleren aan de hand van Kimball dieper bekeken worden. 
 
 
 \subsection{Architectuur}
-Bij het dimensioneel modelleren wordt het proces opgedeeld in 2 soorten lagen:de data warehouselaag en de data marts. Op basis van de data warheouselaag worden de data marts opgebouwd. Rapporteringsomgevingen connecteren met de data marts om hun data op te halen.
+Bij het dimensioneel modelleren wordt het proces opgedeeld in 2 soorten lagen: de staging area en de data warehouselaag. In de data warheouselaag worden de data marts opgebouwd. Rapporteringsomgevingen connecteren met de data marts om hun data op te halen.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.8]{../images/dimmodel.PNG}
+	\caption{Architectuur van een data warehouse op basis van het dimensioneel modelleren.}
+	\label{fig:dimmodel}
+\end{figure}
+
+\subsubsection{Staging area}
+In deze laag wordt het ETL-proces toegepast. Eerst en vooral wordt de data vanuit (een) bron(nen) in de data warehouse geladen. Daarna wordt de data bewerkt en gemanipuleerd. Bijvoorbeeld records met bepaalde lege records weglaten. De data kwaliteit (zoals eerder aangekaart) is zeer belangrijk in een data warehouse. Het doel is om de toegekomen data consistent te maken en ervoor te zorgen dat de integriteit bewaarborgd blijft ~\autocite{Kimball2013}
+
+\pagebreak
 
 \subsubsection{Data warehouselaag}
-In deze laag wordt het ETL-proces toegepast. Eerst en vooral wordt de data vanuit (een) bron(nen) in de warehouse geladen. Daarna wordt de data bewerkt en gemanipuleerd. Bijvoorbeeld records met bepaalde lege records weglaten. De data kwaliteit (zoals eerder aangekaart) is zeer belangrijk in een data warehouse. Het doel is om de toegekomen data consistent te maken en ervoor te zorgen dat de integriteit bewaarborgd blijft ~\autocite{Kimball2013}
-
-\subsubsection{Data marts}
-In deze laag worden OLAP-cubes of relationele ster schema's gemaakt op basis van de data warehouselaag. Deze laag kan eigenlijk als de presentatielaag beschouwd worden. Deze laag moet gedetailleerde data bevatten. Een data mart moet gebaseerd zijn rond een business unit ~\autocite{Kimball2013}.
+In deze laag worden OLAP-cubes of relationele ster schema's gemaakt op basis van de staging area. Deze laag kan eigenlijk als de presentatielaag beschouwd worden. Deze laag moet gedetailleerde data bevatten. Een data mart moet gebaseerd zijn rond een business unit ~\autocite{Kimball2013}.
 
 \subsection{Componenten}
 Een sterschema of OLAP-cube bestaat uit dimensies en facts. Wat deze precies zijn, wordt hieronder uitgelegd. 
 
-\subsubsection{Dimention tabel}
-Voor elke dimensie wordt een primaire sleutel aangemaakt (of afkomstig uit het systeem als business sleutel). Deze sleutel wordt gebruikt in een fact table als vreemde sleutel, zodat er een relatie kan worden gelegd tussen beide entiteiten.
+\subsubsection{Dimension tabel}
+Voor elke dimensie wordt een primary key aangemaakt (of afkomstig uit het systeem als business sleutel). Deze sleutel wordt gebruikt in een fact tabel als foreign key, zodat er een relatie kan worden gelegd tussen beide attributen.
 
-Naast de primaire sleutel wordt in deze tabel ook de beschrijvende data bewaart voor een bepaalde rij. Deze data kan gebruikt worden om in de rapporteringsomgeving de verschillende assen te kiezen. Een typische dimensie is bijvoorbeeld 'naam' of 'Woonplaats'.
+Naast de primary key wordt in deze tabel ook de beschrijvende data bewaart voor een bepaalde rij. Deze data kan gebruikt worden om in de rapporteringsomgeving de verschillende assen te kiezen. Een typisch attribuut is bijvoorbeeld 'naam' of 'woonplaats' voor de dimensie 'Customer'.
 
 \subsubsection{Fact tabel}
-In een fact table worden alle meetbare cijfers bijgehouden. Meetbare cijfers betekent dat bewerkingen moeten kunnen mogelijk zijn op die data. Een bankrekeningnummer is een getal, maar hier kunnen geen bewerkingen met uitgevoerd worden (bijvoorbeeld gemiddelde bankrekeningnummer geven). Invoice amount is wel een goed voorbeeld. Hierop kunnen enkele bewerkingen worden uitgevoerd, bijvoorbeeld: gemiddelde, minimum, maximum, totaal, .... Deze gegevens worden in vaktermen als \textbf{measures} aangeduidt. 
+In een fact tabel worden alle meetbare cijfers bijgehouden. Meetbare cijfers betekent dat bewerkingen moeten kunnen mogelijk zijn op die data. Een bankrekeningnummer is een getal, maar hier kunnen geen bewerkingen met uitgevoerd worden (bijvoorbeeld gemiddelde bankrekeningnummer geven). Facturatiebedrag is een goed voorbeeld. Hierop kunnen enkele bewerkingen worden uitgevoerd, bijvoorbeeld: gemiddelde, minimum, maximum, totaal, .... Deze gegevens worden in vaktermen als \textbf{measures} aangeduidt. 
 
-De fact table bevat niet alleen measures, maar ook de vreemde sleutels van de dimensies waarmee het verbonden is. Zo kan je bruikbare informatie toevoegen aan je measure in de rapporteringsomgeving.
+De fact tabel bevat niet alleen measures, maar ook de foreign keys van de dimensies waarmee het verbonden is. Zo kan je bruikbare informatie toevoegen aan je measure in de rapporteringsomgeving.
 
 \subsubsection{Ster schema}
 In een ster schema worden dimensies en fact tabellen verbonden door enerzijds de primaire sleutels in de dimensies, en anderzijds bij de vreemde sleutels in de fact tabel. Wanneer meerdere tabellen verbonden worden met elkaar zien we een centraal punt in het model, dat de fact tabel is (zie figuur \ref{fig:ster}). 
 
 \begin{figure}[h]
 	\includegraphics[scale=0.8]{../images/ster.PNG}
-	\caption{Ster sschema voorgesteld door \textcite{Kimball2013}.}
+	\caption{Ster schema voorgesteld door \textcite{Kimball2013}.}
 	\label{fig:ster}
 \end{figure}
 
 \subsubsection{Verschil tussen een sterschema en een OLAP-cube}
 Het verschil tussen beide zit niet in het ontwerp, maar puur in het 'fysieke' gedeelte.
-OLAP cubes zijn geoptimaliseerd voor een drill down of een frill up te doen in de gegevensset.
+OLAP cubes zijn geoptimaliseerd voor een drill down of een drill up te doen in de gegevensset.
 Drill down betekent dat de gegevens op een dieper detailniveau zullen bekeken worden, bijvoorbeeld vertrekkend uit een productcategorie niveau, ga je naar een productniveau. OLAP cubes zorgen ervoor dat er meer anlytische functies beschikbaar zijn in vergelijking met SQL. Maar als nadeel heeft de OLAP cubes dat het niet zo performant is als een ster schema  (zie figuur \ref{fig:stervsolap}).  \autocite{Kimball2013}. 
 
 \begin{figure}[h]
@@ -185,26 +208,26 @@ Data vault maakt gebruik van een 3-lagen model. Dit heeft als voordeel dat proce
 \end{figure}
 
 \subsubsection{Staging area}
-In deze laag wordt alle data ingeladen (of een virtuele tabel gebruikt) van een bepaalde bron via een batch. Hier wordt alle data onbewerkt ingeladen. Deze data bevat dan ook nog geen historische data. De tabel worden dus gedupliceerd van de bron(nen). Deze laag is niet persistent.
+In deze laag wordt alle data ingeladen (of een virtuele tabel gebruikt) van een bepaalde bron via een batch. Hier wordt alle data onbewerkt ingeladen. Deze data bevat dan ook nog geen historische metadata. De tabel worden dus gedupliceerd van de bron(nen). Deze laag is niet persistent.
 
 \subsubsection{Raw data vault}
-De data wordt overgeladen van de staging area naar de raw data vault via data integratie software. Deze laag is persistent, logisch ook wanneer we verschillende versies en de historiek behouden van onze entiteiten. Vanaf deze laag beginnen we te modelleren in Data Vault. De data wordt in deze laag gemanipuleerd (ofwel getransformeerd (ETL)). Ook wordt er metadata toegevoegd aan de records zodat er audits kunnen plaatsvinden. 
+De data wordt overgeladen van de staging area naar de raw data vault via het ETL-proces (\ref{sec:etl}). Deze laag is persistent, logisch ook wanneer we verschillende versies en de historiek behouden van onze entiteiten. Vanaf deze laag beginnen we te modelleren in Data Vault. De data wordt in deze laag gemanipuleerd (ofwel getransformeerd (ETL)). Ook wordt er metadata toegevoegd aan de records zodat er audits kunnen plaatsvinden. 
 
 \subsubsection{Business vault}
 Dit is een optionele laag. Deze laag wordt enkel en alleen toegevoegd wanneer er 'Business regels' moet toegepast worden in het model. De business vault wordt in princiepe niet opgeslagen in een aparte laag, maar vaak wordt deze opgeslagen als een uitbreiding van de raw data vault. Een voorbeeld van een 'Business rule' is dat je bijvoorbeeld geen producten wil promoten wanneer er maar minder dan 10 in voorraad zijn.
 
 \subsubsection{Information marts}
-Vertrekkend uit de business vault (of raw data vault wanneer deze niet aanwezig is) zullen er information marts moeten aangemaakt worden, ook wel bekend als data marts . ~\textcite{Linstedt2016} spreek liever over 'information' mart omdat het doel van een enterprise data warehouse duidelijk is: informatie aanbieden. 
+Vertrekkend uit de business vault (of raw data vault) zullen er information marts moeten aangemaakt worden, ook wel bekend als data marts . ~\textcite{Linstedt2016} spreek liever over 'information' mart omdat het doel van een enterprise data warehouse duidelijk is: informatie aanbieden. 
 De information marts bestaan uit sterschema's. Hierop connecteren de eindgebruikers om hun informatie te verschaffen. 
 
 \subsection{Componenten}
-Een data vault model bestaat uit 3 soorten componenten: hubs, links en sattelieten. Elk component heeft zijn functie en zijn doel.
+Een data vault model bestaat uit 3 soorten componenten: hubs, links en sattelites. Elk component heeft zijn functie en zijn doel.
 
 \subsubsection{Hubs}
 ~\textcite{Linstedt2016} beschrijft hubs als pilaren voor het Data Vault model. Een hub bestaat altijd uit minmaal 4 attributen:
 
 \begin{itemize}
-	\item \textbf{Hashkey (PK):} Als primaire sleutel van de entiteit wordt een gehashte identifier van de entiteit gebruikt.
+	\item \textbf{Hashkey (PK):} Als primary key van de entiteit wordt een gehashte identifier van de entiteit gebruikt.
 	\item \textbf{LoadDate:} Datum/tijdstip wanneer de record is ingeladen
 	\item \textbf{Record source:} Van welke databron is de record afkomstig?
 	\item \textbf{Business key(s):} De business key(s) van de bijhorende entiteit
@@ -233,28 +256,28 @@ Ook bij links moeten er een aantal attributen aanwezig zijn:
 	\item \textbf{Business key(s):} Alle business key(s) van de 2 gelinkte hub-entiteiten
 \end{itemize} 
 
-\subsubsection{Sattelieten}
-In een satteliet worden alle gegevens gestockeerd dat een business object, relatie of transactie beschrijft. In de entiteit zelf is het belangrijk dat de historiek wordt bijgehouden. \autocite{Linstedt2016}
+\subsubsection{Sattelites}
+In een satellite worden alle gegevens gestockeerd dat een business object, relatie of transactie beschrijft. In de entiteit zelf is het belangrijk dat de historiek wordt bijgehouden. \autocite{Linstedt2016}
 
-Bij een satteliet vinden we minstens volgende attributen terug:
+Bij een satellite vinden we minstens volgende attributen terug:
 
 \begin{itemize}
 	\item \textbf{Parent Hashkey (PK):} Als primaire sleutel van de entiteit worden alle business keys gehasht naar 1 sleutel.
 	\item \textbf{LoadDate:} Datum/tijdstip wanneer de record is ingeladen
 	\item \textbf{Record source:} Van welke databron is de record afkomstig?
-	\item \textbf{End load date:} Hierin wordt het moment geladen wanneer de entiteit niet meer gebruikt wordt (belangrijk voor het bewaren van de historiek).
+	\item \textbf{End load date:} Hierin wordt het moment geladen wanneer de entiteit niet meer gebruikt wordt (belangrijk voor het bewaren van de historiek). Wie vertrouwt is met het dimensioneel modelleren, kan dit vergelijken met het principe van slow changing dimensions.
 \end{itemize} 
 
-Een satteliet hoort bij een hub of een link. Een hub en een satteliet vormen een bepaald business object. 
+Een satellite hoort bij een hub of een link. Een hub en een satellite vormen een bepaald business object. 
 
 \subsubsection{Data Vault schema}
-Wanneer we zowel hubs, links als sattelieten samengieten in één schema, bekomen we een data vault. Wel zijn er nog enkele belangrijke opmerkingen:
+Wanneer we zowel hubs, links als sattelites samengieten in één schema, bekomen we een data vault. Wel zijn er nog enkele belangrijke opmerkingen:
 
 \begin{itemize}
 	\item Hubs mogen nooit rechtstreeks verbonden met elkaar, dit moet altijd gebeuren via een link (anders verliest het model zijn flexibiliteit).
-	\item Sattelieten kunnen zowel met hubs als links verbonden worden.
-	\item Hubs/links kunnen meerdere sattelieten hebben: deze staan meestal voor verschillende databronnen.
-	\item Een satteliet kan maar verbonden worden met 1 hub of link. 
+	\item Sattelites kunnen zowel met hubs als links verbonden worden.
+	\item Hubs/links kunnen meerdere sattelites hebben: deze staan meestal voor verschillende databronnen.
+	\item Een satellite kan maar verbonden worden met 1 hub of link. 
 \end{itemize} 
 
 \begin{figure}[h]
@@ -264,16 +287,46 @@ Wanneer we zowel hubs, links als sattelieten samengieten in één schema, bekome
 	\label{fig:dvmod}
 \end{figure}
 
-Dit model heeft veel flexibiliteit te bieden. Enerzijds kan er gemakkelijk nieuwe hubs toevoegen door een nieuwe link te leggen. Ook kan er heel gemakkelijk een nieuwe gegevensbron toevoegen, dit wordt gedaan door een nieuwe satteliet toe te voegen aan een bestaande hub. 
+Dit model heeft veel flexibiliteit te bieden. Enerzijds kan er gemakkelijk nieuwe hubs toevoegen door een nieuwe link te leggen. Ook kan er heel gemakkelijk een nieuwe gegevensbron toevoegen, dit wordt gedaan door een nieuwe satellite toe te voegen aan een bestaande hub. 
 
 \section{Rapporteringsomgevingen}
 \label{sec:omgeving}
-Wanneer alle data in de data warehouse ingeladen en getransformeerd is, moet het mogelijk zijn om visuele en interactieve rapporten op te stellen. Op basis van deze rapporten, kan het beleid beslissingen gaan nemen. Ook kunnen dashboards opgesteld worden voor werknemers die geen beleid voeren. De bedoeling in deze sectie is om een schets te geven over welke rapporteringsomgevingen op de markt beschikbaar zijn. 
+Wanneer alle data in de data warehouse ingeladen en getransformeerd is, moet het mogelijk zijn om visuele en interactieve rapporten op te stellen. Op basis van deze rapporten, kan het management beslissingen gaan nemen. Ook kunnen dashboards opgesteld worden voor werknemers die een high level overzicht nodig hebben. De bedoeling in deze sectie is om een schets te geven over welke rapporteringsomgevingen op de markt beschikbaar zijn. 
+
+\subsection{Het magische kwadrant}
+\textcite{Gartner2019} maakte een vergelijkende studie tussen verschillende Business Intelligence platvormen. Als meetpunt werd in deze studie rekening gehouden met 15 cruciale features:
+\begin{itemize}
+	\item \textbf{Administratie, beveiliging en architectuur:} administratie gebruikers, beveiliging garanderen, controleren wie toegang heeft en indien nodig, een herstel kunnen uitvoeren.
+	\item \textbf{Platform-as-a-service:} heeft de software een omgeving beschikbaar in de cloud?
+	\item \textbf{Connecteren naar databronnen:} kunnen gebruikers verbinden naar verschillende databronnen (ongestructureerde data, gestructureerde data, ..)?
+	\item \textbf{Beheer van metadata:} mogelijkheid aanbieden om te kunnen werken met metadata (zoeken, opslaan, herstellen, ...).
+	\item \textbf{Opslag en laden:} mogelijkheden voor het integreren, transformeren en het laden van gegevens.
+	\item \textbf{Voorbereiden van gegevens:}  op welke manieren is het voorbereiden van gegevens mogelijk? Kan er gebruikt worden van machine learning hierbij?
+	\item \textbf{Schaalbaarheid:} hoe wordt er omgegaan met enorme volume data, complexe data modellen, zijn de prestaties geoptimaliseerd, en hoe gaat de omgeving om met veel gebruikers?
+	\item \textbf{Geavanceerde analyses voor data scientists:} Zijn de geavanceerde analytische mogelijkheden makkelijk beschikbaar of moet er externe ontwikkelde software geïmplementeerd worden?
+	\item \textbf{Dashboards:} De mogelijkheid om interactieve dashboards te creëren, is werken met geo-informatie mogelijk?
+	\item \textbf{Verkennen:} kunnen gebruikers data analyseren en manipuleren door te werken met een interactieve presentatie van die gegevens?
+	\item \textbf{Augmented data ontdekken:} kan data ontdekt worden door natural language query (NLQ) technologie? Kan het automatisch uitzonderingen, clusters, links en voorspellingen vinden en visualiseren?
+	\item \textbf{Invoeren van Analytics in externe applicaties:} kunnen deze dashboards of visualiseringen in een andere omgeving makkelijk worden ingevoerd?
+	\item \textbf{Publiceren, delen en samenwerken: } kunnen gebruikers de inhoud publiceren, delen of samenwerken met anderen om visualisaties te realiseren of bekijken?
+	\item \textbf{Gebruiksgemak, visuele aantrekkelijkheid en de integratie van de workflow:} is het platvorm makkelijk te gebruiken en beheren? Kan de data visueel aantrekkelijk voorgesteld worden? Kan de tool makkelijk geïmplementeerd worden in huidige workflows?
+\end{itemize} 
+
+Op basis van deze features werden de verschillende Business Intelligence platvormen verdeeld in vier kwadranten naargelang hun visie en naar hoelang ze deze realiseren. De vier kwadranten zijn: niche-spelers, uitdagers, visionairs en marktleiders.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.7]{../images/gartner.png}
+	\caption{Het magische kwadrant opgesteld door \textcite{Gartner2019}.}
+	\label{fig:dvmod}
+\end{figure}
+
+In deze literatuurstudie bekijken we enkel de mogelijkheden die 2 grootmachten in de ERP-markt (Microsoft en SAP) aanbieden, maar er zijn dus nog een aantal andere opties beschikbaar om rapporteringen visueel aantrekkelijk te maken. 
 
 \subsection{SAP Analytics Cloud}
 Bij SAP Analytics Cloud kan er gebruik gemaakt worden van realtime analytics. Hiervoor is live data nodig en deze wordt opgehaald in het transactionele systeem. Indien gewenst, kan er toch nog steeds gewerkt worden met een batch die 's nachts geladen wordt. 
 
-Analytics cloud biedt heel veel mogelijkheden om interactieve dashboards te ontwerpen. Waar SAP Analytics Cloud zich onderscheidt met de andere spelers, is dat er in deze omgeving planning kan worden toegepast. Er kunnen budgetten opgesteld worden voor de komende jaren (bijvoorbeeld IT-kosten), en deze kunnen dan vergeleken worden met de actuele kosten op dat momenten. Wanneer een bedrijf deze planning-feature wil implementeren, moeten ze hiervoor een pak meer geld op tafel leggen. 
+Analytics cloud biedt heel veel mogelijkheden om interactieve dashboards te ontwerpen. Waar SAP Analytics Cloud zich onderscheidt met de andere spelers, is dat er in deze omgeving planning kan worden toegepast. Er kunnen budgetten opgesteld worden voor de komende jaren (bijvoorbeeld IT-kosten), en deze kunnen dan vergeleken worden met de actuele kosten op dat momenten. Wanneer een bedrijf deze planning-feature wil implementeren, moeten ze hiervoor een aparte licentie aanschaffen.
 
 \begin{figure}[h]
 	\centering
@@ -293,17 +346,6 @@ In tegenstelling tot SAP Analytics cloud kan je Power BI wel on-premise installe
 	\caption{Een voorbeeld van een dashboard gemaakt met Power BI (microsoft.com)}
 	\label{fig:powerbi}
 \end{figure}
-
-\subsection{Andere omgevingen}
-Naast de mogelijkheden die 2 grootmachten in de ERP-markt aanbieden, zijn er nog een aantal andere opties beschikbaar om rapporteringen visueel aantrekkelijk te maken. Enkele voorbeelden zijn: 
-
-\begin{itemize}
-	\item Tableau
-	\item Sisense
-	\item Domo
-	\item IBM Watson Analytics
-	\item \ldots
-\end{itemize} 
  
 
 

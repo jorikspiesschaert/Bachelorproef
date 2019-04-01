@@ -2146,9 +2146,7 @@
     <bcf:datasource type="file" datatype="bibtex">../voorstel/voorstel.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
-    <bcf:citekey order="11">Pollefliet2011</bcf:citekey>
-    <bcf:citekey order="12">Langseth2005</bcf:citekey>
-    <bcf:citekey order="13">Panos2000</bcf:citekey>
+    <bcf:citekey order="13">Langseth2005</bcf:citekey>
     <bcf:citekey order="14">Helfert2002</bcf:citekey>
     <bcf:citekey order="15">Satyanarayana2010</bcf:citekey>
     <bcf:citekey order="16">Satyanarayana2010</bcf:citekey>
@@ -2166,9 +2164,11 @@
     <bcf:citekey order="28">Linstedt2016</bcf:citekey>
     <bcf:citekey order="29">Linstedt2016</bcf:citekey>
     <bcf:citekey order="30">Linstedt2016</bcf:citekey>
-    <bcf:citekey order="31">Linstedt2015</bcf:citekey>
-    <bcf:citekey order="32">Stroobants2018</bcf:citekey>
-    <bcf:citekey order="33">Jukic2006</bcf:citekey>
+    <bcf:citekey order="31">Gartner2019</bcf:citekey>
+    <bcf:citekey order="32">Gartner2019</bcf:citekey>
+    <bcf:citekey order="33">Linstedt2015</bcf:citekey>
+    <bcf:citekey order="34">Stroobants2018</bcf:citekey>
+    <bcf:citekey order="35">Jukic2006</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="apa">

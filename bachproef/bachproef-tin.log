@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.6960 64-bit) (preloaded format=pdflatex 2019.2.25)  27 MAR 2019 16:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.6960 64-bit) (preloaded format=pdflatex 2019.2.25)  1 APR 2019 16:20
 entering extended mode
 **./bachproef-tin.tex
 (bachproef-tin.tex
@@ -1545,6 +1545,9 @@ Package csquotes Info: Adjusting default style.
 Package csquotes Info: Redefining alias 'default' -> 'dutch'.
  (bachproef-tin.aux
 
+LaTeX Warning: Label `fig:dvmod' multiply defined.
+
+
 LaTeX Warning: Label `fig:dvarch' multiply defined.
 
 )
@@ -1830,17 +1833,17 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 ]
 Hoofdstuk 1.
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 11.
+[15]
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 23.
+
 ("C:\Users\Owner\AppData\Local\Programs\MiKTeX 2.9\tex/latex/psnfss\omsptm.fd"
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 11.
-
-Underfull \vbox (badness 5133) has occurred while \output is active []
-
- [15])
-(standvanzaken.tex [16]
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 23.
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 23.
+) (standvanzaken.tex [16]
 Hoofdstuk 2.
 LaTeX Font Info:    Try loading font information for OT1+ztmcm on input line 15
 .
@@ -1896,112 +1899,137 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
 
 ]
 LaTeX Font Info:    Font shape `T1/pag/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/pag/b/n' tried instead on input line 22.
+(Font)              Font shape `T1/pag/b/n' tried instead on input line 24.
 LaTeX Font Info:    Font shape `T1/pag/b/n' in size <10.95> not available
-(Font)              Font shape `T1/pag/db/n' tried instead on input line 22.
+(Font)              Font shape `T1/pag/db/n' tried instead on input line 24.
  [18]
-LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 58.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 8056) has occurred while \output is active []
 
  [19]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [20]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+[20]
+Underfull \vbox (badness 1953) has occurred while \output is active []
 
  [21]
-Underfull \vbox (badness 8038) has occurred while \output is active []
+<../images/ETL.PNG, id=311, 194.22563pt x 264.99pt>
+File: ../images/ETL.PNG Graphic file (type png)
+<use ../images/ETL.PNG>
+Package pdftex.def Info: ../images/ETL.PNG  used on input line 135.
+(pdftex.def)             Requested size: 194.22514pt x 264.98935pt.
 
- [22]
-Underfull \vbox (badness 6658) has occurred while \output is active []
-
- [23]
-<../images/ster.PNG, id=317, 536.0025pt x 187.45032pt>
-File: ../images/ster.PNG Graphic file (type png)
-<use ../images/ster.PNG>
-Package pdftex.def Info: ../images/ster.PNG  used on input line 158.
-(pdftex.def)             Requested size: 428.80258pt x 149.96043pt.
-
-Overfull \hbox (2.01123pt too wide) in paragraph at lines 158--159
-[][] 
- []
-
-<../images/starvsolap.PNG, id=321, 539.76656pt x 213.04594pt>
-File: ../images/starvsolap.PNG Graphic file (type png)
-<use ../images/starvsolap.PNG>
-Package pdftex.def Info: ../images/starvsolap.PNG  used on input line 169.
-(pdftex.def)             Requested size: 431.81383pt x 170.43697pt.
-
-Overfull \hbox (5.02248pt too wide) in paragraph at lines 169--170
-[][] 
- []
-
-[24 <../images/ster.PNG> <../images/starvsolap.PNG>]
-<../images/DVArchitectuur.png, id=334, 688.82344pt x 329.73187pt>
-File: ../images/DVArchitectuur.png Graphic file (type png)
-<use ../images/DVArchitectuur.png>
-Package pdftex.def Info: ../images/DVArchitectuur.png  used on input line 182.
-(pdftex.def)             Requested size: 433.96106pt x 207.73216pt.
-
-Overfull \hbox (7.16971pt too wide) in paragraph at lines 182--183
-[][] 
- []
-
-[25 <../images/DVArchitectuur.png>]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [26]
-<../images/link.png, id=352, 368.87813pt x 533.74406pt>
-File: ../images/link.png Graphic file (type png)
-<use ../images/link.png>
-Package pdftex.def Info: ../images/link.png  used on input line 222.
-(pdftex.def)             Requested size: 110.66428pt x 160.12445pt.
-
-[27 <../images/link.png>]
-<../images/dvmodel.png, id=363, 630.355pt x 336.25626pt>
-File: ../images/dvmodel.png Graphic file (type png)
-<use ../images/dvmodel.png>
-Package pdftex.def Info: ../images/dvmodel.png  used on input line 262.
-(pdftex.def)             Requested size: 441.24548pt x 235.37776pt.
-
-Overfull \hbox (14.45413pt too wide) in paragraph at lines 262--263
- [][] 
- []
-
-[28 <../images/dvmodel.png (PNG copy)>]
-<../images/sac.png, id=369, 974.64125pt x 547.04375pt>
-File: ../images/sac.png Graphic file (type png)
-<use ../images/sac.png>
-Package pdftex.def Info: ../images/sac.png  used on input line 280.
-(pdftex.def)             Requested size: 438.5845pt x 246.1674pt.
-
-Overfull \hbox (11.79315pt too wide) in paragraph at lines 280--281
- [][] 
- []
-
-<../images/powerbi.png, id=370, 939.51pt x 654.445pt>
-File: ../images/powerbi.png Graphic file (type png)
-<use ../images/powerbi.png>
-Package pdftex.def Info: ../images/powerbi.png  used on input line 292.
-(pdftex.def)             Requested size: 422.77559pt x 294.49753pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[29 <../images/sac.png>]) (methodologie.tex [30 <../images/powerbi.png>]
-Hoofdstuk 3.
-) (conclusie.tex [31
 
-] [32
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [22]
+<../images/dimmodel.PNG, id=317, 453.94594pt x 258.21469pt>
+File: ../images/dimmodel.PNG Graphic file (type png)
+<use ../images/dimmodel.PNG>
+Package pdftex.def Info: ../images/dimmodel.PNG  used on input line 151.
+(pdftex.def)             Requested size: 363.15724pt x 206.57202pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[23 <../images/ETL.PNG>] [24 <../images/dimmodel.PNG>]
+<../images/ster.PNG, id=336, 536.0025pt x 187.45032pt>
+File: ../images/ster.PNG Graphic file (type png)
+<use ../images/ster.PNG>
+Package pdftex.def Info: ../images/ster.PNG  used on input line 181.
+(pdftex.def)             Requested size: 428.80258pt x 149.96043pt.
+
+Overfull \hbox (2.01123pt too wide) in paragraph at lines 181--182
+[][] 
+ []
+
+<../images/starvsolap.PNG, id=340, 539.76656pt x 213.04594pt>
+File: ../images/starvsolap.PNG Graphic file (type png)
+<use ../images/starvsolap.PNG>
+Package pdftex.def Info: ../images/starvsolap.PNG  used on input line 192.
+(pdftex.def)             Requested size: 431.81383pt x 170.43697pt.
+
+Overfull \hbox (5.02248pt too wide) in paragraph at lines 192--193
+[][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[25 <../images/ster.PNG>]
+<../images/DVArchitectuur.png, id=352, 688.82344pt x 329.73187pt>
+File: ../images/DVArchitectuur.png Graphic file (type png)
+<use ../images/DVArchitectuur.png>
+Package pdftex.def Info: ../images/DVArchitectuur.png  used on input line 205.
+(pdftex.def)             Requested size: 433.96106pt x 207.73216pt.
+
+Overfull \hbox (7.16971pt too wide) in paragraph at lines 205--206
+[][] 
+ []
+
+
+Underfull \vbox (badness 2318) has occurred while \output is active []
+
+ [26 <../images/starvsolap.PNG> <../images/DVArchitectuur.png>] [27]
+<../images/link.png, id=372, 368.87813pt x 533.74406pt>
+File: ../images/link.png Graphic file (type png)
+<use ../images/link.png>
+Package pdftex.def Info: ../images/link.png  used on input line 245.
+(pdftex.def)             Requested size: 110.66428pt x 160.12445pt.
+ [28 <../images/link.png>]
+<../images/dvmodel.png, id=383, 630.355pt x 336.25626pt>
+File: ../images/dvmodel.png Graphic file (type png)
+<use ../images/dvmodel.png>
+Package pdftex.def Info: ../images/dvmodel.png  used on input line 285.
+(pdftex.def)             Requested size: 441.24548pt x 235.37776pt.
+
+Overfull \hbox (14.45413pt too wide) in paragraph at lines 285--286
+ [][] 
+ []
+
+[29 <../images/dvmodel.png (PNG copy)>]
+Underfull \vbox (badness 6110) has occurred while \output is active []
+
+ [30]
+<../images/gartner.png, id=395, 470.412pt x 470.412pt>
+File: ../images/gartner.png Graphic file (type png)
+<use ../images/gartner.png>
+Package pdftex.def Info: ../images/gartner.png  used on input line 319.
+(pdftex.def)             Requested size: 329.28616pt x 329.28616pt.
+<../images/sac.png, id=397, 974.64125pt x 547.04375pt>
+File: ../images/sac.png Graphic file (type png)
+<use ../images/sac.png>
+Package pdftex.def Info: ../images/sac.png  used on input line 333.
+(pdftex.def)             Requested size: 438.5845pt x 246.1674pt.
+
+Overfull \hbox (11.79315pt too wide) in paragraph at lines 333--334
+ [][] 
+ []
+
+[31 <../images/gartner.png>]
+<../images/powerbi.png, id=403, 939.51pt x 654.445pt>
+File: ../images/powerbi.png Graphic file (type png)
+<use ../images/powerbi.png>
+Package pdftex.def Info: ../images/powerbi.png  used on input line 345.
+(pdftex.def)             Requested size: 422.77559pt x 294.49753pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+) (methodologie.tex [32 <../images/sac.png>] [33 <../images/powerbi.png>]
+[34
+
+]
+Hoofdstuk 3.
+) (conclusie.tex [35] [36
 
 ]
 Hoofdstuk 4.
-) [33] [34
+) [37] [38
 
 ]
 B"ylage A.
-(../voorstel/voorstel-inhoud.tex [35]
+(../voorstel/voorstel-inhoud.tex [39]
 File: ../images/DVArchitectuur.png Graphic file (type png)
 <use ../images/DVArchitectuur.png>
 Package pdftex.def Info: ../images/DVArchitectuur.png  used on input line 28.
@@ -2009,11 +2037,11 @@ Package pdftex.def Info: ../images/DVArchitectuur.png  used on input line 28.
 
 Underfull \vbox (badness 5954) has occurred while \output is active []
 
- [36]
+ [40]
 Underfull \vbox (badness 3039) has occurred while \output is active []
 
- [37])
-[38] [39
+ [41])
+[42] [43
 
 ]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 124.
@@ -2023,11 +2051,15 @@ Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 124.
 Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 124.
 
 
+LaTeX Warning: There were undefined references.
+
+
 LaTeX Warning: There were multiply-defined labels.
 
 
-Package biblatex Warning: Please rerun LaTeX.
-(biblatex)                Page breaks have changed.
+Package biblatex Warning: Please (re)run Biber on the file:
+(biblatex)                bachproef-tin
+(biblatex)                and rerun LaTeX afterwards.
 
 Package logreq Info: Writing requests to 'bachproef-tin.run.xml'.
 \openout1 = `bachproef-tin.run.xml'.
@@ -2035,27 +2067,24 @@ Package logreq Info: Writing requests to 'bachproef-tin.run.xml'.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 124.
  ) 
 Here is how much of TeX's memory you used:
- 40122 strings out of 492946
- 752775 string characters out of 3126266
- 1351848 words of memory out of 3000000
- 43087 multiletter control sequences out of 15000+200000
- 594734 words of font info for 198 fonts, out of 3000000 for 9000
+ 40152 strings out of 492946
+ 753236 string characters out of 3126266
+ 1353012 words of memory out of 3000000
+ 43101 multiletter control sequences out of 15000+200000
+ 595174 words of font info for 202 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,11n,72p,993b,3844s stack positions out of 5000i,500n,10000p,200000b,50000s
-pdfTeX warning (dest): name{appendix*.40} has been referenced but does not ex
-ist, replaced by a fixed one
-
-{C:/Users/Owner/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<
-C:/Users/Owner/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
-/cmsy10.pfb><C:/Users/Owner/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw/a
-vantgar/uagd8a.pfb><C:/Users/Owner/AppData/Local/Programs/MiKTeX 2.9/fonts/type
-1/urw/avantgar/uagk8a.pfb><C:/Users/Owner/AppData/Local/Programs/MiKTeX 2.9/fon
-ts/type1/urw/times/utmb8a.pfb><C:/Users/Owner/AppData/Local/Programs/MiKTeX 2.9
-/fonts/type1/urw/times/utmr8a.pfb><C:/Users/Owner/AppData/Local/Programs/MiKTeX
- 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on bachproef-tin.pdf (41 pages, 747478 bytes).
+ 57i,12n,72p,1026b,3844s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Users/Owner/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc
+}<C:/Users/Owner/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/
+cm/cmsy10.pfb><C:/Users/Owner/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/urw
+/avantgar/uagd8a.pfb><C:/Users/Owner/AppData/Local/Programs/MiKTeX 2.9/fonts/ty
+pe1/urw/avantgar/uagk8a.pfb><C:/Users/Owner/AppData/Local/Programs/MiKTeX 2.9/f
+onts/type1/urw/times/utmb8a.pfb><C:/Users/Owner/AppData/Local/Programs/MiKTeX 2
+.9/fonts/type1/urw/times/utmr8a.pfb><C:/Users/Owner/AppData/Local/Programs/MiKT
+eX 2.9/fonts/type1/urw/times/utmri8a.pfb>
+Output written on bachproef-tin.pdf (45 pages, 906377 bytes).
 PDF statistics:
- 596 PDF objects out of 1000 (max. 8388607)
- 135 named destinations out of 1000 (max. 500000)
- 39269 words of extra memory for PDF output out of 42996 (max. 10000000)
+ 634 PDF objects out of 1000 (max. 8388607)
+ 142 named destinations out of 1000 (max. 500000)
+ 39284 words of extra memory for PDF output out of 42996 (max. 10000000)
 
