@@ -1,0 +1,34 @@
+%%=============================================================================
+%% Voorbereiding op het onderzoek
+%%=============================================================================
+
+\chapter{Rapporteringsnood}
+\label{ch:rapporteringsnood}
+In dit hoofdstuk wordt beschreven wat de rapporteringsnood is voor DHL Pharma Logistics. Er wordt duidelijk beschreven wat de KPI is en deze wordt gemeten aan de hand van het SMART-principe. 
+
+\section{Context DHL Pharma Logistics}
+DHL Pharma Logistics is een divisie van de logistieke grootmacht DHL Supply Chain. PHL Pharma Logistics is verantwoordelijk van de opslag en het bewaren van allerlei medische producten. Bij het stokeren van medische producten moet er met allerlei zaken rekening gebouden worden: temperatuur, houdbaarheid, ... DHL Pharma Logistics hun verantwoordelijkheid ligt bij de opslag en niet bij het vervoeren van deze middelen. DHL Pharma Logistics ontvangt de goederen van labo's (ontwikkelaars van de medicatie) en houden deze goederen bij tot deze moeten verzonden worden naar de klant (ziekenhuizen, apothekers, ...).
+
+\section{Dock-to-Stock proces}
+Labo's sluiten met DHL Pharma Logistics een periode af waarin de goederen vanaf het dock-tijdstip (wanneer de vrachtwagen toekomt aan de juiste poort) totdat de goederen op de juiste plaats gestokeerd zijn op de juiste plaats.
+Deze periode wordt opgenomen in een Service Level Agreement (SLA). Het berekenen van deze KPI kan op verschillende niveau's: levering, per pallet of per unit. Bij DHL Pharma Logistics is het gebruikelijk dat goederen moeten worden gestokeerd binnen de 24 uur. Deze KPI wordt dan berekend op pallet-niveau, al zijn er enkele uitzonderingen.
+
+\subsection{Dock-to-Stock onderworpen aan het SMART-principe}
+Goederen die toekomen aan het magazijn moeten binnen de 24 uur gestockeerd worden op de juiste plaats. In dit interval, moeten alle controles ondergaan zijn. Dit is een afspraak die vast gelegd is in de Service Level Agreement met de Labo's.
+
+\begin{itemize}
+	\item \textbf{Specifiek: } De KPI is duidelijk geformuleerd.
+	\item \textbf{Meetbaar: } Het doel is bereikt wanneer de goederen tijdig zijn gestockeerd.
+	\item \textbf{Acceptabel:} De KPI is bepaald in een overeenkomst, dus is deze acceptabel.
+	\item \textbf{Realistisch: } Het stockeren van de goederen binnen de 24 uur is realistisch.
+	\item \textbf{Tijdsgebonden: } Er wordt een duidelijk interval aangegeven (binnen de 24 uur).
+\end{itemize} 
+
+\section{De formule voor het berekenen van de KPI}
+Een pallet is tijdig gestockeerd wanneer:
+\begin{equation*}
+	\text{Tijdstip pallet van stockage} - \text{Tijdstip pallet van aankomst} < \text{24 uur}
+\end{equation*}
+
+\section{Hoe moet deze KPI bekeken kunnen worden?}
+Deze opgestelde KPI is niet alleen belangrijk voor het clienteel om na te gaan of de goederen wel tijdig gestockeerd zijn, maar ook voor DHL Pharma Logistics om de juiste analyse te kunnen maken wanneer het fout loopt. Zo kunnen ze opsporen waar er een probleem zit in hun proces en daar de juiste oplossing voor vinden. Hebben ze te weinig personeel voor het verwerken van de orders? Zijn er veel defecten in hun rollend materieel? Hebben ze te veel leveringen geaccepteerd op een te korte termijn? Dit zijn nog maar enkele vragen die kunnnen opgelost worden wanneer een data warehouse is opgesteld voor deze specifieke KPI.

@@ -1,13 +1,5 @@
 % Encoding: UTF-8
 
-@book{Pollefliet2011,
-  author = {Pollefliet, Leen},
-  title = {Schrijven van verslag tot eindwerk: do's en don'ts},
-  year = {2011},
-  publisher = {Academia Press},
-  address = {Gent}
-}
-
 @PhdThesis{Panos2000,
   author = {Panos Vassiliadis},
   title  = {Data Warehouse Modeling and Quality Issues},
@@ -16,21 +8,21 @@
 }
 
 @Article{Helfert2002,
-  author = {Markus Helfert, Gregor Zellner, Carlos Sousa},
-  title  = {Data Quality Problems and Proactive Data Quality Management in Data-Warehouse-Systems},
+  author = {Markus Helfert and Gregor Zellner and Carlos Sousa},
+  title  = {Data quality problems and proactive data quality management in data-warehouse-systems},
   year   = {2002},
 }
 
 @Article{Satyanarayana2010,
   author  = {Reddy Satyanarayana},
-  title   = {DATA WAREHOUSING, DATA MINING, OLAP AND OLTP TECHNOLOGIES ARE ESSENTIAL ELEMENTS TO SUPPORT DECISION-MAKING PROCESS IN INDUSTRIES},
+  title   = {Data warehousing, data mining, OLAP and OLTP technologies are essential elements to support decision-making process in industries},
   journal = {International Journal on Computer Science and Engineering},
   year    = {2010},
 }
 
 @Article{Langseth2005,
-  author = {Justin Langseth, Nithi Vivatrat, Gene Sohn},
-  title  = {SCHEMA AND ETL TOOLS FOR STRUCTURED AND UNSTRUCTURED DATA},
+  author = {Justin Langseth and Nithi Vivatrat and Gene Sohn},
+  title  = {Schema and ETL tools for structured and unstructured data},
   year   = {2005},
 }
 
@@ -38,7 +30,7 @@
   title     = {Building a scalable data warehouse with data vault 2.0},
   publisher = {Todd Green},
   year      = {2016},
-  author    = {Daniel Linstedt, Michael Olschimke},
+  author    = {Daniel Linstedt and Michael Olschimke},
   editor    = {Amy Invernizzi},
 }
 
@@ -46,12 +38,12 @@
   title     = {The data warehouse toolkit: Third edition},
   publisher = {Wiley},
   year      = {2013},
-  author    = {Ralph Kimball, Margy Ross},
+  author    = {Ralph Kimball and Margy Ross},
 }
 
 @TechReport{Gartner2019,
   author      = {Gartner},
-  title       = {Magic Quadrant for Analytics and Business Intelligence Platforms},
+  title       = {Magic quadrant for analytics and business intelligence platforms},
   institution = {Gartner},
   year        = {2019},
 }

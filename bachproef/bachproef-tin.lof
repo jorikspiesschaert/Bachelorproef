@@ -17,11 +17,11 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {2.6}{\ignorespaces Link entiteit die 2 hub entiteiten met elkaar verbindt. \autocite {Linstedt2016}.}}{28}{figure.2.6}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.7}{\ignorespaces Een voorbeeld van een data vault model (Bukhantsov.org)}}{29}{figure.2.7}% 
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Een voorbeeld van een data vault model (Bukhantsov.org)}}{30}{figure.2.7}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.8}{\ignorespaces Het magische kwadrant opgesteld door \textcite {Gartner2019}.}}{31}{figure.2.8}% 
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Het magische kwadrant opgesteld door \textcite {Gartner2019}.}}{32}{figure.2.8}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.9}{\ignorespaces Een voorbeeld van een dashboard gemaakt met SAP Analytics Cloud (sap.com)}}{32}{figure.2.9}% 
+\contentsline {figure}{\numberline {2.9}{\ignorespaces Een voorbeeld van een dashboard gemaakt met SAP Analytics Cloud (sap.com)}}{33}{figure.2.9}% 
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {2.10}{\ignorespaces Een voorbeeld van een dashboard gemaakt met Power BI (microsoft.com)}}{33}{figure.2.10}% 
 \defcounter {refsection}{0}\relax 
@@ -31,5 +31,11 @@
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {A.1}{\ignorespaces Data Vault architectuur voorgesteld door \textcite {Stroobants2018}.}}{40}{figure.A.1}% 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Data Vault architectuur voorgesteld door \textcite {Stroobants2018}.}}{46}{figure.A.1}% 
 \contentsfinish 

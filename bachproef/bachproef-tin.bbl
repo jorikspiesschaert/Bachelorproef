@@ -19,44 +19,6 @@
 
 \refsection{0}
   \datalist[entry]{apa/global//global/global}
-    \entry{Linstedt2016}{book}{}
-      \name{author}{1}{}{%
-        {{uniquename=0,uniquepart=base,hash=0bcb42f29abbf44ea8f8027e3a5ccb78}{%
-           family={Daniel\bibnamedelima Linstedt},
-           familyi={D\bibinitperiod\bibinitdelim L\bibinitperiod},
-           given={Michael\bibnamedelima Olschimke},
-           giveni={M\bibinitperiod\bibinitdelim O\bibinitperiod},
-           givenun=0}}%
-      }
-      \name{editor}{1}{}{%
-        {{hash=12a37a0118b582279e6dc497f6ef9bcd}{%
-           family={Invernizzi},
-           familyi={I\bibinitperiod},
-           given={Amy},
-           giveni={A\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {Todd Green}%
-      }
-      \strng{namehash}{0bcb42f29abbf44ea8f8027e3a5ccb78}
-      \strng{fullhash}{0bcb42f29abbf44ea8f8027e3a5ccb78}
-      \strng{bibnamehash}{0bcb42f29abbf44ea8f8027e3a5ccb78}
-      \strng{authorbibnamehash}{0bcb42f29abbf44ea8f8027e3a5ccb78}
-      \strng{authornamehash}{0bcb42f29abbf44ea8f8027e3a5ccb78}
-      \strng{authorfullhash}{0bcb42f29abbf44ea8f8027e3a5ccb78}
-      \strng{editorbibnamehash}{12a37a0118b582279e6dc497f6ef9bcd}
-      \strng{editornamehash}{12a37a0118b582279e6dc497f6ef9bcd}
-      \strng{editorfullhash}{12a37a0118b582279e6dc497f6ef9bcd}
-      \field{sortinit}{D}
-      \field{sortinithash}{2ef1bd9a78cc71eb74d7231c635177b8}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{year}
-      \true{uniqueprimaryauthor}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{Building a scalable data warehouse with data vault 2.0}
-      \field{year}{2016}
-    \endentry
     \entry{Gartner2019}{report}{}
       \name{author}{1}{}{%
         {{uniquename=0,uniquepart=base,hash=18bfab6309a4addeb7e1dae07d2a4b89}{%
@@ -79,9 +41,46 @@
       \true{uniqueprimaryauthor}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{title}{Magic Quadrant for Analytics and Business Intelligence Platforms}
+      \field{title}{Magic quadrant for analytics and business intelligence platforms}
       \field{type}{techreport}
       \field{year}{2019}
+    \endentry
+    \entry{Helfert2002}{article}{}
+      \name{author}{3}{}{%
+        {{uniquename=0,uniquepart=base,hash=759e8d46629a4fa5853b866b39d2b622}{%
+           family={Helfert},
+           familyi={H\bibinitperiod},
+           given={Markus},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=49915daed64092769fca0b0caba21179}{%
+           family={Zellner},
+           familyi={Z\bibinitperiod},
+           given={Gregor},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=634d2a7da50df6dfa8622406fe8f4145}{%
+           family={Sousa},
+           familyi={S\bibinitperiod},
+           given={Carlos},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{665206dd73234839b517fd526dbbe0a7}
+      \strng{fullhash}{8605c901c4a3341ae9c4dce36950bc27}
+      \strng{bibnamehash}{8605c901c4a3341ae9c4dce36950bc27}
+      \strng{authorbibnamehash}{8605c901c4a3341ae9c4dce36950bc27}
+      \strng{authornamehash}{665206dd73234839b517fd526dbbe0a7}
+      \strng{authorfullhash}{8605c901c4a3341ae9c4dce36950bc27}
+      \field{sortinit}{H}
+      \field{sortinithash}{5f15a7bc777ad49ff15aa4d2831b1681}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Data quality problems and proactive data quality management in data-warehouse-systems}
+      \field{year}{2002}
     \endentry
     \entry{Jukic2006}{article}{}
       \name{author}{1}{}{%
@@ -109,32 +108,75 @@
       \field{title}{Modeling strategies and alternatives for dat warehousing projects}
       \field{year}{2006}
     \endentry
-    \entry{Langseth2005}{article}{}
-      \name{author}{1}{}{%
-        {{uniquename=0,uniquepart=base,hash=a3f24d5adbb6125a0ab439c59545e0ec}{%
-           family={Justin\bibnamedelima Langseth},
-           familyi={J\bibinitperiod\bibinitdelim L\bibinitperiod},
-           given={Gene\bibnamedelima Sohn},
-           giveni={G\bibinitperiod\bibinitdelim S\bibinitperiod},
-           givenun=0,
-           suffix={Nithi\bibnamedelima Vivatrat},
-           suffixi={N\bibinitperiod\bibinitdelim V\bibinitperiod},
-           suffixun=0}}%
+    \entry{Kimball2013}{book}{}
+      \name{author}{2}{}{%
+        {{uniquename=0,uniquepart=base,hash=6ec3b140429bc59ad63c593b172f665c}{%
+           family={Kimball},
+           familyi={K\bibinitperiod},
+           given={Ralph},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=257f73b4d408fcd5e8d4a110ef8c8f49}{%
+           family={Ross},
+           familyi={R\bibinitperiod},
+           given={Margy},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
       }
-      \strng{namehash}{a3f24d5adbb6125a0ab439c59545e0ec}
-      \strng{fullhash}{a3f24d5adbb6125a0ab439c59545e0ec}
-      \strng{bibnamehash}{a3f24d5adbb6125a0ab439c59545e0ec}
-      \strng{authorbibnamehash}{a3f24d5adbb6125a0ab439c59545e0ec}
-      \strng{authornamehash}{a3f24d5adbb6125a0ab439c59545e0ec}
-      \strng{authorfullhash}{a3f24d5adbb6125a0ab439c59545e0ec}
-      \field{sortinit}{J}
-      \field{sortinithash}{fce5f8d0bd05e8d93f3dbe21c78897ca}
+      \list{publisher}{1}{%
+        {Wiley}%
+      }
+      \strng{namehash}{c18f3b1557ab75000609609691801c5b}
+      \strng{fullhash}{c18f3b1557ab75000609609691801c5b}
+      \strng{bibnamehash}{c18f3b1557ab75000609609691801c5b}
+      \strng{authorbibnamehash}{c18f3b1557ab75000609609691801c5b}
+      \strng{authornamehash}{c18f3b1557ab75000609609691801c5b}
+      \strng{authorfullhash}{c18f3b1557ab75000609609691801c5b}
+      \field{sortinit}{K}
+      \field{sortinithash}{9fd838a31ba64d981e8f44562bd33f89}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{year}
       \true{uniqueprimaryauthor}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{title}{SCHEMA AND ETL TOOLS FOR STRUCTURED AND UNSTRUCTURED DATA}
+      \field{title}{The data warehouse toolkit: Third edition}
+      \field{year}{2013}
+    \endentry
+    \entry{Langseth2005}{article}{}
+      \name{author}{3}{}{%
+        {{uniquename=0,uniquepart=base,hash=892a658d3b3a5de12560b81fec5693fb}{%
+           family={Langseth},
+           familyi={L\bibinitperiod},
+           given={Justin},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=989f6bef89d60c9c705726859af73d3d}{%
+           family={Vivatrat},
+           familyi={V\bibinitperiod},
+           given={Nithi},
+           giveni={N\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=a10e99163f95bc30b4ffccbb380a18ce}{%
+           family={Sohn},
+           familyi={S\bibinitperiod},
+           given={Gene},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{84271f55379b8c835cf1f5fbfd9d3c97}
+      \strng{fullhash}{203b3a476da05175702b9ce04aa20519}
+      \strng{bibnamehash}{203b3a476da05175702b9ce04aa20519}
+      \strng{authorbibnamehash}{203b3a476da05175702b9ce04aa20519}
+      \strng{authornamehash}{84271f55379b8c835cf1f5fbfd9d3c97}
+      \strng{authorfullhash}{203b3a476da05175702b9ce04aa20519}
+      \field{sortinit}{L}
+      \field{sortinithash}{2c7981aaabc885868aba60f0c09ee20f}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Schema and ETL tools for structured and unstructured data}
       \field{year}{2005}
     \endentry
     \entry{Linstedt2015}{book}{}
@@ -153,98 +195,53 @@
       \field{sortinithash}{2c7981aaabc885868aba60f0c09ee20f}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{year}
-      \true{uniqueprimaryauthor}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Building a Scalable Data Warehouse with Data Vault 2.0}
       \field{year}{2015}
     \endentry
-    \entry{Helfert2002}{article}{}
-      \name{author}{1}{}{%
-        {{uniquename=0,uniquepart=base,hash=efcc5df2c55c1d830db7671744033a7e}{%
-           family={Markus\bibnamedelima Helfert},
-           familyi={M\bibinitperiod\bibinitdelim H\bibinitperiod},
-           given={Carlos\bibnamedelima Sousa},
-           giveni={C\bibinitperiod\bibinitdelim S\bibinitperiod},
-           givenun=0,
-           suffix={Gregor\bibnamedelima Zellner},
-           suffixi={G\bibinitperiod\bibinitdelim Z\bibinitperiod},
-           suffixun=0}}%
-      }
-      \strng{namehash}{efcc5df2c55c1d830db7671744033a7e}
-      \strng{fullhash}{efcc5df2c55c1d830db7671744033a7e}
-      \strng{bibnamehash}{efcc5df2c55c1d830db7671744033a7e}
-      \strng{authorbibnamehash}{efcc5df2c55c1d830db7671744033a7e}
-      \strng{authornamehash}{efcc5df2c55c1d830db7671744033a7e}
-      \strng{authorfullhash}{efcc5df2c55c1d830db7671744033a7e}
-      \field{sortinit}{M}
-      \field{sortinithash}{cfd219b90152c06204fab207bc6c7cab}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{year}
-      \true{uniqueprimaryauthor}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{Data Quality Problems and Proactive Data Quality Management in Data-Warehouse-Systems}
-      \field{year}{2002}
-    \endentry
-    \entry{Pollefliet2011}{book}{}
-      \name{author}{1}{}{%
-        {{uniquename=0,uniquepart=base,hash=7ca343ebcc6de1727ac22a1a847c21e5}{%
-           family={Pollefliet},
-           familyi={P\bibinitperiod},
-           given={Leen},
-           giveni={L\bibinitperiod},
+    \entry{Linstedt2016}{book}{}
+      \name{author}{2}{}{%
+        {{uniquename=1,uniquepart=given,hash=2bf6facf749330bba4aa8c0463ea1fe8}{%
+           family={Linstedt},
+           familyi={L\bibinitperiod},
+           given={Daniel},
+           giveni={D\bibinitperiod},
+           givenun=1}}%
+        {{uniquename=0,uniquepart=base,hash=9a299c6849b0723d23b3cf51645fac7c}{%
+           family={Olschimke},
+           familyi={O\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod},
            givenun=0}}%
       }
-      \list{location}{1}{%
-        {Gent}%
+      \name{editor}{1}{}{%
+        {{hash=12a37a0118b582279e6dc497f6ef9bcd}{%
+           family={Invernizzi},
+           familyi={I\bibinitperiod},
+           given={Amy},
+           giveni={A\bibinitperiod}}}%
       }
       \list{publisher}{1}{%
-        {Academia Press}%
+        {Todd Green}%
       }
-      \strng{namehash}{7ca343ebcc6de1727ac22a1a847c21e5}
-      \strng{fullhash}{7ca343ebcc6de1727ac22a1a847c21e5}
-      \strng{bibnamehash}{7ca343ebcc6de1727ac22a1a847c21e5}
-      \strng{authorbibnamehash}{7ca343ebcc6de1727ac22a1a847c21e5}
-      \strng{authornamehash}{7ca343ebcc6de1727ac22a1a847c21e5}
-      \strng{authorfullhash}{7ca343ebcc6de1727ac22a1a847c21e5}
-      \field{sortinit}{P}
-      \field{sortinithash}{8d51b3d5b78d75b54308d706b9bbe285}
+      \strng{namehash}{21fb18f1d6dd37741f267f77d81dc554}
+      \strng{fullhash}{21fb18f1d6dd37741f267f77d81dc554}
+      \strng{bibnamehash}{21fb18f1d6dd37741f267f77d81dc554}
+      \strng{authorbibnamehash}{21fb18f1d6dd37741f267f77d81dc554}
+      \strng{authornamehash}{21fb18f1d6dd37741f267f77d81dc554}
+      \strng{authorfullhash}{21fb18f1d6dd37741f267f77d81dc554}
+      \strng{editorbibnamehash}{12a37a0118b582279e6dc497f6ef9bcd}
+      \strng{editornamehash}{12a37a0118b582279e6dc497f6ef9bcd}
+      \strng{editorfullhash}{12a37a0118b582279e6dc497f6ef9bcd}
+      \field{sortinit}{L}
+      \field{sortinithash}{2c7981aaabc885868aba60f0c09ee20f}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{year}
-      \true{uniqueprimaryauthor}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{title}{Schrijven van verslag tot eindwerk: do's en don'ts}
-      \field{year}{2011}
-    \endentry
-    \entry{Kimball2013}{book}{}
-      \name{author}{1}{}{%
-        {{uniquename=0,uniquepart=base,hash=2ea89ba75f3dfadc6a8ac7d625e20603}{%
-           family={Ralph\bibnamedelima Kimball},
-           familyi={R\bibinitperiod\bibinitdelim K\bibinitperiod},
-           given={Margy\bibnamedelima Ross},
-           giveni={M\bibinitperiod\bibinitdelim R\bibinitperiod},
-           givenun=0}}%
-      }
-      \list{publisher}{1}{%
-        {Wiley}%
-      }
-      \strng{namehash}{2ea89ba75f3dfadc6a8ac7d625e20603}
-      \strng{fullhash}{2ea89ba75f3dfadc6a8ac7d625e20603}
-      \strng{bibnamehash}{2ea89ba75f3dfadc6a8ac7d625e20603}
-      \strng{authorbibnamehash}{2ea89ba75f3dfadc6a8ac7d625e20603}
-      \strng{authornamehash}{2ea89ba75f3dfadc6a8ac7d625e20603}
-      \strng{authorfullhash}{2ea89ba75f3dfadc6a8ac7d625e20603}
-      \field{sortinit}{R}
-      \field{sortinithash}{da6b42bd3ab22fee61abed031ee405f7}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{year}
-      \true{uniqueprimaryauthor}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{The data warehouse toolkit: Third edition}
-      \field{year}{2013}
+      \field{title}{Building a scalable data warehouse with data vault 2.0}
+      \field{year}{2016}
     \endentry
     \entry{Satyanarayana2010}{article}{}
       \name{author}{1}{}{%
@@ -269,7 +266,7 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{International Journal on Computer Science and Engineering}
-      \field{title}{DATA WAREHOUSING, DATA MINING, OLAP AND OLTP TECHNOLOGIES ARE ESSENTIAL ELEMENTS TO SUPPORT DECISION-MAKING PROCESS IN INDUSTRIES}
+      \field{title}{Data warehousing, data mining, OLAP and OLTP technologies are essential elements to support decision-making process in industries}
       \field{year}{2010}
     \endentry
     \entry{Stroobants2018}{article}{}
