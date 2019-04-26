@@ -1,0 +1,49 @@
+%%=============================================================================
+%% Onderzoek
+%%=============================================================================
+\chapter{Betekenis van de brondata}
+\label{ch:betekenisdata}
+In dit hoofdstuk wordt beschreven wat de betekenis is van de data die gebruikt wordt in dit onderzoek. Zo kan de data goed geïnterpreteerd worden.
+
+\section{Overzicht betekenissen}
+\begin{center}
+	\renewcommand{\arraystretch}{2}%
+	\begin{longtable}{  l  l  p{6cm} }
+		\textbf{Kolomnaam} & \textbf{Afkomst} & \textbf{Betekenis} \\ \hline
+		LABO\_ENTITY\_ID & Customer\_entities.csv & Een uniek identificatie nummer voor een labo entiteit. 
+		Een labo entiteit is een vestiging van een bepaald bedrijf.  \\ \hline
+		LABO\_ENTITY\_NAME & Customer\_entities.csv & De vestigingsnaam van de entiteit.  \\ \hline
+		LABO\_GROUP\_ID & Customer\_entities.csv & Identificatienummer van de overkoepelende groep.  \\ \hline
+		LABO\_GROUP\_ID & Customer\_groups.csv & Identificatienummer van de groep.
+		Een groep bestaat uit meerdere entiteiten.  \\ \hline
+		LABO\_GROUP\_NAAM & Customer\_groups.csv & De naam voor de groep.  \\ \hline
+		STAFF\_ID & Staff.csv & Personeelsnummer van een werknemer.  \\ \hline
+		STAFF\_NAME & Staff.csv & De naam van een werknemer.  \\ \hline
+		WAREHOUSE\_ID & Staff.csv & Het warenhuis waar de werknemer actief is.  \\ \hline
+		WAREHOUSE\_ID & Warehouses.csv & Het identificatienummer voor een bepaalde warenhuis.  \\ \hline
+		WAREHOUSE\_NAME & Warehouses.csv & De plaats van de warenhuis (tevens ook de naam).  \\ \hline
+		PRODUCT\_ID & Products.csv & Het artikelnummer. Dit is een uniek nummer.  \\ \hline
+		PRODUCT\_DESCRIPTION & Products.csv & Naam/beschrijving van een bepaald product.  \\ \hline
+		LABO\_ENTITY\_ID & Products.csv & Het identificatienummer van de labo entiteit waarvan het product afkomstig is.  \\ \hline
+		STATUS\_ID & Dock\_to\_stock\_status.csv & Identificatienummer van een bepaalde status. 
+		Een status wordt gegeven aan een pallet wanneer deze gestockeerd wordt. Ofwel is deze op tijd gestockeerd,
+		ofwel is er een bepaalde reden waarom dit niet op tijd kon gestockeerd worden (bijvoorbeeld een te druk moment).  \\ \hline
+		STATUS\_DESCRIPTION & Dock\_to\_stock\_status.csv & Beschrijving/uitleg over de status.  \\ \hline
+		PRODUCT\_ID & Products.csv & Het artikelnummer. Dit is een uniek nummer.  \\ \hline
+		LEVERAGE\_ID & Leverages.csv & Een nummer die toegekend wordt aan een bepaalde levering.
+		Vaak ook een referentienummer die de klant (labo) ziet op de factuur. \\ \hline
+		PALLET\_ID & Leverages.csv & Het identificatienummer van een pallet.
+		Een levering kan uit meerdere palletten bestaan. \\ \hline
+		STAFF\_ID & Leverages.csv & Een personeelsnummer. 
+		Dit personeelslid was verantwoordelijk voor het juist en tijdig stockeren van een pallet. \\ \hline
+		PRODUCT\_ID & Leverages.csv & Het identificatienummer van het product dat gestockeerd werd.
+		Er wordt enkel 1 productsoort op een pallet gestockeerd. \\ \hline
+		PRODUCT\_QUANTITY & Leverages.csv & De hoeveelheid producten aanwezig op een pallet.
+		De hoeveelheid wordt weergegeven per unit. \\ \hline
+		DOCK\_TIME & Leverages.csv & Het tijdstip waarop de pallet toekomt in het magazijn. \\ \hline
+		STOCK\_TIME & Leverages.csv & Het tijdstip waarop de pallet gestockeerd werd op de juiste plaats. \\ \hline
+		STATUS\_ID & Leverages.csv & Identificatienummer voor de status. Indien deze tijdig werd gestockeerd, dan werd geen status toegekend. \\
+	\caption{Betekenis van de gebruikte data in dit experiment.}
+	\label{tab:betekenisdata}
+	\end{longtable}
+\end{center}

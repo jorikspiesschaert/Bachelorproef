@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.6960 64-bit) (preloaded format=pdflatex 2019.2.25)  22 APR 2019 15:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.6960 64-bit) (preloaded format=pdflatex 2019.2.25)  26 APR 2019 18:03
 entering extended mode
 **./bachproef-tin.tex
 (bachproef-tin.tex
@@ -1025,70 +1025,89 @@ Package: fontenc 2018/08/11 v2.0j Standard LaTeX package
 File: t1enc.def 2018/08/11 v2.0j Standard LaTeX file
 LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
 ))
+("C:\Users\Owner\AppData\Local\Programs\MiKTeX 2.9\tex/latex/tools\longtable.st
+y"
+Package: longtable 2014/10/28 v4.11 Multi-page Table package (DPC)+ FMi change
+\LTleft=\skip66
+\LTright=\skip67
+\LTpre=\skip68
+\LTpost=\skip69
+\LTchunksize=\count311
+\LTcapwidth=\dimen282
+\LT@head=\box63
+\LT@firsthead=\box64
+\LT@foot=\box65
+\LT@lastfoot=\box66
+\LT@cols=\count312
+\LT@rows=\count313
+\c@LT@tables=\count314
+\c@LT@chunks=\count315
+\LT@p@ftn=\toks40
+)
 ("C:\Users\Owner\AppData\Local\Programs\MiKTeX 2.9\tex/latex/biblatex\biblatex.
 sty"
 Package: biblatex 2018/11/02 v3.12 programmable bibliographies (PK/MW)
 
 ("C:\Users\Owner\AppData\Local\Programs\MiKTeX 2.9\tex/latex/logreq\logreq.sty"
 Package: logreq 2010/08/04 v1.0 xml request logger
-\lrq@indent=\count311
+\lrq@indent=\count316
 ("C:\Users\Owner\AppData\Local\Programs\MiKTeX 2.9\tex/latex/logreq\logreq.def"
 File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
 ))
-\c@tabx@nest=\count312
-\c@listtotal=\count313
-\c@listcount=\count314
-\c@liststart=\count315
-\c@liststop=\count316
-\c@citecount=\count317
-\c@citetotal=\count318
-\c@multicitecount=\count319
-\c@multicitetotal=\count320
-\c@instcount=\count321
-\c@maxnames=\count322
-\c@minnames=\count323
-\c@maxitems=\count324
-\c@minitems=\count325
-\c@citecounter=\count326
-\c@maxcitecounter=\count327
-\c@savedcitecounter=\count328
-\c@uniquelist=\count329
-\c@uniquename=\count330
-\c@refsection=\count331
-\c@refsegment=\count332
-\c@maxextratitle=\count333
-\c@maxextratitleyear=\count334
-\c@maxextraname=\count335
-\c@maxextradate=\count336
-\c@maxextraalpha=\count337
-\c@abbrvpenalty=\count338
-\c@highnamepenalty=\count339
-\c@lownamepenalty=\count340
-\c@maxparens=\count341
-\c@parenlevel=\count342
-\blx@tempcnta=\count343
-\blx@tempcntb=\count344
-\blx@tempcntc=\count345
-\blx@maxsection=\count346
-\blx@maxsegment@0=\count347
-\blx@notetype=\count348
-\blx@parenlevel@text=\count349
-\blx@parenlevel@foot=\count350
-\blx@sectionciteorder@0=\count351
-\blx@entrysetcounter=\count352
-\labelnumberwidth=\skip66
-\labelalphawidth=\skip67
-\biblabelsep=\skip68
-\bibitemsep=\skip69
-\bibnamesep=\skip70
-\bibinitsep=\skip71
-\bibparsep=\skip72
-\bibhang=\skip73
+\c@tabx@nest=\count317
+\c@listtotal=\count318
+\c@listcount=\count319
+\c@liststart=\count320
+\c@liststop=\count321
+\c@citecount=\count322
+\c@citetotal=\count323
+\c@multicitecount=\count324
+\c@multicitetotal=\count325
+\c@instcount=\count326
+\c@maxnames=\count327
+\c@minnames=\count328
+\c@maxitems=\count329
+\c@minitems=\count330
+\c@citecounter=\count331
+\c@maxcitecounter=\count332
+\c@savedcitecounter=\count333
+\c@uniquelist=\count334
+\c@uniquename=\count335
+\c@refsection=\count336
+\c@refsegment=\count337
+\c@maxextratitle=\count338
+\c@maxextratitleyear=\count339
+\c@maxextraname=\count340
+\c@maxextradate=\count341
+\c@maxextraalpha=\count342
+\c@abbrvpenalty=\count343
+\c@highnamepenalty=\count344
+\c@lownamepenalty=\count345
+\c@maxparens=\count346
+\c@parenlevel=\count347
+\blx@tempcnta=\count348
+\blx@tempcntb=\count349
+\blx@tempcntc=\count350
+\blx@maxsection=\count351
+\blx@maxsegment@0=\count352
+\blx@notetype=\count353
+\blx@parenlevel@text=\count354
+\blx@parenlevel@foot=\count355
+\blx@sectionciteorder@0=\count356
+\blx@entrysetcounter=\count357
+\labelnumberwidth=\skip70
+\labelalphawidth=\skip71
+\biblabelsep=\skip72
+\bibitemsep=\skip73
+\bibnamesep=\skip74
+\bibinitsep=\skip75
+\bibparsep=\skip76
+\bibhang=\skip77
 \blx@bcfin=\read3
 \blx@bcfout=\write4
-\c@mincomprange=\count353
-\c@maxcomprange=\count354
-\c@mincompwidth=\count355
+\c@mincomprange=\count358
+\c@maxcomprange=\count359
+\c@mincompwidth=\count360
 Package biblatex Info: Trying to load biblatex default data model...
 Package biblatex Info: ... file 'blx-dm.def' found.
 
@@ -1105,98 +1124,98 @@ File: apa.dbx 2018/04/02 v7.7 APA biblatex style data model
 )
 Package biblatex Info: Trying to load biblatex custom data model...
 Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
-\c@afterword=\count356
-\c@savedafterword=\count357
-\c@annotator=\count358
-\c@savedannotator=\count359
-\c@author=\count360
-\c@savedauthor=\count361
-\c@bookauthor=\count362
-\c@savedbookauthor=\count363
-\c@commentator=\count364
-\c@savedcommentator=\count365
-\c@editor=\count366
-\c@savededitor=\count367
-\c@editora=\count368
-\c@savededitora=\count369
-\c@editorb=\count370
-\c@savededitorb=\count371
-\c@editorc=\count372
-\c@savededitorc=\count373
-\c@foreword=\count374
-\c@savedforeword=\count375
-\c@holder=\count376
-\c@savedholder=\count377
-\c@introduction=\count378
-\c@savedintroduction=\count379
-\c@namea=\count380
-\c@savednamea=\count381
-\c@nameb=\count382
-\c@savednameb=\count383
-\c@namec=\count384
-\c@savednamec=\count385
-\c@translator=\count386
-\c@savedtranslator=\count387
-\c@shortauthor=\count388
-\c@savedshortauthor=\count389
-\c@shorteditor=\count390
-\c@savedshorteditor=\count391
-\c@with=\count392
-\c@savedwith=\count393
-\c@writer=\count394
-\c@savedwriter=\count395
-\c@producer=\count396
-\c@savedproducer=\count397
-\c@execproducer=\count398
-\c@savedexecproducer=\count399
-\c@director=\count400
-\c@saveddirector=\count401
-\c@labelname=\count402
-\c@savedlabelname=\count403
-\c@institution=\count404
-\c@savedinstitution=\count405
-\c@lista=\count406
-\c@savedlista=\count407
-\c@listb=\count408
-\c@savedlistb=\count409
-\c@listc=\count410
-\c@savedlistc=\count411
-\c@listd=\count412
-\c@savedlistd=\count413
-\c@liste=\count414
-\c@savedliste=\count415
-\c@listf=\count416
-\c@savedlistf=\count417
-\c@location=\count418
-\c@savedlocation=\count419
-\c@organization=\count420
-\c@savedorganization=\count421
-\c@origlocation=\count422
-\c@savedoriglocation=\count423
-\c@origpublisher=\count424
-\c@savedorigpublisher=\count425
-\c@publisher=\count426
-\c@savedpublisher=\count427
-\c@language=\count428
-\c@savedlanguage=\count429
-\c@origlanguage=\count430
-\c@savedoriglanguage=\count431
-\c@pageref=\count432
-\c@savedpageref=\count433
-\shorthandwidth=\skip74
-\shortjournalwidth=\skip75
-\shortserieswidth=\skip76
-\shorttitlewidth=\skip77
-\shortauthorwidth=\skip78
-\shorteditorwidth=\skip79
-\locallabelnumberwidth=\skip80
-\locallabelalphawidth=\skip81
-\localshorthandwidth=\skip82
-\localshortjournalwidth=\skip83
-\localshortserieswidth=\skip84
-\localshorttitlewidth=\skip85
-\localshortauthorwidth=\skip86
-\localshorteditorwidth=\skip87
+\c@afterword=\count361
+\c@savedafterword=\count362
+\c@annotator=\count363
+\c@savedannotator=\count364
+\c@author=\count365
+\c@savedauthor=\count366
+\c@bookauthor=\count367
+\c@savedbookauthor=\count368
+\c@commentator=\count369
+\c@savedcommentator=\count370
+\c@editor=\count371
+\c@savededitor=\count372
+\c@editora=\count373
+\c@savededitora=\count374
+\c@editorb=\count375
+\c@savededitorb=\count376
+\c@editorc=\count377
+\c@savededitorc=\count378
+\c@foreword=\count379
+\c@savedforeword=\count380
+\c@holder=\count381
+\c@savedholder=\count382
+\c@introduction=\count383
+\c@savedintroduction=\count384
+\c@namea=\count385
+\c@savednamea=\count386
+\c@nameb=\count387
+\c@savednameb=\count388
+\c@namec=\count389
+\c@savednamec=\count390
+\c@translator=\count391
+\c@savedtranslator=\count392
+\c@shortauthor=\count393
+\c@savedshortauthor=\count394
+\c@shorteditor=\count395
+\c@savedshorteditor=\count396
+\c@with=\count397
+\c@savedwith=\count398
+\c@writer=\count399
+\c@savedwriter=\count400
+\c@producer=\count401
+\c@savedproducer=\count402
+\c@execproducer=\count403
+\c@savedexecproducer=\count404
+\c@director=\count405
+\c@saveddirector=\count406
+\c@labelname=\count407
+\c@savedlabelname=\count408
+\c@institution=\count409
+\c@savedinstitution=\count410
+\c@lista=\count411
+\c@savedlista=\count412
+\c@listb=\count413
+\c@savedlistb=\count414
+\c@listc=\count415
+\c@savedlistc=\count416
+\c@listd=\count417
+\c@savedlistd=\count418
+\c@liste=\count419
+\c@savedliste=\count420
+\c@listf=\count421
+\c@savedlistf=\count422
+\c@location=\count423
+\c@savedlocation=\count424
+\c@organization=\count425
+\c@savedorganization=\count426
+\c@origlocation=\count427
+\c@savedoriglocation=\count428
+\c@origpublisher=\count429
+\c@savedorigpublisher=\count430
+\c@publisher=\count431
+\c@savedpublisher=\count432
+\c@language=\count433
+\c@savedlanguage=\count434
+\c@origlanguage=\count435
+\c@savedoriglanguage=\count436
+\c@pageref=\count437
+\c@savedpageref=\count438
+\shorthandwidth=\skip78
+\shortjournalwidth=\skip79
+\shortserieswidth=\skip80
+\shorttitlewidth=\skip81
+\shortauthorwidth=\skip82
+\shorteditorwidth=\skip83
+\locallabelnumberwidth=\skip84
+\locallabelalphawidth=\skip85
+\localshorthandwidth=\skip86
+\localshortjournalwidth=\skip87
+\localshortserieswidth=\skip88
+\localshorttitlewidth=\skip89
+\localshortauthorwidth=\skip90
+\localshorteditorwidth=\skip91
 Package biblatex Info: Trying to load compatibility code...
 Package biblatex Info: ... file 'blx-compat.def' found.
 
@@ -1210,13 +1229,13 @@ Package biblatex Info: ... file 'biblatex.def' found.
 ("C:\Users\Owner\AppData\Local\Programs\MiKTeX 2.9\tex/latex/biblatex\biblatex.
 def"
 File: biblatex.def 2018/11/02 v3.12 biblatex compatibility (PK/MW)
-\c@textcitecount=\count434
-\c@textcitetotal=\count435
-\c@textcitemaxnames=\count436
-\c@biburlnumpenalty=\count437
-\c@biburlucpenalty=\count438
-\c@biburllcpenalty=\count439
-\c@smartand=\count440
+\c@textcitecount=\count439
+\c@textcitetotal=\count440
+\c@textcitemaxnames=\count441
+\c@biburlnumpenalty=\count442
+\c@biburlucpenalty=\count443
+\c@biburllcpenalty=\count444
+\c@smartand=\count445
 )
 Package biblatex Info: Trying to load bibliography style 'apa'...
 Package biblatex Info: ... file 'apa.bbx' found.
@@ -1230,8 +1249,8 @@ Package biblatex Info: ... file 'standard.bbx' found.
 ("C:\Users\Owner\AppData\Local\Programs\MiKTeX 2.9\tex/latex/biblatex/bbx\stand
 ard.bbx"
 File: standard.bbx 2018/11/02 v3.12 biblatex bibliography style (PK/MW)
-\c@bbx:relatedcount=\count441
-\c@bbx:relatedtotal=\count442
+\c@bbx:relatedcount=\count446
+\c@bbx:relatedtotal=\count447
 ))
 Package biblatex Info: Trying to load citation style 'apa'...
 Package biblatex Info: ... file 'apa.cbx' found.
@@ -1264,13 +1283,13 @@ File: biblatex.cfg
 ("C:\Users\Owner\AppData\Local\Programs\MiKTeX 2.9\tex/latex/csquotes\csquotes.
 sty"
 Package: csquotes 2018/04/13 v5.2d context-sensitive quotations (JAW)
-\csq@reset=\count443
-\csq@gtype=\count444
-\csq@glevel=\count445
-\csq@qlevel=\count446
-\csq@maxlvl=\count447
-\csq@tshold=\count448
-\csq@ltx@everypar=\toks40
+\csq@reset=\count448
+\csq@gtype=\count449
+\csq@glevel=\count450
+\csq@qlevel=\count451
+\csq@maxlvl=\count452
+\csq@tshold=\count453
+\csq@ltx@everypar=\toks41
 
 ("C:\Users\Owner\AppData\Local\Programs\MiKTeX 2.9\tex/latex/csquotes\csquotes.
 def"
@@ -1285,16 +1304,16 @@ File: csquotes.cfg
 ))
 ("C:\Users\Owner\AppData\Local\Programs\MiKTeX 2.9\tex/latex/tools\calc.sty"
 Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count449
-\calc@Bcount=\count450
-\calc@Adimen=\dimen282
-\calc@Bdimen=\dimen283
-\calc@Askip=\skip88
-\calc@Bskip=\skip89
+\calc@Acount=\count454
+\calc@Bcount=\count455
+\calc@Adimen=\dimen283
+\calc@Bdimen=\dimen284
+\calc@Askip=\skip92
+\calc@Bskip=\skip93
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count451
-\calc@Cskip=\skip90
+\calc@Ccount=\count456
+\calc@Cskip=\skip94
 )
 ("C:\Users\Owner\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\makeidx.sty"
 Package: makeidx 2014/09/29 v1.0m Standard LaTeX package
@@ -1307,41 +1326,41 @@ Writing index file bachproef-tin.idx
 ("C:\Users\Owner\AppData\Local\Programs\MiKTeX 2.9\tex/latex/titlesec\titletoc.
 sty"
 Package: titletoc 2011/12/15 v1.6 TOC entries
-\ttl@leftsep=\dimen284
+\ttl@leftsep=\dimen285
 )
 ("C:\Users\Owner\AppData\Local\Programs\MiKTeX 2.9\tex/latex/fancyhdr\fancyhdr.
 sty"
 Package: fancyhdr 2019/01/31 v3.10 Extensive control of page headers and footer
 s
-\f@nch@headwidth=\skip91
-\f@nch@O@elh=\skip92
-\f@nch@O@erh=\skip93
-\f@nch@O@olh=\skip94
-\f@nch@O@orh=\skip95
-\f@nch@O@elf=\skip96
-\f@nch@O@erf=\skip97
-\f@nch@O@olf=\skip98
-\f@nch@O@orf=\skip99
+\f@nch@headwidth=\skip95
+\f@nch@O@elh=\skip96
+\f@nch@O@erh=\skip97
+\f@nch@O@olh=\skip98
+\f@nch@O@orh=\skip99
+\f@nch@O@elf=\skip100
+\f@nch@O@erf=\skip101
+\f@nch@O@olf=\skip102
+\f@nch@O@orf=\skip103
 )
 ("C:\Users\Owner\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amscls\amsthm.sty"
 Package: amsthm 2017/10/31 v2.20.4
-\thm@style=\toks41
-\thm@bodyfont=\toks42
-\thm@headfont=\toks43
-\thm@notefont=\toks44
-\thm@headpunct=\toks45
-\thm@preskip=\skip100
-\thm@postskip=\skip101
-\thm@headsep=\skip102
-\dth@everypar=\toks46
+\thm@style=\toks42
+\thm@bodyfont=\toks43
+\thm@headfont=\toks44
+\thm@notefont=\toks45
+\thm@headpunct=\toks46
+\thm@preskip=\skip104
+\thm@postskip=\skip105
+\thm@headsep=\skip106
+\dth@everypar=\toks47
 )
-\c@notation=\count452
-\c@dummy=\count453
-\c@problem=\count454
-\c@exerciseT=\count455
-\c@exampleT=\count456
-\c@vocabulary=\count457
-\c@definitionT=\count458
+\c@notation=\count457
+\c@dummy=\count458
+\c@problem=\count459
+\c@exerciseT=\count460
+\c@exampleT=\count461
+\c@vocabulary=\count462
+\c@definitionT=\count463
 
 ("C:\Users\Owner\AppData\Local\Programs\MiKTeX 2.9\tex/latex/mdframed\mdframed.
 sty"
@@ -1358,105 +1377,105 @@ Package zref Info: New property list: main on input line 759.
 Package zref Info: New property: default on input line 760.
 Package zref Info: New property: page on input line 761.
 )
-\c@abspage=\count459
+\c@abspage=\count464
 Package zref Info: New property: abspage on input line 62.
 )
 ("C:\Users\Owner\AppData\Local\Programs\MiKTeX 2.9\tex/latex/needspace\needspac
 e.sty"
 Package: needspace 2010/09/12 v1.3d reserve vertical space
 )
-\mdf@templength=\skip103
-\c@mdf@globalstyle@cnt=\count460
-\mdf@skipabove@length=\skip104
-\mdf@skipbelow@length=\skip105
-\mdf@leftmargin@length=\skip106
-\mdf@rightmargin@length=\skip107
-\mdf@innerleftmargin@length=\skip108
-\mdf@innerrightmargin@length=\skip109
-\mdf@innertopmargin@length=\skip110
-\mdf@innerbottommargin@length=\skip111
-\mdf@splittopskip@length=\skip112
-\mdf@splitbottomskip@length=\skip113
-\mdf@outermargin@length=\skip114
-\mdf@innermargin@length=\skip115
-\mdf@linewidth@length=\skip116
-\mdf@innerlinewidth@length=\skip117
-\mdf@middlelinewidth@length=\skip118
-\mdf@outerlinewidth@length=\skip119
-\mdf@roundcorner@length=\skip120
-\mdf@footenotedistance@length=\skip121
-\mdf@userdefinedwidth@length=\skip122
-\mdf@needspace@length=\skip123
-\mdf@frametitleaboveskip@length=\skip124
-\mdf@frametitlebelowskip@length=\skip125
-\mdf@frametitlerulewidth@length=\skip126
-\mdf@frametitleleftmargin@length=\skip127
-\mdf@frametitlerightmargin@length=\skip128
-\mdf@shadowsize@length=\skip129
-\mdf@extratopheight@length=\skip130
-\mdf@subtitleabovelinewidth@length=\skip131
-\mdf@subtitlebelowlinewidth@length=\skip132
-\mdf@subtitleaboveskip@length=\skip133
-\mdf@subtitlebelowskip@length=\skip134
-\mdf@subtitleinneraboveskip@length=\skip135
-\mdf@subtitleinnerbelowskip@length=\skip136
-\mdf@subsubtitleabovelinewidth@length=\skip137
-\mdf@subsubtitlebelowlinewidth@length=\skip138
-\mdf@subsubtitleaboveskip@length=\skip139
-\mdf@subsubtitlebelowskip@length=\skip140
-\mdf@subsubtitleinneraboveskip@length=\skip141
-\mdf@subsubtitleinnerbelowskip@length=\skip142
+\mdf@templength=\skip107
+\c@mdf@globalstyle@cnt=\count465
+\mdf@skipabove@length=\skip108
+\mdf@skipbelow@length=\skip109
+\mdf@leftmargin@length=\skip110
+\mdf@rightmargin@length=\skip111
+\mdf@innerleftmargin@length=\skip112
+\mdf@innerrightmargin@length=\skip113
+\mdf@innertopmargin@length=\skip114
+\mdf@innerbottommargin@length=\skip115
+\mdf@splittopskip@length=\skip116
+\mdf@splitbottomskip@length=\skip117
+\mdf@outermargin@length=\skip118
+\mdf@innermargin@length=\skip119
+\mdf@linewidth@length=\skip120
+\mdf@innerlinewidth@length=\skip121
+\mdf@middlelinewidth@length=\skip122
+\mdf@outerlinewidth@length=\skip123
+\mdf@roundcorner@length=\skip124
+\mdf@footenotedistance@length=\skip125
+\mdf@userdefinedwidth@length=\skip126
+\mdf@needspace@length=\skip127
+\mdf@frametitleaboveskip@length=\skip128
+\mdf@frametitlebelowskip@length=\skip129
+\mdf@frametitlerulewidth@length=\skip130
+\mdf@frametitleleftmargin@length=\skip131
+\mdf@frametitlerightmargin@length=\skip132
+\mdf@shadowsize@length=\skip133
+\mdf@extratopheight@length=\skip134
+\mdf@subtitleabovelinewidth@length=\skip135
+\mdf@subtitlebelowlinewidth@length=\skip136
+\mdf@subtitleaboveskip@length=\skip137
+\mdf@subtitlebelowskip@length=\skip138
+\mdf@subtitleinneraboveskip@length=\skip139
+\mdf@subtitleinnerbelowskip@length=\skip140
+\mdf@subsubtitleabovelinewidth@length=\skip141
+\mdf@subsubtitlebelowlinewidth@length=\skip142
+\mdf@subsubtitleaboveskip@length=\skip143
+\mdf@subsubtitlebelowskip@length=\skip144
+\mdf@subsubtitleinneraboveskip@length=\skip145
+\mdf@subsubtitleinnerbelowskip@length=\skip146
 
 ("C:\Users\Owner\AppData\Local\Programs\MiKTeX 2.9\tex/latex/mdframed\md-frame-
 0.mdf"
 File: md-frame-0.mdf 2013/07/01\ 1.9b: md-frame-0
 )
-\mdf@frametitlebox=\box63
-\mdf@footnotebox=\box64
-\mdf@splitbox@one=\box65
-\mdf@splitbox@two=\box66
-\mdf@splitbox@save=\box67
-\mdfsplitboxwidth=\skip143
-\mdfsplitboxtotalwidth=\skip144
-\mdfsplitboxheight=\skip145
-\mdfsplitboxdepth=\skip146
-\mdfsplitboxtotalheight=\skip147
-\mdfframetitleboxwidth=\skip148
-\mdfframetitleboxtotalwidth=\skip149
-\mdfframetitleboxheight=\skip150
-\mdfframetitleboxdepth=\skip151
-\mdfframetitleboxtotalheight=\skip152
-\mdffootnoteboxwidth=\skip153
-\mdffootnoteboxtotalwidth=\skip154
-\mdffootnoteboxheight=\skip155
-\mdffootnoteboxdepth=\skip156
-\mdffootnoteboxtotalheight=\skip157
-\mdftotallinewidth=\skip158
-\mdfboundingboxwidth=\skip159
-\mdfboundingboxtotalwidth=\skip160
-\mdfboundingboxheight=\skip161
-\mdfboundingboxdepth=\skip162
-\mdfboundingboxtotalheight=\skip163
-\mdf@freevspace@length=\skip164
-\mdf@horizontalwidthofbox@length=\skip165
-\mdf@verticalmarginwhole@length=\skip166
-\mdf@horizontalspaceofbox=\skip167
-\mdfsubtitleheight=\skip168
-\mdfsubsubtitleheight=\skip169
-\c@mdfcountframes=\count461
+\mdf@frametitlebox=\box67
+\mdf@footnotebox=\box68
+\mdf@splitbox@one=\box69
+\mdf@splitbox@two=\box70
+\mdf@splitbox@save=\box71
+\mdfsplitboxwidth=\skip147
+\mdfsplitboxtotalwidth=\skip148
+\mdfsplitboxheight=\skip149
+\mdfsplitboxdepth=\skip150
+\mdfsplitboxtotalheight=\skip151
+\mdfframetitleboxwidth=\skip152
+\mdfframetitleboxtotalwidth=\skip153
+\mdfframetitleboxheight=\skip154
+\mdfframetitleboxdepth=\skip155
+\mdfframetitleboxtotalheight=\skip156
+\mdffootnoteboxwidth=\skip157
+\mdffootnoteboxtotalwidth=\skip158
+\mdffootnoteboxheight=\skip159
+\mdffootnoteboxdepth=\skip160
+\mdffootnoteboxtotalheight=\skip161
+\mdftotallinewidth=\skip162
+\mdfboundingboxwidth=\skip163
+\mdfboundingboxtotalwidth=\skip164
+\mdfboundingboxheight=\skip165
+\mdfboundingboxdepth=\skip166
+\mdfboundingboxtotalheight=\skip167
+\mdf@freevspace@length=\skip168
+\mdf@horizontalwidthofbox@length=\skip169
+\mdf@verticalmarginwhole@length=\skip170
+\mdf@horizontalspaceofbox=\skip171
+\mdfsubtitleheight=\skip172
+\mdfsubsubtitleheight=\skip173
+\c@mdfcountframes=\count466
 
 ****** mdframed patching \endmdf@trivlist
 
 ****** -- success******
 
-\mdf@envdepth=\count462
-\c@mdf@env@i=\count463
-\c@mdf@env@ii=\count464
-\c@mdf@zref@counter=\count465
+\mdf@envdepth=\count467
+\c@mdf@env@i=\count468
+\c@mdf@env@ii=\count469
+\c@mdf@zref@counter=\count470
 Package zref Info: New property: mdf@pagevalue on input line 895.
 )
-\esp=\skip170
-\ecart=\skip171
+\esp=\skip174
+\ecart=\skip175
 
 
 Package hyperref Warning: Option `backref' has already been used,
@@ -1485,7 +1504,7 @@ Package: bookmark 2016/05/17 v1.26 PDF bookmarks (HO)
 ("C:\Users\Owner\AppData\Local\Programs\MiKTeX 2.9\tex/latex/oberdiek\bkm-pdfte
 x.def"
 File: bkm-pdftex.def 2016/05/17 v1.26 bookmark driver for pdfTeX (HO)
-\BKM@id=\count466
+\BKM@id=\count471
 )))
 Package biblatex Info: Trying to load language 'dutch' -> 'dutch-apa'...
 Package biblatex Info: ... file 'dutch-apa.lbx' found.
@@ -1609,17 +1628,17 @@ File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 ("C:\Users\Owner\AppData\Local\Programs\MiKTeX 2.9\tex/context/base\supp-pdf.mk
 ii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count467
-\scratchdimen=\dimen285
-\scratchbox=\box68
-\nofMPsegments=\count468
-\nofMParguments=\count469
-\everyMPshowfont=\toks47
-\MPscratchCnt=\count470
-\MPscratchDim=\dimen286
-\MPnumerator=\count471
-\makeMPintoPDFobject=\count472
-\everyMPtoPDFconversion=\toks48
+\scratchcounter=\count472
+\scratchdimen=\dimen286
+\scratchbox=\box72
+\nofMPsegments=\count473
+\nofMParguments=\count474
+\everyMPshowfont=\toks48
+\MPscratchCnt=\count475
+\MPscratchDim=\dimen287
+\MPnumerator=\count476
+\makeMPintoPDFobject=\count477
+\everyMPtoPDFconversion=\toks49
 )
 ("C:\Users\Owner\AppData\Local\Programs\MiKTeX 2.9\tex/latex/oberdiek\epstopdf-
 base.sty"
@@ -1636,7 +1655,7 @@ Package grfext Info: Graphics extension search list:
 G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
 ) ABD: EveryShipout initializing macros
-\AtBeginShipoutBox=\box69
+\AtBeginShipoutBox=\box73
 Package hyperref Info: Link coloring OFF on input line 47.
 
 ("C:\Users\Owner\AppData\Local\Programs\MiKTeX 2.9\tex/latex/hyperref\nameref.s
@@ -1647,12 +1666,12 @@ Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 estring.sty"
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count473
+\c@section@level=\count478
 )
 LaTeX Info: Redefining \ref on input line 47.
 LaTeX Info: Redefining \pageref on input line 47.
 LaTeX Info: Redefining \nameref on input line 47.
-\c@lstlisting=\count474
+\c@lstlisting=\count479
 LaTeX Info: Redefining \microtypecontext on input line 47.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
@@ -1814,13 +1833,15 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 \openout6 = `bachproef-tin.toc'.
 
 
-[9] [10
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-] (bachproef-tin.lof)
+ [9]
+[10] (bachproef-tin.lof)
 \tf@lof=\write7
 \openout7 = `bachproef-tin.lof'.
 
  [11
+
 
 ] [12
 
@@ -1828,8 +1849,8 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 \tf@lot=\write8
 \openout8 = `bachproef-tin.lot'.
 
- (inleiding.tex
-[13] [14
+ (inleiding.tex [13]
+[14
 
 ]
 Hoofdstuk 1.
@@ -1915,7 +1936,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 1953) has occurred while \output is active []
 
  [21]
-<../images/ETL.PNG, id=341, 194.22563pt x 264.99pt>
+<../images/ETL.PNG, id=371, 194.22563pt x 264.99pt>
 File: ../images/ETL.PNG Graphic file (type png)
 <use ../images/ETL.PNG>
 Package pdftex.def Info: ../images/ETL.PNG  used on input line 135.
@@ -1928,7 +1949,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [22]
-<../images/dimmodel.PNG, id=347, 453.94594pt x 258.21469pt>
+<../images/dimmodel.PNG, id=377, 453.94594pt x 258.21469pt>
 File: ../images/dimmodel.PNG Graphic file (type png)
 <use ../images/dimmodel.PNG>
 Package pdftex.def Info: ../images/dimmodel.PNG  used on input line 151.
@@ -1938,7 +1959,7 @@ Package pdftex.def Info: ../images/dimmodel.PNG  used on input line 151.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [23 <../images/ETL.PNG>] [24 <../images/dimmodel.PNG>]
-<../images/ster.PNG, id=366, 536.0025pt x 187.45032pt>
+<../images/ster.PNG, id=396, 536.0025pt x 187.45032pt>
 File: ../images/ster.PNG Graphic file (type png)
 <use ../images/ster.PNG>
 Package pdftex.def Info: ../images/ster.PNG  used on input line 181.
@@ -1948,7 +1969,7 @@ Overfull \hbox (2.01123pt too wide) in paragraph at lines 181--182
 [][] 
  []
 
-<../images/starvsolap.PNG, id=370, 539.76656pt x 213.04594pt>
+<../images/starvsolap.PNG, id=400, 539.76656pt x 213.04594pt>
 File: ../images/starvsolap.PNG Graphic file (type png)
 <use ../images/starvsolap.PNG>
 Package pdftex.def Info: ../images/starvsolap.PNG  used on input line 192.
@@ -1962,7 +1983,7 @@ Overfull \hbox (5.02248pt too wide) in paragraph at lines 192--193
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [25 <../images/ster.PNG>]
-<../images/DVArchitectuur.png, id=382, 688.82344pt x 329.73187pt>
+<../images/DVArchitectuur.png, id=412, 688.82344pt x 329.73187pt>
 File: ../images/DVArchitectuur.png Graphic file (type png)
 <use ../images/DVArchitectuur.png>
 Package pdftex.def Info: ../images/DVArchitectuur.png  used on input line 205.
@@ -1973,13 +1994,13 @@ Overfull \hbox (7.16971pt too wide) in paragraph at lines 205--206
  []
 
 [26 <../images/starvsolap.PNG> <../images/DVArchitectuur.png>] [27]
-<../images/link.png, id=402, 368.87813pt x 533.74406pt>
+<../images/link.png, id=432, 368.87813pt x 533.74406pt>
 File: ../images/link.png Graphic file (type png)
 <use ../images/link.png>
 Package pdftex.def Info: ../images/link.png  used on input line 245.
 (pdftex.def)             Requested size: 110.66428pt x 160.12445pt.
  [28 <../images/link.png>]
-<../images/dvmodel.png, id=413, 630.355pt x 336.25626pt>
+<../images/dvmodel.png, id=443, 630.355pt x 336.25626pt>
 File: ../images/dvmodel.png Graphic file (type png)
 <use ../images/dvmodel.png>
 Package pdftex.def Info: ../images/dvmodel.png  used on input line 286.
@@ -1997,7 +2018,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [29]
 [30 <../images/dvmodel.png (PNG copy)>]
-<../images/gartner.png, id=425, 470.412pt x 470.412pt>
+<../images/gartner.png, id=455, 470.412pt x 470.412pt>
 File: ../images/gartner.png Graphic file (type png)
 <use ../images/gartner.png>
 Package pdftex.def Info: ../images/gartner.png  used on input line 334.
@@ -2010,7 +2031,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 Underfull \vbox (badness 2012) has occurred while \output is active []
 
  [31]
-<../images/sac.png, id=431, 974.64125pt x 547.04375pt>
+<../images/sac.png, id=461, 974.64125pt x 547.04375pt>
 File: ../images/sac.png Graphic file (type png)
 <use ../images/sac.png>
 Package pdftex.def Info: ../images/sac.png  used on input line 348.
@@ -2023,7 +2044,7 @@ Overfull \hbox (11.79315pt too wide) in paragraph at lines 348--349
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<../images/powerbi.png, id=432, 939.51pt x 654.445pt>
+<../images/powerbi.png, id=462, 939.51pt x 654.445pt>
 File: ../images/powerbi.png Graphic file (type png)
 <use ../images/powerbi.png>
 Package pdftex.def Info: ../images/powerbi.png  used on input line 360.
@@ -2047,23 +2068,46 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 29.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 29.
-) (voorbereidingonderzoek.tex [38]
+) (betekenisdata.tex [38]
 Hoofdstuk 5.
-) (vergelijkendonderzoek.tex [39
 
-] [40
+Underfull \hbox (badness 1910) in paragraph at lines 28--30
+[]|\T1/ptm/m/n/12 (+20) Identificatienummer van een be-
+ []
+
+
+Overfull \hbox (44.43898pt too wide) in alignment at lines 11--38
+ [] [] [] 
+ []
+
+
+Overfull \hbox (44.43898pt too wide) in alignment at lines 38--48
+ [] [] [] 
+ []
+
+[39
+
+] [40]) (voorbereidingonderzoek.tex [41] [42
 
 ]
 Hoofdstuk 6.
-) (conclusie.tex [41] [42
+) (vergelijkendonderzoek.tex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [43]
+[44]
+Hoofdstuk 7.
+) (conclusie.tex [45
+
+] [46
 
 ]
-Hoofdstuk 7.
-) [43] [44
+Hoofdstuk 8.
+) [47] [48
 
 ]
 B"ylage A.
-(../voorstel/voorstel-inhoud.tex [45]
+(../voorstel/voorstel-inhoud.tex [49]
 File: ../images/DVArchitectuur.png Graphic file (type png)
 <use ../images/DVArchitectuur.png>
 Package pdftex.def Info: ../images/DVArchitectuur.png  used on input line 28.
@@ -2071,18 +2115,18 @@ Package pdftex.def Info: ../images/DVArchitectuur.png  used on input line 28.
 
 Underfull \vbox (badness 5954) has occurred while \output is active []
 
- [46]
+ [50]
 Underfull \vbox (badness 3039) has occurred while \output is active []
 
- [47])
-[48] [49
+ [51])
+[52] [53
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 126.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 126.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 127.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 127.
  (bachproef-tin.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 126.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 126.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 127.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 127.
 
 
 LaTeX Warning: There were multiply-defined labels.
@@ -2090,14 +2134,14 @@ LaTeX Warning: There were multiply-defined labels.
 Package logreq Info: Writing requests to 'bachproef-tin.run.xml'.
 \openout1 = `bachproef-tin.run.xml'.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 126.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 127.
  ) 
 Here is how much of TeX's memory you used:
- 40249 strings out of 492946
- 754930 string characters out of 3126266
- 1353324 words of memory out of 3000000
- 43169 multiletter control sequences out of 15000+200000
- 608984 words of font info for 232 fonts, out of 3000000 for 9000
+ 40370 strings out of 492946
+ 756425 string characters out of 3126266
+ 1368450 words of memory out of 3000000
+ 43262 multiletter control sequences out of 15000+200000
+ 609114 words of font info for 234 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  57i,11n,80p,1014b,3844s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/Owner/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc
@@ -2109,9 +2153,9 @@ nts/type1/urw/avantgar/uagd8a.pfb><C:/Users/Owner/AppData/Local/Programs/MiKTeX
 /MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Users/Owner/AppData/Local/Prog
 rams/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Users/Owner/AppData/Local/
 Programs/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on bachproef-tin.pdf (51 pages, 930839 bytes).
+Output written on bachproef-tin.pdf (55 pages, 945706 bytes).
 PDF statistics:
- 728 PDF objects out of 1000 (max. 8388607)
- 157 named destinations out of 1000 (max. 500000)
- 46532 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 811 PDF objects out of 1000 (max. 8388607)
+ 177 named destinations out of 1000 (max. 500000)
+ 46604 words of extra memory for PDF output out of 51595 (max. 10000000)
 
