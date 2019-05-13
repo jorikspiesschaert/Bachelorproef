@@ -33,11 +33,35 @@
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Voorstelling netwerk (gemaakt via Lucidchart.com).}}{44}{figure.6.1}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.2}{\ignorespaces DP Agent verbonden met SAP HANA.}}{45}{figure.6.2}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Een remote connectie opgezet naar de host vanuit SAP HANA.}}{45}{figure.6.3}% 
+\defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {7.1}{\ignorespaces Voorstelling van het Data Vault model (gemaakt via Lucidchart.com).}}{48}{figure.7.1}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {7.2}{\ignorespaces Toevoegen van virtuele tabellen aan de staging area.}}{48}{figure.7.2}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {7.3}{\ignorespaces Een voorbeeld van een ETL proces in SAP HANA bij een sattelite (SAP SDI).}}{49}{figure.7.3}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {7.4}{\ignorespaces Een voorbeeld van een ETL proces in SAP HANA bij een hub (SAP SDI).}}{50}{figure.7.4}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {7.5}{\ignorespaces Een voorbeeld van een ETL proces in SAP HANA bij een link (SAP SDI).}}{51}{figure.7.5}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {7.6}{\ignorespaces Sterschema opgesteld in SAP voor data vault.}}{52}{figure.7.6}% 
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {8.1}{\ignorespaces Voorstelling van het dimensioneel model (gemaakt via Lucidchart.com).}}{53}{figure.8.1}% 
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {A.1}{\ignorespaces Data Vault architectuur voorgesteld door \textcite {Stroobants2018}.}}{50}{figure.A.1}% 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Data Vault architectuur voorgesteld door \textcite {Stroobants2018}.}}{60}{figure.A.1}% 
 \contentsfinish 

@@ -154,6 +154,7 @@ Bij het dimensioneel modelleren wordt het proces opgedeeld in 2 soorten lagen: d
 \end{figure}
 
 \subsubsection{Staging area}
+\label{sec:stagingarea}
 In deze laag wordt het ETL-proces toegepast. Eerst en vooral wordt de data vanuit één of meerdere bronnen in de data warehouse geladen. Daarna wordt de data bewerkt en gemanipuleerd. Bijvoorbeeld records met bepaalde lege waarden weglaten. De data kwaliteit (zoals eerder aangekaart) is zeer belangrijk in een data warehouse. Het doel is om de toegekomen data consistent te maken en ervoor te zorgen dat de integriteit gewaarborgd blijft ~\autocite{Kimball2013}
 
 \pagebreak
@@ -228,7 +229,7 @@ Een data vault model bestaat uit 3 soorten componenten: hubs, links en sattelite
 
 \begin{itemize}
 	\item \textbf{Hashkey (PK):} Als primary key van de entiteit wordt een gehashte identifier van de entiteit gebruikt.
-	\item \textbf{LoadDate:} Datum/tijdstip wanneer de record is ingeladen
+	\item \textbf{LoadDate:} Datum/tijdstip wanneer de record geëxtraheerd werd uit de bron.
 	\item \textbf{Record source:} Van welke databron is de record afkomstig?
 	\item \textbf{Business key(s):} De business key(s) van de bijhorende entiteit
 \end{itemize} 
@@ -251,9 +252,9 @@ Ook bij links moeten er een aantal attributen aanwezig zijn:
 
 \begin{itemize}
 	\item \textbf{Hashkey (PK):} Als primaire sleutel van de entiteit worden alle business keys gehasht naar 1 sleutel.
-	\item \textbf{LoadDate:} Datum/tijdstip wanneer de record is ingeladen
+	\item \textbf{LoadDate:} Datum/tijdstip wanneer de record geëxtraheerd werd uit de bron.
 	\item \textbf{Record source:} Van welke databron is de record afkomstig?
-	\item \textbf{Business key(s):} Alle business key(s) van de 2 gelinkte hub-entiteiten
+	\item \textbf{Business key(s):} Alle business key(s) van de 2 gelinkte hub-entiteiten.
 \end{itemize} 
 
 \subsubsection{Sattelites}
@@ -262,10 +263,11 @@ In een satellite worden alle gegevens gestockeerd die een business object, relat
 Bij een satellite vinden we minstens volgende attributen terug:
 
 \begin{itemize}
-	\item \textbf{Parent Hashkey (PK):} Als primaire sleutel van de entiteit worden alle business keys gehasht naar 1 sleutel.
-	\item \textbf{LoadDate (PK):} Datum/tijdstip wanneer de record is ingeladen
+	\item \textbf{Parent Hashkey (PK):} Als primaire sleutel van de entiteit worden alle business keys gehasht naar 1 sleutel samen met de naam van afkomsts.
+	\item \textbf{LoadDate (PK):} Datum/tijdstip wanneer de record geëxtraheerd werd uit de bron.
 	\item \textbf{Record source:} Van welke databron is de record afkomstig?
 	\item \textbf{End load date:} Hierin wordt het moment geladen wanneer de entiteit niet meer gebruikt wordt (belangrijk voor het bewaren van de historiek). Wie vertrouwt is met het dimensioneel modelleren, kan dit vergelijken met het principe van slow changing dimensions.
+	\item \textbf{Hash difference:} Hierin worden alle dimensionele data samen gehasht naar 1 sleutel. Zo kan er makkelijk vergeleken worden of de nieuwe data wel degelijk een verandering is of niet.
 \end{itemize} 
 
 Een satellite hoort bij een hub of een link. Een hub en een satellite vormen een bepaald business object. Hier is de primary key een composite key, dat bestaat uit een Parent Hashkey en een LoadDate. Deze combinatie is nodig om nieuwe versies van data te kunnen toevoegen.

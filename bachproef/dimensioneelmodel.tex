@@ -1,0 +1,30 @@
+%%=============================================================================
+%% Voorbereiding op het onderzoek
+%%=============================================================================
+
+\chapter{Dimensioneel model: data warehousing}
+\label{ch:dimmodel}
+In dit hoofdstuk wordt een data warehouse opgebouwd aan de hand van het dimensioneel modelleren. Net zoals bij het data vault model, moet hier alles geconfigureerd worden zodat een verbinding mogelijk is vanuit een rapporteringsomgeving.
+
+\section{Dimensioneel modelleren}
+
+\subsection{Overzicht datamodel}
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.5]{../images/Dimensioneelmodel.png}
+	\caption{Voorstelling van het dimensioneel model (gemaakt via Lucidchart.com).}
+	\label{fig:dpa}
+\end{figure}
+
+\section{Staging area}
+In de architectuur van Data Vault, is al reeds een staging area toegevoegd die alle informatie ongemanipuleerd bijhoudt. Voor dit onderdeel van het onderzoek zal de laag niet opnieuw worden toegevoegd, maar zal er gebruik gemaakt worden van de eerder toegevoegde laag (zie sectie \ref{sec:stagareadv}).
+
+\section{Data warehouselaag}
+
+\subsection{ETL}
+
+\subsubsection{Dimensions}
+
+\subsubsection{Facts}
+
+\section{Data mart}
