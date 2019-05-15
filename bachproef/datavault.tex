@@ -15,6 +15,8 @@ In dit hoofdstuk wordt een data warehouse opgebouwd aan de hand van data vault. 
 	\label{fig:dvm}
 \end{figure}
 
+Het model is opgebouwd uit drie soorten tabellen: de rode entiteiten worden voorgesteld als sattelites, de blauwe entiteiten als hubs en de gele entiteiten vormen de links tussen de verschillende hubs. In de SAT\_DOCK\_TO\_STOCK wordt de berekeningen opgeslagen die nodig zijn voor het berekenen van de KPI. Hash keys worden opgeslagen onder het type ''binary''.
+
 \section{Staging area}
 \label{sec:stagareadv}
 In de staging area worden alle gegevens in de originele vorm ingeladen. Dit betekent dat hierop nog geen manipulaties mogen gebeuren. In dit onderzoek wordt de data ingeladen via een virtuele tabel, afkomstig van een remote source.
@@ -28,7 +30,7 @@ In de staging area worden alle gegevens in de originele vorm ingeladen. Dit bete
 
 Eens alle virtuele tabellen toegevoegd zijn in de staging area, dan is het modelleren van de eerste laag afgewerkt en kan er overgegaan worden naar het modelleren van de raw data vault.
 
-\section{Raw data vault}
+\section{Opbouw raw data vault}
 In de raw data vault wordt de source data omgevormd naar de data vault methodologie. Hierbij wordt nog geen extra business logica en/of berekeningen toegevoegd. Concreet voor dit data model zullen de gegevens getransformeerd worden en doorgeladen worden naar alle tabellen, behalve de tabel SAT\_DOCK\_TO\_STOCK (business logica). De data bij de tabel HUB\_DOCK\_TO\_STOCK kan wel al ingeladen worden, aangezien deze geen business logica bevat (een hub of link bevat nooit business logica).
 
 \subsection{ETL}
@@ -96,19 +98,19 @@ Bij het inladen voor de data in de link-entiteiten worden dezelfde stappen doorl
 	\item \textbf{RECORD\_SOURCE:} De naam van het bronsysteem waarvan de data afkomstig is (''DATAFILES'' in dit geval).
 \end{itemize}
 
-\section{Business vault}
+\section{Opbouw business vault}
 Aangezien de Business vault in dit data schema slechts 1 nieuwe entiteit bevat, verteld de methodologie van data vault dat het niet nodig is om een nieuwe laag hiervoor te ontwerpen. De business vault tabellen mogen dan toegevoegd worden aan de raw data vault indien dit de complexiteit niet aanzienlijk zou verhogen.
 
 Bij het aanmaken van het ETL proces bij een sattelite binnen de Business vault, worden dezelfde stappen overlopen als bij het aanmaken van een sattelite binnen de raw data vault. Bij ''projection'' wordt dan de benodigde business logica en de benodigde berekeningen toegevoegd.
 
-\section{Data mart}
+\section{Opbouw data mart}
 Wanneer alle data getransformeerd en ingeladen is in de data vault modellen, moeten deze verbonden worden met elkaar en wordt hiervoor een virtuele view aangemaakt waarop verbonden kan worden vanuit een rapporteringsomgeving.
 
 Een best practice die in dit onderzoek werd toegepast was het samenvoegen van alle hubs, links \& sattelites in één dimensie. Zo wordt een beter overzicht behouden van de opgestelde calculation views en wordt de complexiteit verminderd. Deze dimensie werd dan verbonden met een fact table in een sterschema. 
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[scale=0.45]{../images/DV_FG_datamart.png}
+	\includegraphics[scale=0.5]{../images/DV_FG_datamart.png}
 	\caption{Sterschema opgesteld in SAP voor data vault.}
 	\label{fig:dvdm}
 \end{figure}

@@ -43,7 +43,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {7.1}{\ignorespaces Voorstelling van het Data Vault model (gemaakt via Lucidchart.com).}}{48}{figure.7.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {7.2}{\ignorespaces Toevoegen van virtuele tabellen aan de staging area.}}{48}{figure.7.2}% 
+\contentsline {figure}{\numberline {7.2}{\ignorespaces Toevoegen van virtuele tabellen aan de staging area.}}{49}{figure.7.2}% 
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {7.3}{\ignorespaces Een voorbeeld van een ETL proces in SAP HANA bij een sattelite (SAP SDI).}}{49}{figure.7.3}% 
 \defcounter {refsection}{0}\relax 
@@ -57,11 +57,21 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {8.1}{\ignorespaces Voorstelling van het dimensioneel model (gemaakt via Lucidchart.com).}}{53}{figure.8.1}% 
 \defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {8.2}{\ignorespaces Voorstelling van het ETL-proces bij een dimension.}}{54}{figure.8.2}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {8.3}{\ignorespaces Voorstelling van het ETL-proces bij een fact.}}{55}{figure.8.3}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {8.4}{\ignorespaces Sterschema opgesteld in SAP voor het dimensioneel model.}}{57}{figure.8.4}% 
+\defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {9.1}{\ignorespaces Het toevoegen van een nieuwe entiteit bij data vault (gemaakt via Lucidchart.com).}}{61}{figure.9.1}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {9.2}{\ignorespaces Het toevoegen van een nieuwe dimension bij een dimensioneel model (gemaakt via Lucidchart.com).}}{62}{figure.9.2}% 
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {A.1}{\ignorespaces Data Vault architectuur voorgesteld door \textcite {Stroobants2018}.}}{60}{figure.A.1}% 
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Data Vault architectuur voorgesteld door \textcite {Stroobants2018}.}}{68}{figure.A.1}% 
 \contentsfinish 
