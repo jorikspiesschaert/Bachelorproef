@@ -4,7 +4,7 @@
 
 \chapter{Dimensioneel model: data warehousing}
 \label{ch:dimmodel}
-In dit hoofdstuk wordt een data warehouse opgebouwd aan de hand van het dimensioneel modelleren. Net zoals bij het data vault model, moet hier alles geconfigureerd worden zodat een verbinding mogelijk is vanuit een rapporteringsomgeving.
+In dit hoofdstuk wordt een data warehouse opgebouwd aan de hand van het dimensioneel modelleren. Net zoals bij het Data Vault model, moet hier alles geconfigureerd worden zodat een verbinding mogelijk is vanuit een rapporteringsomgeving.
 
 \section{Overzicht datamodel}
 \begin{figure}[h]
@@ -30,11 +30,11 @@ Bij het inladen van de dimensions bij het dimensioneel model, moeten er nooit be
 \begin{figure}[h]
 	\centering
 	\includegraphics[scale=0.5]{../images/DM_FG_dim.png}
-	\caption{Voorstelling van het ETL-proces bij een dimension.}
+	\caption{Voorstelling van het ETL-proces bij een dimension (SAP SDI).}
 	\label{fig:DM_FG_dim}
 \end{figure}
 
-In figuur 8.2 wordt het ETL-proces voorgesteld bij het inladen van de data in de tabel DIM\_ARTICLE. Aangezien er enkel data moet ingeladen worden vanuit één enkele tabel, moet er geen JOIN gebeuren. Er kan dus onmiddelijk begonnen worden met het transformeren van de data in PROJECTION. 
+In figuur 8.2 wordt het ETL-proces voorgesteld bij het inladen van de data in de tabel DIM\_ARTICLE. Aangezien er enkel data moet ingeladen worden vanuit één enkele tabel, moet er geen JOIN gebeuren. Er kan dus onmiddellijk begonnen worden met het transformeren van de data in PROJECTION. 
 
 \begin{itemize}
 	\item \textbf{ARTICLE\_ID (PK):} In dit attribuut wordt PRODUCT\_ID overgenomen van de brondata.
@@ -49,7 +49,7 @@ Bij een fact tabel, wordt de key van elke dimension bijgehouden. Alle sleutels s
 \begin{figure}[h]
 	\centering
 	\includegraphics[scale=0.5]{../images/DM_FG_fact.png}
-	\caption{Voorstelling van het ETL-proces bij een fact.}
+	\caption{Voorstelling van het ETL-proces bij een fact (SAP SDI).}
 	\label{fig:DM_FG_fac}
 \end{figure}
 
@@ -78,7 +78,7 @@ Vervolgens wordt de benodigde data berekend. Volgende transformaties worden toeg
 Nadat alle transformaties en berekeningen zijn toegepast, worden de toegekomen waardes vergeleken met de huidige waardes van de destination table. Er wordt vergeleken op basis van de composite key. Indien de waarde al in de database aanwezig is, wordt deze overschreven, anders wordt deze toegevoegd aan de dataset.
 
 \section{Opbouw data mart}
-Nadat alle tabellen in het dimensioneel model zijn aangevuld, kan er een data mart aangemaakt worden voor de opgestelde KPI. Dit gebeurt gelijkaardig zoals bij het data vault model. Er zal een sterschema aangemaakt worden waarbij alle dimensions verbonden worden met de fact tabel. Hierop kan dan verbonden worden vanuit een rapporteringsomgeving. 
+Nadat alle tabellen in het dimensioneel model zijn aangevuld, kan er een data mart aangemaakt worden voor de opgestelde KPI. Dit gebeurt gelijkaardig zoals bij het Data Vault model. Er zal een sterschema aangemaakt worden waarbij alle dimensions verbonden worden met de fact tabel. Hierop kan dan verbonden worden vanuit een rapporteringsomgeving. 
 
 \begin{figure}[h]
 	\centering

@@ -10,28 +10,28 @@ In dit hoofdstuk wordt beschreven wat de betekenis is van de data die gebruikt w
 	\renewcommand{\arraystretch}{2}%
 	\begin{longtable}{  l  l  p{6cm} }
 		\textbf{Kolomnaam} & \textbf{Afkomst} & \textbf{Betekenis} \\ \hline
-		LABO\_ENTITY\_ID & Customer\_entities.csv & Een uniek identificatie nummer voor een labo entiteit. 
-		Een labo entiteit is een vestiging van een bepaald bedrijf.  \\ \hline
-		LABO\_ENTITY\_NAME & Customer\_entities.csv & De vestigingsnaam van de entiteit.  \\ \hline
-		LABO\_GROUP\_ID & Customer\_entities.csv & Identificatienummer van de overkoepelende groep.  \\ \hline
-		LABO\_GROUP\_ID & Customer\_groups.csv & Identificatienummer van de groep.
+		Data Vault\_ENTITY\_ID & Customer\_entities.csv & Een uniek identificatie nummer voor een Data Vault entiteit. 
+		Een Data Vault entiteit is een vestiging van een bepaald bedrijf.  \\ \hline
+		Data Vault\_ENTITY\_NAME & Customer\_entities.csv & De vestigingsnaam van de entiteit.  \\ \hline
+		Data Vault\_GROUP\_ID & Customer\_entities.csv & Identificatienummer van de overkoepelende groep.  \\ \hline
+		Data Vault\_GROUP\_ID & Customer\_groups.csv & Identificatienummer van de groep.
 		Een groep bestaat uit meerdere entiteiten.  \\ \hline
-		LABO\_GROUP\_NAAM & Customer\_groups.csv & De naam voor de groep.  \\ \hline
+		Data Vault\_GROUP\_NAAM & Customer\_groups.csv & De naam voor de groep.  \\ \hline
 		STAFF\_ID & Staff.csv & Personeelsnummer van een werknemer.  \\ \hline
 		STAFF\_NAME & Staff.csv & De naam van een werknemer.  \\ \hline
 		WAREHOUSE\_ID & Staff.csv & Het warenhuis waar de werknemer actief is.  \\ \hline
 		WAREHOUSE\_ID & Warehouses.csv & Het identificatienummer voor een bepaalde warenhuis.  \\ \hline
-		WAREHOUSE\_NAME & Warehouses.csv & De plaats van de warenhuis (tevens ook de naam).  \\ \hline
+		WAREHOUSE\_NAME & Warehouses.csv & De gemeente/stad van het warenhuis (tevens ook de naam).  \\ \hline
 		PRODUCT\_ID & Products.csv & Het artikelnummer. Dit is een uniek nummer.  \\ \hline
 		PRODUCT\_DESCRIPTION & Products.csv & Naam/beschrijving van een bepaald product.  \\ \hline
-		LABO\_ENTITY\_ID & Products.csv & Het identificatienummer van de labo entiteit waarvan het product afkomstig is.  \\ \hline
+		Data Vault\_ENTITY\_ID & Products.csv & Het identificatienummer van de Data Vault entiteit waarvan het product afkomstig is.  \\ \hline
 		STATUS\_ID & Dock\_to\_stock\_status.csv & Identificatienummer van een bepaalde status. 
 		Een status wordt gegeven aan een pallet wanneer deze gestockeerd wordt. Ofwel is deze op tijd gestockeerd,
 		ofwel is er een bepaalde reden waarom dit niet op tijd kon gestockeerd worden (bijvoorbeeld een te druk moment).  \\ \hline
 		STATUS\_DESCRIPTION & Dock\_to\_stock\_status.csv & Beschrijving/uitleg over de status.  \\ \hline
 		PRODUCT\_ID & Products.csv & Het artikelnummer. Dit is een uniek nummer.  \\ \hline
 		LEVERAGE\_ID & Leverages.csv & Een nummer die toegekend wordt aan een bepaalde levering.
-		Vaak ook een referentienummer die de klant (labo) ziet op de factuur. \\ \hline
+		Vaak ook een referentienummer die de klant (Data Vault) ziet op de factuur. \\ \hline
 		PALLET\_ID & Leverages.csv & Het identificatienummer van een pallet.
 		Een levering kan uit meerdere palletten bestaan. \\ \hline
 		STAFF\_ID & Leverages.csv & Een personeelsnummer. 

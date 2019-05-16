@@ -5,14 +5,14 @@
 \chapter{Opzet van het onderzoek}
 \label{ch:voorbereidingonderzoek}
 
-Voor er aan de slag kan gegaan worden met het onderzoek, moet er een data warehouse opgesteld worden zowel via de Data Vault methodologie als de methodologie voor het dimensioneel modelleren. In dit hoofdstuk wordt de opbouw van het experiment uitgebreidt uitgeschreven.
+Voor er aan de slag kan gegaan worden met het onderzoek, moet er een data warehouse opgesteld worden zowel via de Data Vault methodologie als de methodologie voor het dimensioneel modelleren. In dit hoofdstuk wordt de opbouw van het experiment uitgebreid uitgeschreven.
 
 \section{Gebruikte technologieën in dit experiment}
 De benodigdheden voor het nabootsen van dit experiment zijn:
 
 \begin{itemize}
-	\item \textbf{SAP HANA technologie:} deze databank draait op een linux distributie (Debian) in een Azure omgeving.\footnote[1]{De SAP HANA server moet bereikbaar zijn over het internet.}
-	\item \textbf{Databron:} Als databron wordt een Windows server (versie 2016) gebruikt die ook draait in een Azure omgeving. De data zal aangeleverd worden door middel van CSV-bestanden. \footnote[2]{De Windows server moet bereikbaar zijn over het internet.}
+	\item \textbf{SAP HANA technologie:} deze databank draait op een Linux distributie (Debian) in een Azure omgeving.\footnote[1]{De SAP HANA server moet bereikbaar zijn over het internet.}
+	\item \textbf{Databron:} Als databron worden csv-bestanden gebruikt die aangeleverd worden door een Windows server (versie 2016) die draait in een Azure omgeving.\footnote[2]{De Windows server moet bereikbaar zijn over het internet.}
 	\item \textbf{Data Provisioning Agent:} De DP Agent wordt gebruikt om een bron te verbinden met SAP HANA.
 	\item \textbf{SDI:} Een ETL-tool die aangeleverd wordt door SAP en die geïntegreerd is binnen SAP HANA.
 \end{itemize}
@@ -34,7 +34,7 @@ Hieronder een overzicht over hoe de verbinding in zijn werk gaat:
 \begin{enumerate}
 	\item SAP HANA stuurt een request voor data naar de DP Agent die geïnstalleerd staat op de host.
 	\item De host haalt de benodigde data op via een adapter, in dit geval haalt hij de CSV-files die nodig zijn op uit een lokale betandslocatie.
-	\item De DP Agent zend de data door naar SAP HANA.
+	\item De DP Agent zendt de data door naar SAP HANA.
 \end{enumerate}
 
 \section{Opzetten van een remote source}
