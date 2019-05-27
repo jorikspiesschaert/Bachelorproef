@@ -7,23 +7,237 @@
 In dit deel van het onderzoek zal er van de twee eerder opgebouwde datamodellen een vergelijking gemaakt worden. Hierbij wordt voornamelijk gefocust op deze 5 pijlers:
 
 \begin{itemize}
-	\item \textbf{Performantie:} is er een significant verschil in uitvoeringstijd en bij het inladen van gegevens?
+	\item \textbf{Performantie:} is er een significant verschil in het uitvoeren van leesopdrachten?
 	\item \textbf{Complexiteit:} zijn beide modellen makkelijk interpreteerbaar door IT \& business?
 	\item \textbf{Flexibiliteit:} hoe flexibel zijn beide modellen wanneer een business requirement gewijzigd wordt?
-	\item \textbf{Schaalbaarheid:} hoe gaan beide modellen overweg met enorme hoeveelheid data?
+	\item \textbf{Schaalbaarheid:} hoe gaan beide modellen overweg met het inladen van enorme hoeveelheid data?
 	\item \textbf{Audit:} is er metadata beschikbaar over de werkelijke data? Kunnen problemen makkelijk opgespoord worden?
 \end{itemize} 
 
 Op basis van deze resultaten zal er kunnen opgemaakt worden of de keuze voor Data Vault wel de juiste keuze was voor dit project.
 
 \section{Performantie}
-Wanneer we de performantie vergelijken tussen twee data warehouses, kan dit gebeuren op twee vlakken: op vlak van het lezen van data, en op vlak van het inladen van de data.
+In deze sectie wordt het vergelijkend onderzoek gestart door de performantie bij leesopdrachten te vergelijken tussen Data Vault en het dimensioneel model. Voor het verkrijgen van de resultaten wordt een procedure geschreven in SQL-code die de executietijd zal berekenen. Elke query zal 1000 keer uitgevoerd worden. Op basis van de verkregen resultaten kan er een correcte analyse opgemaakt worden. Deze queries worden uitgevoerd op een \textbf{SAP HANA databank}, door het gebruik te maken van deze technologie zal dit een invloed hebben op de snelheid van executie. Zowel voor Data Vault als voor het dimensioneel werden de leesopdrachten uitgevoerd met 2 verschillende hoeveelheden van data. De 1000 leesoperaties werden uitgevoerd op 1200 en 100.000 records.
 
-Het inladen van data zal sneller gebeuren bij het Data Vault model. Dit omdat Data Vault toelaat data parallel in te laden. Dit komt omdat de tabellen binnen dit model niet afhankelijk zijn van elkaar. Bij het dimensioneel model is dit een ander verhaal, hierbij moeten de dimensions eerst ingeladen, dan de fact tabel. 
+\subsection{Procedure} 
+\lstset{breaklines=true,keywordstyle=\bfseries\color{blue!40!black}}
+\begin{lstlisting}[frame=single] 
+CREATE PROCEDURE "TESTJORIK_BV"."RESULTS" LANGUAGE SQLSCRIPT AS BEGIN
 
-Leesoperaties gebeuren veel performanter op het dimensioneel model. Dit komt omdat het dimensioneel model veel minder relaties bevat en dus veel minder joins zal moeten maken om alle benodigde data te verkrijgen. Wanneer een join gebeurt, zorgt dit toch wel voor vertraging. Het Data Vault model bestaat uit veel meer tabellen, dus zullen er heel wat meer joins moeten gebeuren om de benodigde data te lezen. 
+--Declareren van variabele (teller)
+DECLARE EXEC_ID int;
 
-Qua performantie kunnen er dus 2 zaken geconcludeerd worden: Data Vault is heel performant in het inladen van gegevens, maar het inlezen van data gebeurt veel performanter bij het dimensioneel model.
+--Initialiseren van variabele
+EXEC_ID = 1;
+
+--Starten van loop (1000x queries uitvoeren)
+WHILE :EXEC_ID < 1001 DO
+
+--ID toevoegen in databank
+INSERT INTO "TESTJORIK_BV"."UITVOERINGSTIJDEN" ("EXEC_ID") VALUES (:EXEC_ID);
+
+--Tijdstip van start toevoegen in de databank voor het Data Vault model
+UPDATE "TESTJORIK_BV"."UITVOERINGSTIJDEN" SET "START_TIME_DV" = CURRENT_TIMESTAMP
+WHERE "EXEC_ID" = :EXEC_ID;
+
+--Uitvoeren query leesopdracht op DataVault model
+SELECT hubarticle."ARTICLE_ID", hubwarehouse."WAREHOUSE_ID", hubstatus."STATUS_ID", hubstaff."STAFF_ID", hubpallet."PALLET_ID", hubdelivery."DELIVERY_ID",
+hubgroup."LABO_GROUP_ID", hubentity."LABO_ENTITY_ID", satgroup."LABO_GROUP_NAME", satentity."LABO_ENTITY_NAME", satstaff."STAFF_NAME", satwarehouse."WAREHOUSE_CITY",
+satarticle."ARTICLE_NAME", satstatus."STATUS_NAME", hubdock."DOCK_TIME", hubstock."STOCK_TIME", satdts."STOCKED_TOTAL", satdts."STOCKED_WITHIN_12HOURS_QUANTITY",
+satdts."STOCKED_WITHIN_16HOURS_QUANTITY", satdts."STOCKED_WITHIN_24HOURS_QUANTITY", satdts."SECONDS_TO_LATE", satdts."SECONDS_BETWEEN_STOCK_AND_DOCK", satorderline."ARTICLE_QUANTITY"
+FROM "BP_DHLPL_RAWDATAVAULT"."LINK_DOCK_TO_STOCK" as linkdts
+INNER JOIN "BP_DHLPL_RAWDATAVAULT"."HUB_DOCK" as hubdock
+ON linkdts."DOCK_HASH_KEY" = hubdock."DOCK_HASH_KEY"
+INNER JOIN "BP_DHLPL_RAWDATAVAULT"."HUB_STOCK" as hubstock
+ON linkdts."STOCK_HASH_KEY" = hubstock."STOCK_HASH_KEY"
+INNER JOIN "BP_DHLPL_RAWDATAVAULT"."HUB_PALLET" as hubpallet
+ON linkdts."PALLET_HASH_KEY" = hubpallet."PALLET_HASH_KEY"
+INNER JOIN "BP_DHLPL_RAWDATAVAULT"."HUB_STATUS" as hubstatus
+ON linkdts."STATUS_HASH_KEY" = hubstatus."STATUS_HASH_KEY"
+INNER JOIN "BP_DHLPL_RAWDATAVAULT"."HUB_STAFF" as hubstaff
+ON linkdts."STAFF_HASH_KEY" = hubstaff."STAFF_HASH_KEY"
+INNER JOIN "BP_DHLPL_RAWDATAVAULT"."LINK_ORDERLINE" as linkorderline
+ON hubpallet."PALLET_HASH_KEY" = linkorderline."PALLET_HASH_KEY"
+INNER JOIN "BP_DHLPL_RAWDATAVAULT"."HUB_ARTICLE" as hubarticle
+ON linkorderline."ARTICLE_HASH_KEY" = hubarticle."ARTICLE_HASH_KEY"
+INNER JOIN "BP_DHLPL_RAWDATAVAULT"."LINK_WAREHOUSE_STAFF" as linkwarehousestaff
+ON hubstaff."STAFF_HASH_KEY" = linkwarehousestaff."STAFF_HASH_KEY"
+INNER JOIN "BP_DHLPL_RAWDATAVAULT"."HUB_WAREHOUSE" as hubwarehouse
+ON linkwarehousestaff."WAREHOUSE_HASH_KEY" = hubwarehouse."WAREHOUSE_HASH_KEY"
+INNER JOIN "BP_DHLPL_RAWDATAVAULT"."LINK_TRANSPORT" as linktransport
+ON hubdock."DOCK_HASH_KEY" = linktransport."DOCK_HASH_KEY"
+INNER JOIN "BP_DHLPL_RAWDATAVAULT"."HUB_LABO_ENTITY" as hubentity
+ON linktransport."LABO_ENTITY_HASH_KEY" = hubentity."LABO_ENTITY_HASH_KEY"
+INNER JOIN "BP_DHLPL_RAWDATAVAULT"."HUB_DELIVERY" as hubdelivery
+ON linktransport."DELIVERY_HASH_KEY" = hubdelivery."DELIVERY_HASH_KEY"
+INNER JOIN "BP_DHLPL_RAWDATAVAULT"."LINK_LABO_ENTITY_GROUP" as linklabo
+ON hubentity."LABO_ENTITY_HASH_KEY" = linklabo."LABO_ENTITY_HASH_KEY"
+INNER JOIN "BP_DHLPL_RAWDATAVAULT"."HUB_LABO_GROUP" as hubgroup
+ON linklabo."LABO_GROUP_HASH_KEY" = hubgroup."LABO_GROUP_HASH_KEY"
+INNER JOIN "BP_DHLPL_RAWDATAVAULT"."SAT_LABO_GROUP" as satgroup
+ON satgroup."LABO_GROUP_HASH_KEY" = hubgroup."LABO_GROUP_HASH_KEY"
+INNER JOIN "BP_DHLPL_RAWDATAVAULT"."SAT_LABO_ENTITY" as satentity
+ON satentity."LABO_ENTITY_HASH_KEY" = hubentity."LABO_ENTITY_HASH_KEY"
+INNER JOIN "BP_DHLPL_RAWDATAVAULT"."SAT_STATUS" as satstatus
+ON hubstatus."STATUS_HASH_KEY" = satstatus."STATUS_HASH_KEY"
+INNER JOIN "BP_DHLPL_RAWDATAVAULT"."SAT_STAFF" as satstaff
+ON hubstaff."STAFF_HASH_KEY" = satstaff."STAFF_HASH_KEY"
+INNER JOIN "BP_DHLPL_RAWDATAVAULT"."SAT_WAREHOUSE" as satwarehouse
+ON hubwarehouse."WAREHOUSE_HASH_KEY" = satwarehouse."WAREHOUSE_HASH_KEY"
+INNER JOIN "BP_DHLPL_RAWDATAVAULT"."SAT_ARTICLE" as satarticle
+ON hubarticle."ARTICLE_HASH_KEY" = satarticle."ARTICLE_HASH_KEY"
+INNER JOIN "BP_DHLPL_RAWDATAVAULT"."SAT_ORDERLINE" as satorderline
+ON linkorderline."ORDERLINE_HASH_KEY" = satorderline."ORDERLINE_HASH_KEY"
+INNER JOIN "BP_DHLPL_RAWDATAVAULT"."SAT_DOCK_TO_STOCK" as satdts
+ON linkdts."DOCK_TO_STOCK_HASH_KEY" = satdts."DOCK_TO_STOCK_HASH_KEY";
+
+--Tijdstip van einde toevoegen in de databank voor het Data Vault model
+UPDATE "TESTJORIK_BV"."UITVOERINGSTIJDEN" SET "END_TIME_DV" = CURRENT_TIMESTAMP
+WHERE "TESTJORIK_BV"."UITVOERINGSTIJDEN"."EXEC_ID" = :EXEC_ID;
+
+--Tijdstip van start toevoegen in de databank voor het dimensioneel model
+UPDATE "TESTJORIK_BV"."UITVOERINGSTIJDEN" SET "START_TIME_DM" = CURRENT_TIMESTAMP
+WHERE "TESTJORIK_BV"."UITVOERINGSTIJDEN"."EXEC_ID" = :EXEC_ID;
+
+--Uitvoeren query leesop^dracht op het dimensioneel model 
+SELECT fct.*, dimarticle."ARTICLE_NAME", dimentity."LABO_ENTITY_NAME", dimgroup."LABO_GROUP_NAME", dimdelivery."STOCK_TIME", dimdelivery."DOCK_TIME", dimstaff."STAFF_NAME", dimstatus."STATUS_NAME", dimwarehouse."WAREHOUSE_CITY"
+FROM "BP_DHLPL_DATAWAREHOUSELAAG"."FACT_DOCKTOSTOCK" as fct
+INNER JOIN "BP_DHLPL_DATAWAREHOUSELAAG"."DIM_ARTICLE" as dimarticle
+ON fct."ARTICLE_ID" = dimarticle."ARTICLE_ID"
+INNER JOIN "BP_DHLPL_DATAWAREHOUSELAAG"."DIM_LABO_ENTITY" as dimentity
+ON fct."LABO_ENTITY_ID" = dimentity."LABO_ENTITY_ID"
+INNER JOIN "BP_DHLPL_DATAWAREHOUSELAAG"."DIM_LABO_GROUP" as dimgroup
+ON fct."LABO_GROUP_ID" = dimgroup."LABO_GROUP_ID"
+INNER JOIN "BP_DHLPL_DATAWAREHOUSELAAG"."DIM_DELIVERY" as dimdelivery
+ON fct."PALLET_ID" = dimdelivery."PALLET_ID"
+INNER JOIN "BP_DHLPL_DATAWAREHOUSELAAG"."DIM_STAFF" as dimstaff
+ON fct."STAFF_ID" = dimstaff."STAFF_ID"
+INNER JOIN "BP_DHLPL_DATAWAREHOUSELAAG"."DIM_STATUS" as dimstatus
+ON fct."STATUS_ID" = dimstatus."STATUS_ID"
+INNER JOIN "BP_DHLPL_DATAWAREHOUSELAAG"."DIM_WAREHOUSE" as dimwarehouse
+ON fct."WAREHOUSE_ID" = dimwarehouse."WAREHOUSE_ID";
+
+--Tijdstip van einde toevoegen in de databank voor het dimensioneel model
+UPDATE "TESTJORIK_BV"."UITVOERINGSTIJDEN" SET "END_TIME_DM" = CURRENT_TIMESTAMP
+WHERE "TESTJORIK_BV"."UITVOERINGSTIJDEN"."EXEC_ID" = :EXEC_ID;
+
+--Berekenen van executietijd voor het Data Vault model
+UPDATE "TESTJORIK_BV"."UITVOERINGSTIJDEN" SET "DIFF_TIME_DV" = (NANO100_BETWEEN(START_TIME_DV,END_TIME_DV) / 10000)
+WHERE "TESTJORIK_BV"."UITVOERINGSTIJDEN"."EXEC_ID" = :EXEC_ID;
+
+--Berekenen van executietijd voor het dimensioneel model
+UPDATE "TESTJORIK_BV"."UITVOERINGSTIJDEN" SET "DIFF_TIME_DM" = (NANO100_BETWEEN(START_TIME_DM,END_TIME_DM) / 10000)
+WHERE "TESTJORIK_BV"."UITVOERINGSTIJDEN"."EXEC_ID" = :EXEC_ID;
+
+--Waarde teller verhogen met 1
+EXEC_ID = :EXEC_ID + 1;
+END WHILE;
+END;
+\end{lstlisting}
+
+\subsection{Resultaten}
+Na het doorlopen van de vorige procedure, kan er gestart worden met het vergelijken van de gegenereerde data over de performantie bij leesopdrachten. In tabel \ref{tab:mem} wordt een overzicht getoont van het werkgeheugen die SAP HANA toewees voor het uitvoeren van beide queries (door de query 1 keer uit te voeren). 
+
+\begin{center}
+	\renewcommand{\arraystretch}{2}%
+	\begin{longtable}{  l  p{4,5cm}  p{4,5cm} }
+	    \ & \textbf{Data Vault} & \textbf{Dimensioneel model} \\ \hline
+		\textbf{1200 records} & 5,2 MByte(s) & 2,5 MByte(s) \\
+		\textbf{100.000 records} & 139,8 MByte(s) & 4,6 MByte(s) \\
+		\caption{Overzicht van het toegewezen werkgeheugen van beide select-statements (verkregen via het Execution plan in SAP HANA).}
+		\label{tab:mem}
+	\end{longtable}
+\end{center}
+
+In tabel \ref{tab:spg} wordt een overzicht getoont van het steekproefgemiddelde van de executietijd bij het uitvoeren van de leesopdracht bij beide modellen.
+
+\begin{center}
+	\renewcommand{\arraystretch}{2}%
+	\begin{longtable}{  l  p{4,5cm}  p{4,5cm} }
+		\ & \textbf{Data Vault} & \textbf{Dimensioneel model} \\ \hline
+		 \textbf{1200 records} & 15,29 ms & 5,466 ms \\
+		 \textbf{100.000 records} & 108,086 ms & 6,783 ms \\
+		\caption{Overzicht van het steekproefgemiddelde bij Data Vault en het dimensioneel model.}
+		\label{tab:spg}
+	\end{longtable}
+\end{center}
+
+In tabel \ref{tab:sa} wordt een overzicht getoont van de standaardafwijking bij de resultaten van de steekproef.
+
+\begin{center}
+	\renewcommand{\arraystretch}{2}%
+	\begin{longtable}{  l  p{4,5cm}  p{4,5cm} }
+		\ & \textbf{Data Vault} & \textbf{Dimensioneel model} \\ \hline
+		\textbf{1200 records} & 0,7723319 & 0,7832353 \\
+		\textbf{100.000 records} & 11,37488 & 1,122128 \\
+		\caption{Overzicht van de standaardafwijkingen van deze meting bij Data Vault en het dimensioneel model.}
+		\label{tab:sa}
+	\end{longtable}
+\end{center}
+
+
+
+In figuur \ref{fig:boxplotperf} wordt een boxplot weergegeven met de snelheid bij leesopdrachten van beide data modellen. 
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.7]{../images/Score_perf.png}
+	\caption{Boxplot van de uitvoeringstijden bij leesopdrachten van Data Vault en het dimensioneel model. }
+	\label{fig:boxplotperf}
+\end{figure}
+
+Uit deze boxplot kan afgeleid worden dat er een kleine spreiding is van de resultaten bij het dimensioneel model (op enkele uitschieters na). Opmerkelijk is dat de executietijd bij Data Vault bij het opvragen van 100.000 records opmerkelijk hoger ligt en er meer spreiding bij de data is in vergelijking met de executietijd bij het opvragen van 100.000 records bij het dimensioneel model.
+
+\subsection{Analyse van de resultaten}
+
+De resultaten die verkregen zijn zullen onderworpen worpen aan een statistische toets (t-toets aangezien de standaardafwijking van de populatie niet gekend is). Bij de resultaten tussen Data Vault en het dimensioneel model (bij een dataset van 1200 records) zijn volgende hypotheses bepaald:
+
+\[
+H_0 = \gamma_1 - \gamma_2 = 0
+\]
+\[
+H_1 = \gamma_1 - \gamma_2 > 0
+\]
+
+waarbij
+$\gamma_1$ = Executietijd bij Data Vault met 1.200 records \&
+$\gamma_2$ = Executietijd bij dimensioneel model met 1.200 records.
+
+Het betrouwbaarheidsinterval dat zal gehanteerd worden in deze meting is 95\%. Dit betekent dat met 95\% zekerheid
+kan gezegd worden dat een bepaalde parameter binnen het
+betrouwbaarheidsinterval zal liggen.
+
+\[
+\alpha = 1 - 0.95
+\]
+\[
+\alpha = 0.05
+\]
+
+Het uitvoeren van de Welch Two Sample t-test in RStudio geeft volgend resultaat:
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.7]{../images/Ttest1200.png}
+	\caption{Resultaat van de Welch Two Sample t-test in Rstudio voor de dataset met 1200 records tussen Data Vault en het dimensioneel model. }
+	\label{fig:ttest1200}
+\end{figure}
+
+Aangezien de p-value uit de Welch Two Sample t-test kleiner is dan $\alpha$ betekent dit dat de nullhypothese mag verworpen worden en dat de alternative hypothese mag aanvaard worden.
+
+Wanneer er dezelfde methodologie wordt toegepast voor het bepalen ofdat er een significant verschil aanwezig tussen Data Vault en het dimensioneel model bij een dataset van 100.000 records, bekomen we volgend resultaat:
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.7]{../images/Ttest100000.png}
+	\caption{Resultaat van de Welch Two Sample t-test in Rstudio voor de dataset met 100.000 records tussen Data Vault en het dimensioneel model. }
+	\label{fig:ttest100000}
+\end{figure}
+
+Na het uitvoeren van deze test is de p-value hier ook kleinder dan $\alpha$, ook hier betekent dit dat er een significant verschil aanwezig is tussen de performantie van beide data modellen.
+
+\subsubsection{Conclusie}
+Er kan geconcludeerd worden dat er toch wel degelijk een significant verschil zit tussen de gemiddelde executietijd van een leesopdracht bij Data Vault in vergelijking met het dimensioneel model. Niet alleen het data model, maar ook de hoeveelheid data aanwezig in de tabellen van een data model heeft een invloed op de snelheid van leesoperaties. Het dimensioneel model gaat hiermee duidelijk veel beter om dan het Data Vault model. 
 
 \section{Complexiteit}
 Bij het modelleren van data kan complexiteit ontstaan zowel bij het interpreteren van het data model als bij het opmaken van het data model. 
@@ -90,6 +304,8 @@ In de Data Vault methodologie zit historisatie verwerkt. Er wordt extra informat
 Bij het dimensioneel model wordt standaard noch de historisatie van data, noch extra informatie over de aangeleverde data niet bijgehouden. Voor historisatie bij het dimensioneel model kan gebruik gemaakt worden van slow changing dimensions. Indien gewenst kan er natuurlijk ook altijd geopteerd worden om deze extra informatie op te nemen door enkele kolommen toe te voegen. 
 
 Er kan geconcludeerd worden dat Data Vault standaard historisatie toepast in hun model en dat er extra informatie (audit data) opgeslaan wordt over de data. Bij het dimensioneel model worden historisatie en het bijhouden van audit data niet opgenomen, maar het kan wel geïmplementeerd worden indien gewenst.
+
+
 \section{Overzicht}
 \begin{center}
 	\renewcommand{\arraystretch}{2}%

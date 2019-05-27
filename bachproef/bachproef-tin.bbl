@@ -19,6 +19,36 @@
 
 \refsection{0}
   \datalist[entry]{apa/global//global/global}
+    \entry{Buneman1997}{report}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,uniquepart=base,hash=0e2b444d9d3a80f70ca5eb50e7596a60}{%
+           family={Buneman},
+           familyi={B\bibinitperiod},
+           given={Peter},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{institution}{1}{%
+        {University of Pennsylvania}%
+      }
+      \strng{namehash}{0e2b444d9d3a80f70ca5eb50e7596a60}
+      \strng{fullhash}{0e2b444d9d3a80f70ca5eb50e7596a60}
+      \strng{bibnamehash}{0e2b444d9d3a80f70ca5eb50e7596a60}
+      \strng{authorbibnamehash}{0e2b444d9d3a80f70ca5eb50e7596a60}
+      \strng{authornamehash}{0e2b444d9d3a80f70ca5eb50e7596a60}
+      \strng{authorfullhash}{0e2b444d9d3a80f70ca5eb50e7596a60}
+      \field{sortinit}{B}
+      \field{sortinithash}{276475738cc058478c1677046f857703}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Semistructured data}
+      \field{type}{techreport}
+      \field{year}{1997}
+      \true{nocite}
+    \endentry
     \entry{Gartner2019}{report}{}
       \name{author}{1}{}{%
         {{uniquename=0,uniquepart=base,hash=18bfab6309a4addeb7e1dae07d2a4b89}{%
@@ -44,8 +74,52 @@
       \field{title}{Magic quadrant for analytics and business intelligence platforms}
       \field{type}{techreport}
       \field{year}{2019}
+      \true{nocite}
     \endentry
-    \entry{Helfert2002}{article}{}
+    \entry{Gupta1995}{report}{}
+      \name{author}{3}{}{%
+        {{uniquename=0,uniquepart=base,hash=938f49b8d73f0efbba25ee07e32c8d44}{%
+           family={Gupta},
+           familyi={G\bibinitperiod},
+           given={Ashish},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=a18962cfee6eb4e3108254f802ee658a}{%
+           family={Harinarayan},
+           familyi={H\bibinitperiod},
+           given={Venky},
+           giveni={V\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=49cf70ede27d305fd98af37dd900bf9d}{%
+           family={Quass},
+           familyi={Q\bibinitperiod},
+           given={Dallan},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{institution}{2}{%
+        {IBM Almaden Research Center}%
+        {Stanford University}%
+      }
+      \strng{namehash}{50efa6ffd2e68d614d62055991bb8acc}
+      \strng{fullhash}{54e3f21c4993cf478ac4423d8a51991d}
+      \strng{bibnamehash}{54e3f21c4993cf478ac4423d8a51991d}
+      \strng{authorbibnamehash}{54e3f21c4993cf478ac4423d8a51991d}
+      \strng{authornamehash}{50efa6ffd2e68d614d62055991bb8acc}
+      \strng{authorfullhash}{54e3f21c4993cf478ac4423d8a51991d}
+      \field{sortinit}{G}
+      \field{sortinithash}{5e8d2bf9d38de41b1528bd307546008f}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Aggregate-query processing in data Warehousing environments}
+      \field{type}{techreport}
+      \field{year}{1995}
+      \true{nocite}
+    \endentry
+    \entry{Helfert2002}{report}{}
       \name{author}{3}{}{%
         {{uniquename=0,uniquepart=base,hash=759e8d46629a4fa5853b866b39d2b622}{%
            family={Helfert},
@@ -66,6 +140,10 @@
            giveni={C\bibinitperiod},
            givenun=0}}%
       }
+      \list{institution}{2}{%
+        {University of St. Gallen}%
+        {University College Dublin}%
+      }
       \strng{namehash}{665206dd73234839b517fd526dbbe0a7}
       \strng{fullhash}{8605c901c4a3341ae9c4dce36950bc27}
       \strng{bibnamehash}{8605c901c4a3341ae9c4dce36950bc27}
@@ -80,7 +158,118 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Data quality problems and proactive data quality management in data-warehouse-systems}
+      \field{type}{techreport}
       \field{year}{2002}
+      \true{nocite}
+    \endentry
+    \entry{Inmon2005}{book}{}
+      \name{author}{1}{}{%
+        {{uniquename=1,uniquepart=given,hash=fe070ddfbf368740bfe41b23ac091cb2}{%
+           family={Inmon},
+           familyi={I\bibinitperiod},
+           given={William\bibnamedelima H.},
+           giveni={W\bibinitperiod\bibinitdelim H\bibinitperiod},
+           givenun=1}}%
+      }
+      \list{publisher}{1}{%
+        {Wiley Publishing Inc}%
+      }
+      \strng{namehash}{fe070ddfbf368740bfe41b23ac091cb2}
+      \strng{fullhash}{fe070ddfbf368740bfe41b23ac091cb2}
+      \strng{bibnamehash}{fe070ddfbf368740bfe41b23ac091cb2}
+      \strng{authorbibnamehash}{fe070ddfbf368740bfe41b23ac091cb2}
+      \strng{authornamehash}{fe070ddfbf368740bfe41b23ac091cb2}
+      \strng{authorfullhash}{fe070ddfbf368740bfe41b23ac091cb2}
+      \field{sortinit}{I}
+      \field{sortinithash}{320bc8fe8101b9376f9f21cd507de0e8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Building the Data Warehouse}
+      \field{year}{2005}
+      \true{nocite}
+    \endentry
+    \entry{Inmon2015}{book}{}
+      \name{author}{2}{}{%
+        {{uniquename=1,uniquepart=given,hash=e7661449d903fcf472782ff5cb4aa538}{%
+           family={Inmon},
+           familyi={I\bibinitperiod},
+           given={William},
+           giveni={W\bibinitperiod},
+           givenun=1}}%
+        {{uniquename=1,uniquepart=given,hash=2bf6facf749330bba4aa8c0463ea1fe8}{%
+           family={Linstedt},
+           familyi={L\bibinitperiod},
+           given={Daniel},
+           giveni={D\bibinitperiod},
+           givenun=1}}%
+      }
+      \name{editor}{1}{}{%
+        {{hash=3ac333bf72dce409ee28e5ae4ee4727e}{%
+           family={Herbert},
+           familyi={H\bibinitperiod},
+           given={Kaitlin},
+           giveni={K\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Morgan Kaufmann}%
+      }
+      \strng{namehash}{709b3cf0930f3b4ec4cf3997cf0f75f1}
+      \strng{fullhash}{709b3cf0930f3b4ec4cf3997cf0f75f1}
+      \strng{bibnamehash}{709b3cf0930f3b4ec4cf3997cf0f75f1}
+      \strng{authorbibnamehash}{709b3cf0930f3b4ec4cf3997cf0f75f1}
+      \strng{authornamehash}{709b3cf0930f3b4ec4cf3997cf0f75f1}
+      \strng{authorfullhash}{709b3cf0930f3b4ec4cf3997cf0f75f1}
+      \strng{editorbibnamehash}{3ac333bf72dce409ee28e5ae4ee4727e}
+      \strng{editornamehash}{3ac333bf72dce409ee28e5ae4ee4727e}
+      \strng{editorfullhash}{3ac333bf72dce409ee28e5ae4ee4727e}
+      \field{sortinit}{I}
+      \field{sortinithash}{320bc8fe8101b9376f9f21cd507de0e8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Data Architecture: A Primer for the Data Scientist}
+      \field{year}{2015}
+      \true{nocite}
+    \endentry
+    \entry{Jovanovic2012}{report}{}
+      \name{author}{2}{}{%
+        {{uniquename=0,uniquepart=base,hash=d82b7d1f5288d5f2d9171e7864dec4c9}{%
+           family={Jovanovic},
+           familyi={J\bibinitperiod},
+           given={Vladan},
+           giveni={V\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=36df39465390668edc9f882c93d6fcec}{%
+           family={Bojicic},
+           familyi={B\bibinitperiod},
+           given={Ivan},
+           giveni={I\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{institution}{2}{%
+        {Georgia Southern University}%
+        {Belgrade University}%
+      }
+      \strng{namehash}{417f74b6deaa6f9c715295b44c2a7208}
+      \strng{fullhash}{417f74b6deaa6f9c715295b44c2a7208}
+      \strng{bibnamehash}{417f74b6deaa6f9c715295b44c2a7208}
+      \strng{authorbibnamehash}{417f74b6deaa6f9c715295b44c2a7208}
+      \strng{authornamehash}{417f74b6deaa6f9c715295b44c2a7208}
+      \strng{authorfullhash}{417f74b6deaa6f9c715295b44c2a7208}
+      \field{sortinit}{J}
+      \field{sortinithash}{fce5f8d0bd05e8d93f3dbe21c78897ca}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Conceptual Data Vault Model}
+      \field{type}{techreport}
+      \field{year}{2012}
+      \true{nocite}
     \endentry
     \entry{Jukic2006}{article}{}
       \name{author}{1}{}{%
@@ -107,6 +296,7 @@
       \field{journaltitle}{Communications of the ACM}
       \field{title}{Modeling strategies and alternatives for dat warehousing projects}
       \field{year}{2006}
+      \true{nocite}
     \endentry
     \entry{Kimball2013}{book}{}
       \name{author}{2}{}{%
@@ -141,8 +331,78 @@
       \field{labeltitlesource}{title}
       \field{title}{The data warehouse toolkit: Third edition}
       \field{year}{2013}
+      \true{nocite}
     \endentry
-    \entry{Langseth2005}{article}{}
+    \entry{Kortink2000}{report}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,uniquepart=base,hash=f975d6d6c4fb6c1e5eb28dd766772c1a}{%
+           family={Kortink},
+           familyi={K\bibinitperiod},
+           given={Daniel\bibnamedelimb L.\bibnamedelimi Moody\bibnamedelimb \& Mark\bibnamedelima A.R.},
+           giveni={D\bibinitperiod\bibinitdelim L\bibinitperiod\bibinitdelim M\bibinitperiod\bibinitdelim \~M\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{institution}{1}{%
+        {University of Melbourne}%
+      }
+      \strng{namehash}{f975d6d6c4fb6c1e5eb28dd766772c1a}
+      \strng{fullhash}{f975d6d6c4fb6c1e5eb28dd766772c1a}
+      \strng{bibnamehash}{f975d6d6c4fb6c1e5eb28dd766772c1a}
+      \strng{authorbibnamehash}{f975d6d6c4fb6c1e5eb28dd766772c1a}
+      \strng{authornamehash}{f975d6d6c4fb6c1e5eb28dd766772c1a}
+      \strng{authorfullhash}{f975d6d6c4fb6c1e5eb28dd766772c1a}
+      \field{sortinit}{K}
+      \field{sortinithash}{9fd838a31ba64d981e8f44562bd33f89}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{From enterprise models to dimensional models: a methodology for data warehouse and data mart design}
+      \field{type}{techreport}
+      \field{year}{2000}
+      \true{nocite}
+    \endentry
+    \entry{Krneta2014}{article}{}
+      \name{author}{3}{}{%
+        {{uniquename=0,uniquepart=base,hash=942da8a816cee55bfa154f89c4b3f253}{%
+           family={Krneta},
+           familyi={K\bibinitperiod},
+           given={Dragoljub},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=2a0704df704fe48221a99db292cd32e0}{%
+           family={Jovanović},
+           familyi={J\bibinitperiod},
+           given={Vladan},
+           giveni={V\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=897e06501f7ab255406f42cc77c04ee8}{%
+           family={Marjanović},
+           familyi={M\bibinitperiod},
+           given={Zoran},
+           giveni={Z\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{485ebf31f91a33e3848353f9ab908043}
+      \strng{fullhash}{7c238c25e0b42ffe21556df08125b96e}
+      \strng{bibnamehash}{7c238c25e0b42ffe21556df08125b96e}
+      \strng{authorbibnamehash}{7c238c25e0b42ffe21556df08125b96e}
+      \strng{authornamehash}{485ebf31f91a33e3848353f9ab908043}
+      \strng{authorfullhash}{7c238c25e0b42ffe21556df08125b96e}
+      \field{sortinit}{K}
+      \field{sortinithash}{9fd838a31ba64d981e8f44562bd33f89}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Computer Science and Information Systems 11}
+      \field{title}{A direct approach to physical Data Vault design}
+      \field{year}{2014}
+      \true{nocite}
+    \endentry
+    \entry{Langseth2005}{report}{}
       \name{author}{3}{}{%
         {{uniquename=0,uniquepart=base,hash=892a658d3b3a5de12560b81fec5693fb}{%
            family={Langseth},
@@ -163,6 +423,9 @@
            giveni={G\bibinitperiod},
            givenun=0}}%
       }
+      \list{institution}{1}{%
+        {Clarabridge}%
+      }
       \strng{namehash}{84271f55379b8c835cf1f5fbfd9d3c97}
       \strng{fullhash}{203b3a476da05175702b9ce04aa20519}
       \strng{bibnamehash}{203b3a476da05175702b9ce04aa20519}
@@ -177,7 +440,9 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Schema and ETL tools for structured and unstructured data}
+      \field{type}{techreport}
       \field{year}{2005}
+      \true{nocite}
     \endentry
     \entry{Linstedt2015}{book}{}
       \name{author}{1}{}{%
@@ -199,6 +464,7 @@
       \field{labeltitlesource}{title}
       \field{title}{Building a Scalable Data Warehouse with Data Vault 2.0}
       \field{year}{2015}
+      \true{nocite}
     \endentry
     \entry{Linstedt2016}{book}{}
       \name{author}{2}{}{%
@@ -242,6 +508,40 @@
       \field{labeltitlesource}{title}
       \field{title}{Building a scalable data warehouse with data vault 2.0}
       \field{year}{2016}
+      \true{nocite}
+    \endentry
+    \entry{McAfee2012}{article}{}
+      \name{author}{2}{}{%
+        {{uniquename=0,uniquepart=base,hash=00c50c0a44597347642883ea39a79e19}{%
+           family={McAfee},
+           familyi={M\bibinitperiod},
+           given={Andrew},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=7bd9f54569cb8c0301da00ed49b5a752}{%
+           family={Brynjolfsson},
+           familyi={B\bibinitperiod},
+           given={Erik},
+           giveni={E\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{8d147cc63003d0d677ef354663d17ae0}
+      \strng{fullhash}{8d147cc63003d0d677ef354663d17ae0}
+      \strng{bibnamehash}{8d147cc63003d0d677ef354663d17ae0}
+      \strng{authorbibnamehash}{8d147cc63003d0d677ef354663d17ae0}
+      \strng{authornamehash}{8d147cc63003d0d677ef354663d17ae0}
+      \strng{authorfullhash}{8d147cc63003d0d677ef354663d17ae0}
+      \field{sortinit}{M}
+      \field{sortinithash}{cfd219b90152c06204fab207bc6c7cab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Harvard Business Review}
+      \field{title}{Big data: the management revolution}
+      \field{year}{2012}
+      \true{nocite}
     \endentry
     \entry{Satyanarayana2010}{article}{}
       \name{author}{1}{}{%
@@ -268,6 +568,7 @@
       \field{journaltitle}{International Journal on Computer Science and Engineering}
       \field{title}{Data warehousing, data mining, OLAP and OLTP technologies are essential elements to support decision-making process in industries}
       \field{year}{2010}
+      \true{nocite}
     \endentry
     \entry{Stroobants2018}{article}{}
       \name{author}{1}{}{%
@@ -293,6 +594,37 @@
       \field{labeltitlesource}{title}
       \field{title}{Modern data warehousing with data vault in SAP HANA}
       \field{year}{2018}
+      \true{nocite}
+    \endentry
+    \entry{Panos2000}{thesis}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,uniquepart=base,hash=9e7a0590d59945c560f5f4d194ea78e0}{%
+           family={Vassiliadis},
+           familyi={V\bibinitperiod},
+           given={Panos},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{institution}{1}{%
+        {National technical Univesity of Athen}%
+      }
+      \strng{namehash}{9e7a0590d59945c560f5f4d194ea78e0}
+      \strng{fullhash}{9e7a0590d59945c560f5f4d194ea78e0}
+      \strng{bibnamehash}{9e7a0590d59945c560f5f4d194ea78e0}
+      \strng{authorbibnamehash}{9e7a0590d59945c560f5f4d194ea78e0}
+      \strng{authornamehash}{9e7a0590d59945c560f5f4d194ea78e0}
+      \strng{authorfullhash}{9e7a0590d59945c560f5f4d194ea78e0}
+      \field{sortinit}{V}
+      \field{sortinithash}{75dd7385c90b2252c3ae853a80ca853b}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Data warehouse modeling and quality issues}
+      \field{type}{phdthesis}
+      \field{year}{2000}
+      \true{nocite}
     \endentry
   \enddatalist
 \endrefsection

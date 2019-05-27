@@ -7,7 +7,7 @@
 
 % Pas na deze inleidende paragraaf komt de eerste sectiehoofding.
 
-Dit hoofdstuk bevat een literatuurstudie omtrent data warehousing. Na het lezen van dit hoofdstuk zullen begrippen zoals dimensioneel modelleren, Data Vault 2.0 en data warehousing jou niet meer onbekend zijn en waarom er nood is aan data warehousing. Je zal in staat zijn om een eerste Data Vault model en een dimensioneel model te kunnen schetsen.
+Dit hoofdstuk bevat een literatuurstudie omtrent data warehousing. Na het lezen van dit hoofdstuk zullen begrippen zoals dimensioneel modelleren, Data Vault 2.0 en data warehousing jou niet meer onbekend zijn en zal duidelijk zijn waarom er nood is aan data warehousing. Je zal in staat zijn om een eerste Data Vault model en een dimensioneel model te schetsen.
 
 %\textcite{Knuth1998}
 \section{Inleiding data warehousing}
@@ -16,7 +16,7 @@ Dit hoofdstuk bevat een literatuurstudie omtrent data warehousing. Na het lezen 
 
 Veel moderne, digitale bedrijven genereren tegenwoordig enorme volumes data. Deze data kunnen afkomstig zijn uit verschillende bronnen: ERP/CRM-systeem, flat-files (bijvoorbeeld Excel-sheets), big data, ... Bestuursleden gebruiken data om beslissingen te nemen die de onderneming toelaat om te (blijven) groeien of om bepaalde problemen op te sporen. Stel dat een onderneming meer kosten heeft dan opbrengsten, dan kunnen we op basis van alle gegevens die het bedrijf bezit een analyse maken. Zijn er overbodige kosten? Worden onze producten/diensten aan een te lage prijs verkocht? Dit zijn maar enkele vragen die kunnen opgelost worden wanneer het bestuur de correcte rapporteringen ontvangt. Ook wordt een data warehouse gebruikt om gegevens aan te leveren om budgetten op te stellen voor de komende jaren en om van forecasting gebruik te maken. Zo kan er bijvoorbeeld een beslissing gemaakt worden welk budget er moet toegekend worden aan de verschillende afdelingen. 
 
-Om alles nog even samen te vatten: een data warehouse levert data aan een rapporteringsomgeving. Op basis van deze data worden beslissingen ondersteund.
+Om alles nog even samen te vatten: een data warehouse levert data aan een rapporteringsomgeving. Op basis van deze data worden beslissingen genomen.
 
 \subsection{Soorten data}
 Er kan een onderscheid gemaakt worden tussen verschillende soorten data. Voornamelijk kunnen we informatie opdelen in drie categorieën: gestructureerde, semi-gestructureerde en ongestructureerde data. Volgens  ~\textcite{Langseth2005}, bestaat 95\% van de globale informatie uit ongestructureerde data. 
@@ -31,7 +31,7 @@ Data afkomstig uit IoT-apparaten of XML-bestanden zijn meestal semi-gestructuree
 Deze informatie kan niet gemakkelijk worden opgeslagen in relationele databanken (er kan hiervoor geen primair datatype gebruikt worden, maar bijvoorbeeld wel als een BLOB-type). Denk maar aan Excel-sheets, e-mails, muziek, ... Deze data bevat vaak ook heel nuttige informatie die organisaties graag willen gebruiken. Denk bijvoorbeeld maar aan emails: hoe gelukkig zijn klanten over een bepaald product? Hoeveel mails worden er maandelijks ontvangen met klachten?
 
 \subsection{Wat is een data warehouse?}
-De definitie van een data warehouse luidt als volgt: \textit{'een subject-georiënteerde, geïntegreerde, tijd-variante, niet-vluchtige collectie van gegevens die in eerste instantie gebruikt wordt bij organisaties om beslissingen te nemen'} (Bill Inmon).
+De definitie van een data warehouse luidt als volgt: \textit{'een subject-georiënteerde, geïntegreerde, tijd-variante, niet-vluchtige collectie van gegevens die in eerste instantie gebruikt wordt bij organisaties om beslissingen te nemen'} ~\autocite{Inmon2005}.
 
 \paragraph{Subject-georiënteerd}
 Dit begrip slaat op het feit dat een data warehouse gebouwd is met als doel het analyseren van data, niet om transacties op toe te passen. Dit wordt uitgebreid besproken in subsectie \ref{sec:oltp-vs-olap}.
@@ -54,13 +54,13 @@ Een organisatie heeft tegenwoordig heel wat data ter beschikking. Vaak is deze d
 
 Om deze reden wordt een data warehouse ontworpen. Hierin worden gegevens, verspreid over meerdere bronnen, in één centrale plaats verzameld. Zo kunnen rapporteringen makkelijk en flexibel opgebouwd worden. 
 
-Een andere reden voor het opbouwen van een data warehouse is dat je de historiek van alle data kan bijhouden. Wanneer er bijvoorbeeld gegevens aangepast zijn in het transactionele systeem, dan zijn de oude gegevens vaak moeilijk te achterhalen (omdat deze dat vaak overschreven wordt). Door verschillende versies bij te houden van entiteiten, kan je oudere data makkelijk opzoeken.
+Een andere reden voor het opbouwen van een data warehouse is dat je de historiek van alle data kan bijhouden. Wanneer er bijvoorbeeld gegevens aangepast zijn in het transactionele systeem, dan zijn de oude gegevens vaak moeilijk te achterhalen (omdat deze dan vaak overschreven wordt). Door verschillende versies bij te houden van entiteiten, kan je oudere data makkelijk opzoeken.
 
 Wanneer men rapporteringen wil opvragen aan het transactionele systeem, vergt dit ook extra belasting van de server. Dit komt doordat dat datamodel opgebouwd werd niet geoptimaliseerd is om zware SELECT-queries af te handelen. Dit zou niet alleen de server (van het transactionele systeem) meer belasten, bovendien zal dit ook zorgen voor een tragere rapportering. Indien de server te veel rapporteringen zou moeten opvragen, zou dit kunnen leiden tot een overbelasting waarbij transacties niet meer mogelijk zouden kunnen zijn. 
 
 
 \subsection{Wat is het doel van een data warehouse?}
-Het belangrijkste doel van een data warehouse is om een \textbf{correcte} rapportering te leveren. Dit zorgt ervoor dat het beslissingsnemingsproces ondersteunt wordt die genomen wordt door het management. 
+Het belangrijkste doel van een data warehouse is om een \textbf{correcte} rapportering te leveren. Dit zorgt ervoor dat het beslissingsnemingsproces van het management ondersteund wordt. 
 
 \paragraph{Data kwaliteit}
 Zoals eerder aangekaart, is het belangrijk dat rapporten de juiste gegevens bevat. Hieruit volgt dat data kwaliteit een heel belangrijk aspect is. Vaak zijn er verschillende oorzaken waarom de data kwaliteit niet voldoet:
@@ -80,7 +80,7 @@ Gegevens die in een data warehouse geladen worden, ondergaan een proces (zie par
 We kunnen een onderscheid maken tussen 3 verschillende soorten beslissingen: operationele (dagelijks), tactische (jaarlijks) en strategische (lange termijn) beslissingen. Wanneer we operationele rapporten nodig hebben, verwachten we dan ook dat deze onmiddellijk kunnen opgeleverd worden. Het datamodel van een data warehouse wordt geoptimaliseerd voor het ophalen van data in plaats van het te kunnen stockeren. De data wordt 's nachts ingeladen zodat werknemers geen performantie problemen hieromtrent ondervinden. 
 
 \subparagraph{De toekomst}
-Door de komst van in-memory databanken merken we op dat een deel van de (operationele) rapportering opnieuw verhuist naar de transactionele databanken. Dit heeft enerzijds te maken met de snelheid van de databanken en anderzijds met het feit dat queries om operationele rapporten op te vragen gebruikelijk niet zo belastend zijn. Zo kan er gewerkt worden met \textbf{live data} (doordat deze niet 's nachts moet ingeladen worden in de data warehouse). De voorwaarde hiervoor is dat alle benodigde data beschikbaar is binnen dat geïntegreerd systeem. Een voorbeeld van een in-memory databank is HANA, een technologie ontwikkelt door SAP.
+Door de komst van in-memory databanken merken we op dat een deel van de (operationele) rapportering opnieuw verhuist naar de transactionele databanken. Dit heeft enerzijds te maken met de snelheid van de databanken en anderzijds met het feit dat queries om operationele rapporten op te vragen gebruikelijk niet zo belastend zijn. Zo kan er gewerkt worden met \textbf{live data} (doordat deze niet 's nachts moet ingeladen worden in de data warehouse). De voorwaarde hiervoor is dat alle benodigde data beschikbaar is binnen dat geïntegreerd systeem. Een voorbeeld van een in-memory databank is HANA, een technologie ontwikkeld door SAP.
 
 \paragraph{Automatisering}
 Doordat alle rapporteringsnoden geautomatiseerd kunnen worden, heeft dit natuurlijk als voordeel dat personeelsleden deze niet meer manueel hoeven te maken/berekenen. Zo kunnen ze hun tijd spenderen aan andere prioriteiten. Deze data kan dan worden voorgesteld in een overzichtelijke omgeving (zie sectie \ref{sec:omgeving}). Bovendien zal er ook een kleinere kans zijn op fouten.
@@ -98,7 +98,7 @@ Wanneer men data wil verkrijgen/wijzigen in een OLTP systeem, moet er rekening g
 \begin{itemize}
 	\item \textbf{Atomic:} Wanneer een transactie afgebroken is, mag er niets gewijzigd zijn in de databank.
 	\item \textbf{Consistent:} Als een deel van de transactie faalt, zullen alle doorgevoerde wijzigingen in die transactie ongedaan gemaakt worden en zal de databank terugkeren naar een consistente staat.
-	\item \textbf{Isolated:} Transacties worden geïsoleerd, transacties mogen in geen enkel geval elkaar beïnvloeden.
+	\item \textbf{Isolated:} Transacties worden geïsoleerd, transacties mogen elkaar in geen enkel geval beïnvloeden.
 	\item \textbf{Durable:} Wanneer een transactie is doorgevoerd, kan deze niet meer ongedaan gemaakt worden.
 \end{itemize}  
 
@@ -122,7 +122,7 @@ Klassieke databanken bewaren hun gegevens op harde schijven en/of SSD's. Maar si
 
 \subsubsection{Data integratie software}
 \label{sec:etl}
-Het data inladen is een proces dat verantwoordelijkheid draagt voor de data integratie software, al is dat niet zijn enige verantwoordelijkheid. De software is verantwoordelijk voor het gehele ETL-proces (zie visualisatie \ref{fig:etl}):
+Het inladen van data is een proces dat verantwoordelijkheid draagt voor de data integratie software, al is dat niet zijn enige verantwoordelijkheid. De software is verantwoordelijk voor het gehele ETL-proces (zie figuur \ref{fig:etl}):
 
 \begin{itemize}
 	\item Extraction: Ophalen van de data vanuit de bron.
@@ -130,16 +130,18 @@ Het data inladen is een proces dat verantwoordelijkheid draagt voor de data inte
 	\item Load: De data wegschrijven naar de nieuwe bron.
 \end{itemize} 
 
+Voorbeelden van ETL-tools die beschikbaar zijn op de markt zijn: Microsoft SSIS, SAP HANA SDI, Oracle Data Integrator, IBM InfoSphere DataStage, ...
+
 \begin{figure}[h]
 	\centering
 	\includegraphics[scale=1]{../images/ETL.PNG}
-	\caption{Het ETL-proces}
+	\caption{Het ETL-proces (gemaakt via Microsoft Word).}
 	\label{fig:etl}
 \end{figure}
 
 \pagebreak
 
-\section{Dimensioneel modelleren via Kimball}
+\section{Dimensioneel modelleren}
 Wie consultant Business Intelligence is, heeft ongetwijfeld al gehoord van dimensioneel modelleren. Over de jaren heen is het als het ware een standaard geworden wanneer men een data warehouse wil ontwerpen. Dimensioneel modelleren heeft als voordeel dat het model niet complex is, dus gemakkelijk te begrijpen, zelf voor niet IT-opgeleide personen. Ook is er vaak een snel resultaat beschikbaar. In deze sectie zal het dimensioneel modelleren aan de hand van Kimball dieper bekeken worden. 
 
 
@@ -149,13 +151,13 @@ Bij het dimensioneel modelleren wordt het proces opgedeeld in 2 soorten lagen: d
 \begin{figure}[h]
 	\centering
 	\includegraphics[scale=0.8]{../images/dimmodel.PNG}
-	\caption{Architectuur van een data warehouse op basis van het dimensioneel modelleren.}
+	\caption{Architectuur van een data warehouse op basis van het dimensioneel modelleren (gemaakt via Microsoft Word).}
 	\label{fig:dimmodel}
 \end{figure}
 
 \subsubsection{Staging area}
 \label{sec:stagingarea}
-In deze laag wordt het ETL-proces toegepast. Eerst en vooral worden de data vanuit één of meerdere bronnen in de data warehouse geladen. Daarna wordt de data bewerkt en gemanipuleerd. Bijvoorbeeld records met bepaalde lege waarden weglaten. De data kwaliteit (zoals eerder aangekaart) is zeer belangrijk in een data warehouse. Het doel is om de toegekomen data consistent te maken en ervoor te zorgen dat de integriteit gewaarborgd blijft ~\autocite{Kimball2013}
+In deze laag wordt het ETL-proces toegepast. Eerst en vooral worden de data vanuit één of meerdere bronnen in de data warehouse geladen. Daarna wordt de data bewerkt en gemanipuleerd. Bijvoorbeeld records met bepaalde lege waarden weglaten. De data kwaliteit (zoals eerder aangekaart) is zeer belangrijk in een data warehouse. Het doel is om de opgehaalde data consistent te maken en ervoor te zorgen dat de integriteit gewaarborgd blijft ~\autocite{Kimball2013}
 
 \pagebreak
 
@@ -266,7 +268,7 @@ Bij een satellite vinden we minstens volgende attributen terug:
 	\item \textbf{Parent Hashkey (PK):} Als primaire sleutel van de entiteit worden alle business keys gehasht naar 1 sleutel samen met de naam van afkomst.
 	\item \textbf{LoadDate (PK):} Datum/tijdstip wanneer de record geëxtraheerd werd uit de bron.
 	\item \textbf{Record source:} Van welke databron is de record afkomstig?
-	\item \textbf{End load date:} Hierin wordt het moment geladen wanneer de entiteit niet meer gebruikt wordt (belangrijk voor het bewaren van de historiek). Wie vertrouwt is met het dimensioneel modelleren, kan dit vergelijken met het principe van slow changing dimensions.
+	\item \textbf{End load date:} Hierin wordt het moment geladen wanneer de entiteit niet meer gebruikt wordt (belangrijk voor het bewaren van de historiek). Wie vertrouwd is met het dimensioneel modelleren, kan dit vergelijken met het principe van slow changing dimensions.
 	\item \textbf{Hash difference:} Hierin worden alle dimensionele data samen gehasht naar 1 sleutel. Zo kan er makkelijk vergeleken worden of de nieuwe data wel degelijk een verandering is of niet.
 \end{itemize} 
 
@@ -290,7 +292,7 @@ Wanneer we zowel hubs, links als sattelites samengieten in één schema, bekomen
 	\label{fig:dvmod}
 \end{figure}
 
-Dit model heeft veel flexibiliteit te bieden. Enerzijds kan er gemakkelijk nieuwe hubs toevoegen door een nieuwe link te leggen. Ook kan heel gemakkelijk een nieuwe gegevensbron toevoegen, dit wordt gedaan door een nieuwe satellite toe te voegen aan een bestaande hub. 
+Dit model heeft veel flexibiliteit te bieden. Enerzijds kan men gemakkelijk nieuwe hubs toevoegen door een nieuwe link te leggen. Ook kan men heel gemakkelijk een nieuwe gegevensbron toevoegen, dit wordt gedaan door een nieuwe satellite toe te voegen aan een bestaande hub. 
 
 \section{Rapporteringsomgevingen}
 \label{sec:omgeving}
@@ -301,9 +303,9 @@ Een Key Performance Indicator (KPI) is een doelstelling uitgedrukt als een cijfe
 
 Een KPI moet opgesteld zijn aan de hand van het SMART-principe:
 \begin{itemize}
-	\item \textbf{Specifiek: } een KPI moet duidelijk geformuleerd worden.
+	\item \textbf{Specifiek: } Een KPI moet duidelijk geformuleerd worden.
 	\item \textbf{Meetbaar: } Er moet kunnen vastgesteld worden wanneer een doel bereikt is.
-	\item \textbf{Acceptabel:} Is de KPI acceptabel?
+	\item \textbf{Acceptabel:} Is de KPI haalbaar? 
 	\item \textbf{Realistisch: } Is het behalen van deze KPI realistisch?
 	\item \textbf{Tijdsgebonden: } Wanneer moet de KPI behaald worden?
 \end{itemize} 
@@ -318,13 +320,13 @@ Alle KPI's samen vormen de rapporteringsnoden op strategisch niveau.
 	\item \textbf{Connecteren naar databronnen:} kunnen gebruikers verbinden naar verschillende databronnen (ongestructureerde data, gestructureerde data, ..)?
 	\item \textbf{Beheer van metadata:} mogelijkheid aanbieden om te kunnen werken met metadata (zoeken, opslaan, herstellen, ...).
 	\item \textbf{Opslag en laden:} mogelijkheden voor het integreren, transformeren en het laden van gegevens.
-	\item \textbf{Voorbereiden van gegevens:}  op welke manieren is het voorbereiden van gegevens mogelijk? Kan er gebruikt worden van machine learning hierbij?
-	\item \textbf{Schaalbaarheid:} hoe wordt er omgegaan met enorme volume data, complexe datamodellen, zijn de prestaties geoptimaliseerd, en hoe gaat de omgeving om met veel gebruikers?
+	\item \textbf{Voorbereiden van gegevens:}  op welke manieren is het voorbereiden van gegevens mogelijk? Kan er gebruik gemaakt worden van machine learning?
+	\item \textbf{Schaalbaarheid:} hoe wordt er omgegaan met enorme volumes data, complexe datamodellen, zijn de prestaties geoptimaliseerd, en hoe gaat de omgeving om met veel gebruikers?
 	\item \textbf{Geavanceerde analyses voor data scientists:} Zijn de geavanceerde analytische mogelijkheden makkelijk beschikbaar of moet er externe ontwikkelde software geïmplementeerd worden?
 	\item \textbf{Dashboards:} De mogelijkheid om interactieve dashboards te creëren, is werken met geo-informatie mogelijk?
 	\item \textbf{Verkennen:} kunnen gebruikers data analyseren en manipuleren door te werken met een interactieve presentatie van die gegevens?
 	\item \textbf{Augmented data ontdekken:} kan data ontdekt worden door natural language query (NLQ) technologie? Kan het automatisch uitzonderingen, clusters, links en voorspellingen vinden en visualiseren?
-	\item \textbf{Invoeren van Analytics in externe applicaties:} kunnen deze dashboards of visualiseringen in een andere omgeving makkelijk worden ingevoerd?
+	\item \textbf{Invoeren van Analytics in externe applicaties:} kunnen deze dashboards of visualiseringen makkelijk in een andere omgeving worden ingevoerd?
 	\item \textbf{Publiceren, delen en samenwerken: } kunnen gebruikers de inhoud publiceren, delen of samenwerken met anderen om visualisaties te realiseren of bekijken?
 	\item \textbf{Gebruiksgemak, visuele aantrekkelijkheid en de integratie van de workflow:} is het platvorm makkelijk te gebruiken en beheren? Kan de data visueel aantrekkelijk voorgesteld worden? Kan de tool makkelijk geïmplementeerd worden in huidige workflow?
 \end{itemize} 
@@ -343,7 +345,7 @@ In deze literatuurstudie bekijken we enkel de mogelijkheden die 2 grootmachten i
 \subsection{SAP Analytics Cloud}
 Bij SAP Analytics Cloud kan er gebruik gemaakt worden van realtime analytics. Hiervoor is live data nodig en deze wordt opgehaald in het transactionele systeem. Indien gewenst, kan er toch nog steeds gewerkt worden met een batch die 's nachts geladen wordt. 
 
-Analytics cloud biedt heel veel mogelijkheden om interactieve dashboards te ontwerpen. Waar SAP Analytics Cloud zich onderscheidt met de andere spelers, is dat er in deze omgeving planning kan worden toegepast. Er kunnen budgetten opgesteld worden voor de komende jaren (bijvoorbeeld IT-kosten), en deze kunnen dan vergeleken worden met de actuele kosten op dat momenten. 
+Analytics cloud biedt heel veel mogelijkheden om interactieve dashboards te ontwerpen. Waar SAP Analytics Cloud zich onderscheidt met de andere spelers, is dat er in deze omgeving planning kan worden toegepast. Er kunnen budgetten opgesteld worden voor de komende jaren (bijvoorbeeld IT-kosten), en deze kunnen dan vergeleken worden met de actuele kosten op dat moment. 
 
 \begin{figure}[h]
 	\centering

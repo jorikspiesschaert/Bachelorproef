@@ -1,18 +1,20 @@
 [0] Config.pm:304> INFO - This is Biber 2.12
 [0] Config.pm:307> INFO - Logfile is 'bachproef-tin.blg'
-[29] biber-MSWIN64:315> INFO - === 
-[53] Biber.pm:371> INFO - Reading 'bachproef-tin.bcf'
-[146] Biber.pm:889> INFO - Found 9 citekeys in bib section 0
-[160] Biber.pm:4093> INFO - Processing section 0
-[174] Biber.pm:4254> INFO - Looking for bibtex format file 'bachproef-tin.bib' for section 0
-[176] bibtex.pm:1523> INFO - LaTeX decoding ...
-[188] bibtex.pm:1340> INFO - Found BibTeX data source 'bachproef-tin.bib'
-[217] Biber.pm:4254> INFO - Looking for bibtex format file '../voorstel/voorstel.bib' for section 0
-[220] bibtex.pm:1523> INFO - LaTeX decoding ...
-[223] bibtex.pm:1340> INFO - Found BibTeX data source '../voorstel/voorstel.bib'
-[252] UCollate.pm:68> INFO - Overriding locale 'nl-NL' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[252] UCollate.pm:68> INFO - Overriding locale 'nl-NL' defaults 'variable = shifted' with 'variable = non-ignorable'
-[252] Biber.pm:3921> INFO - Sorting list 'apa/global//global/global' of type 'entry' with template 'apa' and locale 'nl-NL'
-[252] Biber.pm:3927> INFO - No sort tailoring available for locale 'nl-NL'
-[261] bbl.pm:636> INFO - Writing 'bachproef-tin.bbl' with encoding 'UTF-8'
-[267] bbl.pm:739> INFO - Output to bachproef-tin.bbl
+[30] biber-MSWIN64:315> INFO - === 
+[60] Biber.pm:371> INFO - Reading 'bachproef-tin.bcf'
+[155] Biber.pm:886> INFO - Using all citekeys in bib section 0
+[172] Biber.pm:4093> INFO - Processing section 0
+[186] Biber.pm:4254> INFO - Looking for bibtex format file 'bachproef-tin.bib' for section 0
+[189] bibtex.pm:1523> INFO - LaTeX decoding ...
+[208] bibtex.pm:1340> INFO - Found BibTeX data source 'bachproef-tin.bib'
+[278] Utils.pm:193> WARN - BibTeX subsystem: C:\Users\Owner\AppData\Local\Temp\TliztzBDjn\bachproef-tin.bib_16108.utf8, line 3, warning: 10 characters of junk seen at toplevel
+[280] Biber.pm:4254> INFO - Looking for bibtex format file '../voorstel/voorstel.bib' for section 0
+[286] bibtex.pm:1523> INFO - LaTeX decoding ...
+[290] bibtex.pm:1340> INFO - Found BibTeX data source '../voorstel/voorstel.bib'
+[333] UCollate.pm:68> INFO - Overriding locale 'nl-NL' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[333] UCollate.pm:68> INFO - Overriding locale 'nl-NL' defaults 'variable = shifted' with 'variable = non-ignorable'
+[333] Biber.pm:3921> INFO - Sorting list 'apa/global//global/global' of type 'entry' with template 'apa' and locale 'nl-NL'
+[333] Biber.pm:3927> INFO - No sort tailoring available for locale 'nl-NL'
+[350] bbl.pm:636> INFO - Writing 'bachproef-tin.bbl' with encoding 'UTF-8'
+[362] bbl.pm:739> INFO - Output to bachproef-tin.bbl
+[362] Biber.pm:110> INFO - WARNINGS: 1

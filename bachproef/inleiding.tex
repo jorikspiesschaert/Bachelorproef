@@ -4,7 +4,7 @@
 
 \chapter{Inleiding}
 \label{ch:inleiding}
-Beslissingen genomen door het management worden vaak ondersteund op basis van data en rapporteringen. Bij sommige bedrijven worden de benodigde data nog steeds manueel uitgerekend. Deze methodologie heeft enkele nadelen: kans op fouten, tijdrovend, ... Bedrijven die dit proces willen automatiseren en digitaliseren moeten hiervoor een data warehouse opbouwen. Data afkomstig uit verschillende bronnen worden dan ingeladen in één centrale plaats. Op basis van de data afkomstig uit een data warehouse kan een rapporteringsomgeving de data visualiseren, dashboards en rapporteringen opmaken. Het is gebruikelijk dat het datamodel in een data warehouse opgebouwd wordt aan de hand van een dimensioneel model. Dit kan ook gebeuren aan de hand van een ander model, genaamd Data Vault. 
+Beslissingen genomen door het management worden vaak gemaakt op basis en ondersteund door van data en rapporteringen. Bij sommige bedrijven worden de benodigde data nog steeds manueel uitgerekend. Deze methodologie heeft enkele nadelen: kans op fouten, tijdrovend, ... Bedrijven die dit proces willen automatiseren en digitaliseren moeten hiervoor een data warehouse opbouwen. Data afkomstig uit verschillende bronnen worden dan ingeladen in één centrale plaats. Op basis van de data afkomstig uit een data warehouse kan een rapporteringsomgeving de data visualiseren, dashboards en rapporteringen opmaken. Het is gebruikelijk dat het datamodel in een data warehouse opgebouwd wordt aan de hand van een dimensioneel model. Dit kan ook gebeuren aan de hand van een ander model, genaamd Data Vault. 
 
 Bij DHL Pharma Logistics wordt een data warehouse opgebouwd aan de hand van het Data Vault model. Maar waar zitten de verschillen bij Data Vault in vergelijking met het dimensioneel model? Was de keuze voor Data Vault bij het modelleren van de data warehouse juist voor DHL Pharma Logistics?
 
@@ -13,11 +13,11 @@ Bij DHL Pharma Logistics wordt een data warehouse opgebouwd aan de hand van het 
 \section{Probleemstelling}
 \label{sec:probleemstelling}
 
-Wie interesse heeft in Business Intelligence of modelleren van data, is ongetwijfeld al in aanraking gekomen met het dimensioneel model. Maar dit is heus niet de enigste techniek die beschikbaar is voor het modelleren van datamodellen. Data Vault 2.0 werd al geïmplementeerd bij bedrijven zoals IBM, Oracle en ING. Wat zouden de redenen kunnen zijn waarom deze bedrijven kiezen voor Data Vault? Met welke elementen onderscheidt Data Vault zich ten opzichte van het dimensioneel model? Dit onderzoek is gericht naar BI consultants en alle belanghebbenden.
+Wie interesse heeft in Business Intelligence of modelleren van data, is ongetwijfeld al in aanraking gekomen met het dimensioneel model. Maar dit is heus niet de enige techniek die beschikbaar is voor het modelleren van datamodellen. Data Vault 2.0 werd al geïmplementeerd bij bedrijven zoals IBM, Oracle en ING. Wat zouden de redenen kunnen zijn waarom deze bedrijven kiezen voor Data Vault? Met welke elementen onderscheidt Data Vault zich ten opzichte van het dimensioneel model? Dit onderzoek is gericht naar BI consultants en alle belanghebbenden.
 
 \section{Onderzoeksvraag}
 \label{sec:onderzoeksvraag}
-In dit onderzoek wordt een vergelijkende studie uitgevoerd tussen het dimensioneel modelleren en Data Vault 2.0, dit toegepast op een case bij DHL Pharma Logistics. Er wordt onderzocht waar de verschillen zitten bij het modelleren met Data Vault 2.0 en het dimensioneel modelleren. Er zal een antwoord trachten gevonden te worden op volgende deelvragen:
+In dit onderzoek wordt een vergelijkende studie uitgevoerd tussen het dimensioneel modelleren en Data Vault 2.0, toegepast op een case bij DHL Pharma Logistics. Er wordt onderzocht waar de verschillen zitten bij het modelleren met Data Vault 2.0 en het dimensioneel modelleren. Er zal een antwoord trachten gevonden te worden op volgende deelvragen:
 
 \begin{itemize}
 	\item \textbf{Performantie:} is er een significant verschil tussen de performantie tussen beide modellen?
@@ -30,7 +30,7 @@ In dit onderzoek wordt een vergelijkende studie uitgevoerd tussen het dimensione
 
 \section{Onderzoeksdoelstelling}
 \label{sec:onderzoeksdoelstelling}
-DHL Pharma Logistics wil een data warehouse ontwerpen voor hun rapporteringen te kunnen automatiseren. De data warehouse zal gemodelleerd worden via Data Vault. De vraag is echter of dit een juiste beslissing was. De andere mogelijkheid was om de data warehouse te ontwerpen via het dimensioneel ontwerpen. 
+DHL Pharma Logistics wil een data warehouse ontwerpen om hun rapporteringen te automatiseren. De data warehouse zal gemodelleerd worden via Data Vault 2.0. In dit onderzoek zal bewezen worden als het dimensioneel model hier een betere keuze was geweest.
 
 \section{Opzet van deze bachelorproef}
 \label{sec:opzet-bachelorproef}
@@ -43,9 +43,9 @@ De rest van deze bachelorproef is als volgt opgebouwd:
 
 In hoofdstuk~\ref{ch:stand-van-zaken} wordt een overzicht gegeven van de stand van zaken binnen het onderzoeksdomein, op basis van een literatuurstudie.
 
-In hoofdstuk~\ref{ch:methodologie} wordt de methodologie toegelicht en worden de gebruikte onderzoekstechnieken besproken om een antwoord te kunnen formuleren op de onderzoeksvragen.
+In hoofdstuk~\ref{ch:voorbereidingonderzoek} wordt beschreven wat de benodigdheden zijn voor dit onderzoek en worden twee data warehouses stap voor stap opgebouwd. Er zal een data warehouse gebaseerd op het dimensioneel model, de andere data warehouse gebaseerd op Data Vault. Het ETL-proces (\ref{sec:etl}) wordt neergepend in deze paper voor zowel Data Vault als voor het dimensioneel model.
 
-% TODO: Vul hier aan voor je eigen hoofstukken, één of twee zinnen per hoofdstuk
+In hoofdstuk~\ref{ch:vergelijkendonderzoek} zal een vergelijkend onderzoek gevoerd worden tussen Data Vault en het dimensioneel model. De onderzoeksvraag en deelvragen worden in dit hoofdstuk beantwoord.
 
-In Hoofdstuk~\ref{ch:conclusie}, tenslotte, wordt de conclusie gegeven en een antwoord geformuleerd op de onderzoeksvragen. Daarbij wordt ook een aanzet gegeven voor toekomstig onderzoek binnen dit domein.
+In hoofdstuk~\ref{ch:conclusie}, tenslotte, wordt de conclusie gegeven en een antwoord geformuleerd op de onderzoeksvragen. Daarbij wordt ook een aanzet gegeven voor toekomstig onderzoek binnen dit domein.
 

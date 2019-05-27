@@ -1,16 +1,17 @@
 % Encoding: UTF-8
-
+\nocite{*}
 @PhdThesis{Panos2000,
   author = {Panos Vassiliadis},
-  title  = {Data Warehouse Modeling and Quality Issues},
-  school = {NATIONAL TECHNICAL UNIVERSITY OF ATHENS},
+  title  = {Data warehouse modeling and quality issues},
+  school = {National technical Univesity of Athen},
   year   = {2000},
 }
 
-@Article{Helfert2002,
-  author = {Markus Helfert and Gregor Zellner and Carlos Sousa},
-  title  = {Data quality problems and proactive data quality management in data-warehouse-systems},
-  year   = {2002},
+@TechReport{Helfert2002,
+  author      = {Markus Helfert and Gregor Zellner and Carlos Sousa},
+  title       = {Data quality problems and proactive data quality management in data-warehouse-systems},
+  institution = {University of St. Gallen and University College Dublin},
+  year        = {2002},
 }
 
 @Article{Satyanarayana2010,
@@ -20,10 +21,11 @@
   year    = {2010},
 }
 
-@Article{Langseth2005,
-  author = {Justin Langseth and Nithi Vivatrat and Gene Sohn},
-  title  = {Schema and ETL tools for structured and unstructured data},
-  year   = {2005},
+@TechReport{Langseth2005,
+  author      = {Justin Langseth and Nithi Vivatrat and Gene Sohn},
+  title       = {Schema and ETL tools for structured and unstructured data},
+  institution = {Clarabridge},
+  year        = {2005},
 }
 
 @Book{Linstedt2016,
@@ -46,6 +48,56 @@
   title       = {Magic quadrant for analytics and business intelligence platforms},
   institution = {Gartner},
   year        = {2019},
+}
+
+@Book{Inmon2005,
+  title     = {Building the Data Warehouse},
+  publisher = {Wiley Publishing Inc},
+  year      = {2005},
+  author    = {William H. Inmon},
+}
+
+@TechReport{Gupta1995,
+  author      = {Ashish Gupta and Venky Harinarayan and Dallan Quass},
+  title       = {Aggregate-query processing in data Warehousing environments},
+  institution = {IBM Almaden Research Center and Stanford University},
+  year        = {1995},
+}
+
+@Book{Inmon2015,
+  title     = {Data Architecture: A Primer for the Data Scientist},
+  publisher = {Morgan Kaufmann},
+  year      = {2015},
+  author    = {William Inmon and Daniel Linstedt},
+  editor    = {Kaitlin Herbert},
+}
+
+@TechReport{Jovanovic2012,
+  author      = {Vladan Jovanovic and Ivan Bojicic},
+  title       = {Conceptual Data Vault Model},
+  institution = {Georgia Southern University and Belgrade University},
+  year        = {2012},
+}
+
+@TechReport{Kortink2000,
+  author      = {Daniel L. Moody \& Mark A.R. Kortink},
+  title       = {From enterprise models to dimensional models: a methodology for data warehouse and data mart design},
+  institution = {University of Melbourne},
+  year        = {2000},
+}
+
+@Article{Krneta2014,
+  author  = {Dragoljub Krneta and Vladan Jovanović and Zoran Marjanović},
+  title   = {A direct approach to physical Data Vault design},
+  journal = {Computer Science and Information Systems 11},
+  year    = {2014},
+}
+
+@Article{McAfee2012,
+  author  = {Andrew McAfee and Erik Brynjolfsson},
+  title   = {Big data: the management revolution},
+  journal = {Harvard Business Review},
+  year    = {2012},
 }
 
 @Comment{jabref-meta: databaseType:bibtex;}

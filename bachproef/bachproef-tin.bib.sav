@@ -102,7 +102,7 @@
 
 @TechReport{Buneman1997,
   author      = {Peter Buneman},
-  title       = {Semistructured data},
+  title       = {Semistructured Data},
   institution = {University of Pennsylvania},
   year        = {1997},
 }
