@@ -2146,30 +2146,32 @@
     <bcf:datasource type="file" datatype="bibtex">../voorstel/voorstel.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
-    <bcf:citekey order="13">Langseth2005</bcf:citekey>
-    <bcf:citekey order="14">Inmon2005</bcf:citekey>
-    <bcf:citekey order="15">Helfert2002</bcf:citekey>
-    <bcf:citekey order="16">Satyanarayana2010</bcf:citekey>
-    <bcf:citekey order="17">Satyanarayana2010</bcf:citekey>
-    <bcf:citekey order="18">Kimball2013</bcf:citekey>
-    <bcf:citekey order="19">Kimball2013</bcf:citekey>
+    <bcf:citekey order="13">Buneman1997</bcf:citekey>
+    <bcf:citekey order="14">Langseth2005</bcf:citekey>
+    <bcf:citekey order="15">McAfee2012</bcf:citekey>
+    <bcf:citekey order="16">Inmon2005</bcf:citekey>
+    <bcf:citekey order="17">Helfert2002</bcf:citekey>
+    <bcf:citekey order="18">Satyanarayana2010</bcf:citekey>
+    <bcf:citekey order="19">Satyanarayana2010</bcf:citekey>
     <bcf:citekey order="20">Kimball2013</bcf:citekey>
     <bcf:citekey order="21">Kimball2013</bcf:citekey>
     <bcf:citekey order="22">Kimball2013</bcf:citekey>
     <bcf:citekey order="23">Kimball2013</bcf:citekey>
-    <bcf:citekey order="24">Linstedt2016</bcf:citekey>
-    <bcf:citekey order="25">Linstedt2016</bcf:citekey>
-    <bcf:citekey order="26">Stroobants2018</bcf:citekey>
-    <bcf:citekey order="27">Linstedt2016</bcf:citekey>
-    <bcf:citekey order="28">Linstedt2016</bcf:citekey>
+    <bcf:citekey order="24">Kimball2013</bcf:citekey>
+    <bcf:citekey order="25">Kimball2013</bcf:citekey>
+    <bcf:citekey order="26">Linstedt2016</bcf:citekey>
+    <bcf:citekey order="27">Krneta2014</bcf:citekey>
+    <bcf:citekey order="28">Stroobants2018</bcf:citekey>
     <bcf:citekey order="29">Linstedt2016</bcf:citekey>
     <bcf:citekey order="30">Linstedt2016</bcf:citekey>
     <bcf:citekey order="31">Linstedt2016</bcf:citekey>
-    <bcf:citekey order="32">Gartner2019</bcf:citekey>
-    <bcf:citekey order="33">Gartner2019</bcf:citekey>
-    <bcf:citekey order="34">Linstedt2015</bcf:citekey>
-    <bcf:citekey order="35">Stroobants2018</bcf:citekey>
-    <bcf:citekey order="36">Jukic2006</bcf:citekey>
+    <bcf:citekey order="32">Linstedt2016</bcf:citekey>
+    <bcf:citekey order="33">Linstedt2016</bcf:citekey>
+    <bcf:citekey order="34">Gartner2019</bcf:citekey>
+    <bcf:citekey order="35">Gartner2019</bcf:citekey>
+    <bcf:citekey order="36">Linstedt2015</bcf:citekey>
+    <bcf:citekey order="37">Stroobants2018</bcf:citekey>
+    <bcf:citekey order="38">Jukic2006</bcf:citekey>
     <bcf:citekey order="0" nocite="1">*</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->

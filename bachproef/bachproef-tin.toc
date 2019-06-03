@@ -1,227 +1,235 @@
 \boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
 \babel@toc {dutch}{}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {1}Inleiding}{15}{chapter.1}% 
+\contentsline {chapter}{\numberline {1}Inleiding}{15}{chapter.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.1}Probleemstelling}{15}{section.1.1}% 
+\contentsline {section}{\numberline {1.1}Probleemstelling}{15}{section.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.2}Onderzoeksvraag}{16}{section.1.2}% 
+\contentsline {section}{\numberline {1.2}Onderzoeksvraag}{16}{section.1.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.3}Onderzoeksdoelstelling}{16}{section.1.3}% 
+\contentsline {section}{\numberline {1.3}Onderzoeksdoelstelling}{16}{section.1.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.4}Opzet van deze bachelorproef}{16}{section.1.4}% 
+\contentsline {section}{\numberline {1.4}Opzet van deze bachelorproef}{16}{section.1.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {2}Stand van zaken}{19}{chapter.2}% 
+\contentsline {chapter}{\numberline {2}Stand van zaken}{19}{chapter.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.1}Inleiding data warehousing}{19}{section.2.1}% 
+\contentsline {section}{\numberline {2.1}Inleiding data warehousing}{19}{section.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.1.1}Soorten data}{20}{subsection.2.1.1}% 
+\contentsline {subsection}{\numberline {2.1.1}Soorten data}{20}{subsection.2.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Gestructureerde data}{20}{section*.6}% 
+\contentsline {subsubsection}{Gestructureerde data}{20}{section*.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Semi-gestructureerde data}{20}{section*.7}% 
+\contentsline {subsubsection}{Semi-gestructureerde data}{20}{section*.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Ongestructureerde data}{20}{section*.8}% 
+\contentsline {subsubsection}{Ongestructureerde data}{20}{section*.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.1.2}Wat is een data warehouse?}{20}{subsection.2.1.2}% 
+\contentsline {subsection}{\numberline {2.1.2}Wat is een data warehouse?}{20}{subsection.2.1.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Subject-geori\IeC {\"e}nteerd}{21}{section*.9}% 
+\contentsline {paragraph}{Subject-geori\IeC {\"e}nteerd}{21}{section*.9}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Ge\IeC {\"\i }ntegreerd}{21}{section*.10}% 
+\contentsline {paragraph}{Ge\IeC {\"\i }ntegreerd}{21}{section*.10}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Tijd-variant}{21}{section*.11}% 
+\contentsline {paragraph}{Tijd-variant}{21}{section*.11}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Niet-vluchtig}{21}{section*.12}% 
+\contentsline {paragraph}{Niet-vluchtig}{21}{section*.12}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Conclusie}{21}{section*.13}% 
+\contentsline {paragraph}{Conclusie}{21}{section*.13}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.1.3}Waarom is er nood aan een data warehouse?}{21}{subsection.2.1.3}% 
+\contentsline {subsection}{\numberline {2.1.3}Waarom is er nood aan een data warehouse?}{21}{subsection.2.1.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.1.4}Wat is het doel van een data warehouse?}{22}{subsection.2.1.4}% 
+\contentsline {subsection}{\numberline {2.1.4}Wat is het doel van een data warehouse?}{22}{subsection.2.1.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Data kwaliteit}{22}{section*.14}% 
+\contentsline {paragraph}{Data kwaliteit}{22}{section*.14}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Performantie}{22}{section*.15}% 
+\contentsline {paragraph}{Performantie}{22}{section*.15}
 \defcounter {refsection}{0}\relax 
-\contentsline {subparagraph}{De toekomst}{23}{section*.16}% 
+\contentsline {subparagraph}{De toekomst}{23}{section*.16}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Automatisering}{23}{section*.17}% 
+\contentsline {paragraph}{Automatisering}{23}{section*.17}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.1.5}Wat is OLTP en wat zijn de verschillen met OLAP?}{23}{subsection.2.1.5}% 
+\contentsline {subsection}{\numberline {2.1.5}Wat is OLTP en wat zijn de verschillen met OLAP?}{23}{subsection.2.1.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Inhoudelijk}{23}{section*.18}% 
+\contentsline {paragraph}{Inhoudelijk}{23}{section*.18}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Toegankelijkheid}{23}{section*.19}% 
+\contentsline {paragraph}{Toegankelijkheid}{23}{section*.19}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.1.6}Wat zijn de benodigdheden voor een data warehouse?}{24}{subsection.2.1.6}% 
+\contentsline {subsection}{\numberline {2.1.6}Wat zijn de benodigdheden voor een data warehouse?}{24}{subsection.2.1.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{RDBMS}{24}{section*.20}% 
+\contentsline {subsubsection}{RDBMS}{24}{section*.20}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Data integratie software}{24}{section*.21}% 
+\contentsline {subsubsection}{Data integratie software}{24}{section*.21}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.2}Dimensioneel modelleren}{25}{section.2.2}% 
+\contentsline {section}{\numberline {2.2}Dimensioneel modelleren}{25}{section.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.2.1}Architectuur}{25}{subsection.2.2.1}% 
+\contentsline {subsection}{\numberline {2.2.1}Architectuur}{25}{subsection.2.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Staging area}{25}{section*.22}% 
+\contentsline {subsubsection}{Staging area}{25}{section*.22}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Data warehouselaag}{26}{section*.23}% 
+\contentsline {subsubsection}{Data warehouselaag}{27}{section*.23}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.2.2}Componenten}{26}{subsection.2.2.2}% 
+\contentsline {subsection}{\numberline {2.2.2}Componenten}{27}{subsection.2.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Dimension tabel}{26}{section*.24}% 
+\contentsline {subsubsection}{Dimension tabel}{27}{section*.24}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Fact tabel}{27}{section*.25}% 
+\contentsline {subsubsection}{Fact tabel}{27}{section*.25}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Ster schema}{27}{section*.26}% 
+\contentsline {subsubsection}{Ster schema}{27}{section*.26}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Verschil tussen een sterschema en een OLAP-cube}{27}{section*.27}% 
+\contentsline {subsubsection}{Verschil tussen een sterschema en een OLAP-cube}{28}{section*.27}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.3}Modelleren via Data Vault 2.0}{28}{section.2.3}% 
+\contentsline {section}{\numberline {2.3}Modelleren via Data Vault 2.0}{29}{section.2.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.3.1}Architectuur}{28}{subsection.2.3.1}% 
+\contentsline {subsection}{\numberline {2.3.1}Architectuur}{29}{subsection.2.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Staging area}{28}{section*.28}% 
+\contentsline {subsubsection}{Staging area}{29}{section*.28}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Raw data vault}{28}{section*.29}% 
+\contentsline {subsubsection}{Raw data vault}{29}{section*.29}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Business vault}{29}{section*.30}% 
+\contentsline {subsubsection}{Business vault}{30}{section*.30}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Information marts}{29}{section*.31}% 
+\contentsline {subsubsection}{Information marts}{30}{section*.31}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.3.2}Componenten}{29}{subsection.2.3.2}% 
+\contentsline {subsection}{\numberline {2.3.2}Componenten}{30}{subsection.2.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Hubs}{30}{section*.32}% 
+\contentsline {subsubsection}{Hubs}{30}{section*.32}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Links}{30}{section*.33}% 
+\contentsline {subsubsection}{Links}{31}{section*.33}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Sattelites}{31}{section*.34}% 
+\contentsline {subsubsection}{Sattelites}{31}{section*.34}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Data Vault schema}{31}{section*.35}% 
+\contentsline {subsubsection}{Data Vault schema}{32}{section*.35}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.4}Rapporteringsomgevingen}{32}{section.2.4}% 
+\contentsline {section}{\numberline {2.4}Rapporteringsomgevingen}{33}{section.2.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.4.1}Wat is een KPI?}{32}{subsection.2.4.1}% 
+\contentsline {subsection}{\numberline {2.4.1}Wat is een KPI?}{33}{subsection.2.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.4.2}Het magische kwadrant}{33}{subsection.2.4.2}% 
+\contentsline {subsection}{\numberline {2.4.2}Het magische kwadrant}{33}{subsection.2.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.4.3}SAP Analytics Cloud}{34}{subsection.2.4.3}% 
+\contentsline {subsection}{\numberline {2.4.3}SAP Analytics Cloud}{35}{subsection.2.4.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.4.4}Power BI}{34}{subsection.2.4.4}% 
+\contentsline {subsection}{\numberline {2.4.4}Power BI}{36}{subsection.2.4.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {3}Opzet van het onderzoek}{37}{chapter.3}% 
+\contentsline {chapter}{\numberline {3}Opzet van het onderzoek}{39}{chapter.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.1}Rapporteringsnood DHL Pharma Logistics}{37}{section.3.1}% 
+\contentsline {section}{\numberline {3.1}Rapporteringsnood DHL Pharma Logistics}{39}{section.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.1.1}Context}{37}{subsection.3.1.1}% 
+\contentsline {subsection}{\numberline {3.1.1}Context}{39}{subsection.3.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.1.2}Dock-to-Stock proces}{38}{subsection.3.1.2}% 
+\contentsline {subsection}{\numberline {3.1.2}Dock-to-Stock proces}{40}{subsection.3.1.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Dock-to-Stock onderworpen aan het SMART-principe}{38}{section*.36}% 
+\contentsline {subsubsection}{Dock-to-Stock onderworpen aan het SMART-principe}{40}{section*.36}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.1.3}De formule voor het berekenen van de KPI}{38}{subsection.3.1.3}% 
+\contentsline {subsection}{\numberline {3.1.3}De formule voor het berekenen van de KPI}{40}{subsection.3.1.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.1.4}Hoe moet deze KPI bekeken kunnen worden?}{38}{subsection.3.1.4}% 
+\contentsline {subsection}{\numberline {3.1.4}Hoe moet deze KPI bekeken kunnen worden?}{40}{subsection.3.1.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.1.5}Benodigde data}{38}{subsection.3.1.5}% 
+\contentsline {subsection}{\numberline {3.1.5}Benodigde data}{40}{subsection.3.1.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.2}Betekenis van de brondata}{39}{section.3.2}% 
+\contentsline {section}{\numberline {3.2}Betekenis van de brondata}{41}{section.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.1}Overzicht betekenissen}{39}{subsection.3.2.1}% 
+\contentsline {subsection}{\numberline {3.2.1}Overzicht betekenissen}{41}{subsection.3.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.3}Gebruikte technologie\IeC {\"e}n in dit experiment}{41}{section.3.3}% 
+\contentsline {section}{\numberline {3.3}Gebruikte technologie\IeC {\"e}n in dit experiment}{43}{section.3.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.4}Overzicht van de connectie tussen SAP HANA en de host}{42}{section.3.4}% 
+\contentsline {section}{\numberline {3.4}Overzicht van de connectie tussen SAP HANA en de host}{44}{section.3.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.5}Opzetten van een remote source}{42}{section.3.5}% 
+\contentsline {section}{\numberline {3.5}Opzetten van een remote source}{44}{section.3.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.6}Data Vault: data warehousing}{44}{section.3.6}% 
+\contentsline {section}{\numberline {3.6}Data Vault: data warehousing}{46}{section.3.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.6.1}Overzicht datamodel}{44}{subsection.3.6.1}% 
+\contentsline {subsection}{\numberline {3.6.1}Overzicht datamodel}{46}{subsection.3.6.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.6.2}Staging area}{44}{subsection.3.6.2}% 
+\contentsline {subsection}{\numberline {3.6.2}Staging area}{46}{subsection.3.6.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.6.3}Opbouw raw Data Vault}{45}{subsection.3.6.3}% 
+\contentsline {subsection}{\numberline {3.6.3}Opbouw raw Data Vault}{47}{subsection.3.6.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Inladen van data bij een sattelite}{45}{section*.37}% 
+\contentsline {subsubsection}{Inladen van data bij een sattelite}{47}{section*.37}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Inladen van data bij een hub}{46}{section*.38}% 
+\contentsline {subsubsection}{Inladen van data bij een hub}{48}{section*.38}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Inladen van data bij een link}{47}{section*.39}% 
+\contentsline {subsubsection}{Inladen van data bij een link}{49}{section*.39}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.6.4}Opbouw business vault}{47}{subsection.3.6.4}% 
+\contentsline {subsection}{\numberline {3.6.4}Opbouw business vault}{49}{subsection.3.6.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.6.5}Opbouw data mart}{47}{subsection.3.6.5}% 
+\contentsline {subsection}{\numberline {3.6.5}Opbouw data mart}{49}{subsection.3.6.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.7}Dimensioneel model: data warehousing}{48}{section.3.7}% 
+\contentsline {section}{\numberline {3.7}Dimensioneel model: data warehousing}{50}{section.3.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.7.1}Overzicht datamodel}{48}{subsection.3.7.1}% 
+\contentsline {subsection}{\numberline {3.7.1}Overzicht datamodel}{50}{subsection.3.7.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.7.2}Staging area}{48}{subsection.3.7.2}% 
+\contentsline {subsection}{\numberline {3.7.2}Staging area}{50}{subsection.3.7.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.7.3}Opbouw data warehouselaag}{49}{subsection.3.7.3}% 
+\contentsline {subsection}{\numberline {3.7.3}Opbouw data warehouselaag}{51}{subsection.3.7.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Dimensions}{49}{section*.40}% 
+\contentsline {subsubsection}{Dimensions}{51}{section*.40}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Facts}{50}{section*.41}% 
+\contentsline {subsubsection}{Facts}{52}{section*.41}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.7.4}Opbouw data mart}{51}{subsection.3.7.4}% 
+\contentsline {subsection}{\numberline {3.7.4}Opbouw data mart}{53}{subsection.3.7.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {4}Vergelijkend Onderzoek}{53}{chapter.4}% 
+\contentsline {chapter}{\numberline {4}Vergelijkend Onderzoek}{55}{chapter.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.1}Performantie}{53}{section.4.1}% 
+\contentsline {section}{\numberline {4.1}Performantie}{55}{section.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.1.1}Procedure}{54}{subsection.4.1.1}% 
+\contentsline {subsection}{\numberline {4.1.1}Procedure}{56}{subsection.4.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.1.2}Resultaten}{58}{subsection.4.1.2}% 
+\contentsline {subsection}{\numberline {4.1.2}Resultaten}{60}{subsection.4.1.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.1.3}Analyse van de resultaten}{60}{subsection.4.1.3}% 
+\contentsline {subsection}{\numberline {4.1.3}Analyse van de resultaten}{61}{subsection.4.1.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Conclusie}{61}{section*.42}% 
+\contentsline {subsubsection}{Conclusie}{62}{section*.42}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.2}Complexiteit}{61}{section.4.2}% 
+\contentsline {section}{\numberline {4.2}Complexiteit}{63}{section.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.3}Flexibiliteit}{62}{section.4.3}% 
+\contentsline {section}{\numberline {4.3}Flexibiliteit}{64}{section.4.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.4}Schaalbaarheid}{64}{section.4.4}% 
+\contentsline {section}{\numberline {4.4}Schaalbaarheid}{66}{section.4.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.5}Audit}{65}{section.4.5}% 
+\contentsline {subsection}{\numberline {4.4.1}Procedure}{66}{subsection.4.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.6}Overzicht}{65}{section.4.6}% 
+\contentsline {subsection}{\numberline {4.4.2}Resultaten}{69}{subsection.4.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {5}Conclusie}{67}{chapter.5}% 
+\contentsline {subsection}{\numberline {4.4.3}Analyse van de resultaten}{71}{subsection.4.4.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {A}Onderzoeksvoorstel}{69}{appendix.A}% 
+\contentsline {subsection}{\numberline {4.4.4}Conclusie}{71}{subsection.4.4.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.1}Introductie}{69}{section.A.1}% 
+\contentsline {section}{\numberline {4.5}Audit}{72}{section.4.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.2}Literatuurstudie}{70}{section.A.2}% 
+\contentsline {section}{\numberline {4.6}Overzicht}{73}{section.4.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {A.2.1}Data Vault 2.0}{70}{subsection.A.2.1}% 
+\contentsline {chapter}{\numberline {5}Conclusie}{75}{chapter.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Architectuur}{70}{section*.43}% 
+\contentsline {chapter}{\numberline {A}Onderzoeksvoorstel}{77}{appendix.A}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Entiteittype's}{70}{section*.44}% 
+\contentsline {section}{\numberline {A.1}Introductie}{77}{section.A.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {A.2.2}Dimensioneel modelleren}{71}{subsection.A.2.2}% 
+\contentsline {section}{\numberline {A.2}Literatuurstudie}{78}{section.A.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Architectuur}{71}{section*.45}% 
+\contentsline {subsection}{\numberline {A.2.1}Data Vault 2.0}{78}{subsection.A.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Entiteittype's}{71}{section*.46}% 
+\contentsline {subsubsection}{Architectuur}{78}{section*.43}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.3}Methodologie}{71}{section.A.3}% 
+\contentsline {subsubsection}{Entiteittype's}{78}{section*.44}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {A.3.1}Performatie}{71}{subsection.A.3.1}% 
+\contentsline {subsection}{\numberline {A.2.2}Dimensioneel modelleren}{79}{subsection.A.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {A.3.2}Audit}{71}{subsection.A.3.2}% 
+\contentsline {subsubsection}{Architectuur}{79}{section*.45}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {A.3.3}Schaalbaarheid}{72}{subsection.A.3.3}% 
+\contentsline {subsubsection}{Entiteittype's}{79}{section*.46}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {A.3.4}Flexibiliteit}{72}{subsection.A.3.4}% 
+\contentsline {section}{\numberline {A.3}Methodologie}{79}{section.A.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.4}Verwachte resultaten}{72}{section.A.4}% 
+\contentsline {subsection}{\numberline {A.3.1}Performatie}{79}{subsection.A.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.5}Verwachte conclusies}{72}{section.A.5}% 
+\contentsline {subsection}{\numberline {A.3.2}Audit}{79}{subsection.A.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Bibliografie}{73}{appendix*.47}% 
+\contentsline {subsection}{\numberline {A.3.3}Schaalbaarheid}{80}{subsection.A.3.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {A.3.4}Flexibiliteit}{80}{subsection.A.3.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {A.4}Verwachte resultaten}{80}{section.A.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {A.5}Verwachte conclusies}{80}{section.A.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Bibliografie}{81}{appendix*.47}
 \contentsfinish 

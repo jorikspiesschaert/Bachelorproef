@@ -49,7 +49,7 @@ Alle overige data zijn aanvullingen. Deze kunnen dan gebruikt worden om diepere 
 
 \section{Betekenis van de brondata}
 \label{sec:betekenisdata}
-Vooraleer van start gegaan wordt met het onderzoek, volgt in deze sectie een overzicht van wat de betekenissen zijn van de gebruikte data. Zo kan de data goed geïnterpreteerd worden. De data die gebruikt wordt is gegenereerde data, en is niet afkomstig uit een bronsysteem van DHL Pharma Logistics. Merk op: de naamgeving van bepaalde data is aangepast (in samenspraak met de business) zodat deze data makkelijker te begrijpen is door de business. Een primary key wordt aangeduid door PK, een foreign key door FK.
+Vooraleer van start gegaan wordt met het onderzoek, volgt in deze sectie een overzicht (tabel \ref{tab:betekenisdata}) van wat de betekenissen zijn van de gebruikte data. Zo kan de data goed geïnterpreteerd worden. De data die gebruikt wordt is gegenereerde data, en is niet afkomstig uit een bronsysteem van DHL Pharma Logistics. Merk op: de naamgeving van bepaalde data is aangepast (in samenspraak met de business) zodat deze data makkelijker te begrijpen is door de business. Een primary key wordt aangeduid door PK, een foreign key door FK.
 
 \subsection{Overzicht betekenissen}
 \begin{center}
@@ -113,7 +113,7 @@ In dit onderzoek worden voornamelijk SAP producten gebruikt. De reden hiervoor i
 	\label{fig:azureconn}
 \end{figure}
 
-Beide virtuele machines zijn bereikbaar op het internet zodat de connectie tussen beiden mogelijk is. Op de virtuele machine waar de DP Agent op draait staat bovendien ook poort 5050 open en maakt gebruik van het TCP protocol. Dit protocol zorgt ervoor dat elk datapakket arriveert op zijn bestemming in tegenstelling tot UDP. Wanneer snelheid belangrijk (Skype, streaming, ..) is, kies je voor UDP. Dit protocol zal nooit gebruikt worden bij deze soort connectie.
+In figuur \ref{fig:azureconn} zijn beide virtuele machines bereikbaar op het internet zodat de connectie tussen beiden mogelijk is. Op de virtuele machine waar de DP Agent op draait staat bovendien ook poort 5050 open en maakt gebruik van het TCP protocol. Dit protocol zorgt ervoor dat elk datapakket arriveert op zijn bestemming in tegenstelling tot UDP. Wanneer snelheid belangrijk (Skype, streaming, ..) is, kies je voor UDP. Dit protocol zal nooit gebruikt worden bij deze soort connectie.
 
 Hieronder een overzicht over hoe de verbinding in zijn werk gaat:
 
@@ -124,7 +124,7 @@ Hieronder een overzicht over hoe de verbinding in zijn werk gaat:
 \end{enumerate}
 
 \section{Opzetten van een remote source}
-Wanneer er een verbinding moet opgezet worden naar SAP HANA, moet een Data Provisioning Agent geïnstalleerd worden. Deze wordt geïnstalleerd op de host die een verbinding moet maken met SAP HANA. Nadat deze geïnstalleerd is, moet deze ook nog geconfigureerd worden. Volgende zaken moeten zeker in orde gebracht worden voor een connectie kan plaats vinden: 
+Wanneer er een verbinding moet opgezet worden naar SAP HANA, moet een Data Provisioning Agent (zie figuur \ref{fig:dpa}) geïnstalleerd worden. Deze wordt geïnstalleerd op de host die een verbinding moet maken met SAP HANA. Nadat deze geïnstalleerd is, moet deze ook nog geconfigureerd worden. Volgende zaken moeten zeker in orde gebracht worden voor een connectie kan plaats vinden: 
 \interfootnotelinepenalty=10000
 \begin{itemize}
 	\item Connection: de agent moet geconnecteerd en ingelogd zijn op het SAP HANA systeem.
@@ -139,7 +139,7 @@ Wanneer er een verbinding moet opgezet worden naar SAP HANA, moet een Data Provi
 	\label{fig:dpa}
 \end{figure}
 
-Wanneer alles correct geconfigureerd is, kan er nu vanuit SAP HANA een remote connectie gemaakt worden naar de host en kan de benodigde informatie opgevraagd worden.
+Wanneer alles correct geconfigureerd is, kan er nu vanuit SAP HANA een remote connectie (zie figuur \ref{fig:remoteconn}) gemaakt worden naar de host en kan de benodigde informatie opgevraagd worden.
 
 \begin{figure}[h]
 	\centering
@@ -160,7 +160,7 @@ In deze sectie wordt een data warehouse opgebouwd aan de hand van Data Vault. El
 	\label{fig:dvm}
 \end{figure}
 
-Het model is opgebouwd uit drie soorten tabellen: de rode entiteiten worden voorgesteld als sattelites, de blauwe entiteiten als hubs en de gele entiteiten vormen de links tussen de verschillende hubs. In de SAT\_DOCK\_TO\_STOCK worden de berekeningen opgeslagen die nodig zijn voor het berekenen van de KPI. Hash keys worden opgeslagen onder het type ''binary''.
+Het model in figuur \ref{fig:dvm} is opgebouwd uit drie soorten tabellen: de rode entiteiten worden voorgesteld als sattelites, de blauwe entiteiten als hubs en de gele entiteiten vormen de links tussen de verschillende hubs. In de SAT\_DOCK\_TO\_STOCK worden de berekeningen opgeslagen die nodig zijn voor het berekenen van de KPI. Hash keys worden opgeslagen onder het type ''binary''.
 
 \subsection{Staging area}
 \label{sec:stagareadv}
@@ -245,7 +245,7 @@ Aangezien de Business vault in dit data schema slechts 1 nieuwe entiteit bevat, 
 Bij het aanmaken van het ETL proces bij een sattelite binnen de Business vault, worden dezelfde stappen overlopen als bij het aanmaken van een sattelite binnen de raw Data Vault. Bij ''projection'' wordt dan de benodigde business logica en de benodigde berekeningen toegevoegd.
 
 \subsection{Opbouw data mart}
-Wanneer alle data getransformeerd en ingeladen is in de Data Vault modellen, moeten deze verbonden worden met elkaar en wordt hiervoor een virtuele view aangemaakt waarop verbonden kan worden vanuit een rapporteringsomgeving.
+Wanneer alle data getransformeerd en ingeladen is in de Data Vault modellen, moeten deze verbonden worden met elkaar en wordt hiervoor een virtuele view aangemaakt waarop verbonden kan worden vanuit een rapporteringsomgeving (zie figuur \ref{fig:dvdm}).
 
 Een best practice die in dit onderzoek werd toegepast was het samenvoegen van alle hubs, links \& sattelites in één dimensie. Zo wordt een beter overzicht behouden van de opgestelde calculation views en wordt de complexiteit verminderd. Deze dimensie werd dan verbonden met een fact table in een sterschema. 
 
@@ -268,7 +268,7 @@ In dit hoofdstuk wordt een data warehouse opgebouwd aan de hand van het dimensio
 	\label{fig:dmdm}
 \end{figure}
 
-In deze sectie worden de dimensions voorgesteld als de blauwe entiteiten. Deze bevatten de beschrijvende data die iets meer vertellen over de ''facts''. De business key wordt gebruikt als attribuut die de relatie legt naar de facts-table (die wordt voorgesteld in het rood). In dit model worden geen gegevens opgeslagen die meer vertellen over de oorsprong van de data, tevens wordt de historiek van de data niet bijgehouden.
+In figuur \ref{fig:dmdm}  worden de dimensions voorgesteld als de blauwe entiteiten. Deze bevatten de beschrijvende data die iets meer vertellen over de ''facts''. De business key wordt gebruikt als attribuut die de relatie legt naar de facts-table (die wordt voorgesteld in het rood). In dit model worden geen gegevens opgeslagen die meer vertellen over de oorsprong van de data, tevens wordt de historiek van de data niet bijgehouden.
 
 \subsection{Staging area}
 In de architectuur van Data Vault, is al reeds een staging area toegevoegd die alle informatie ongemanipuleerd bijhoudt. Voor dit onderdeel van het onderzoek zal de laag niet opnieuw worden toegevoegd, maar zal er gebruik gemaakt worden van de eerder toegevoegde laag (zie sectie \ref{sec:stagareadv}).
@@ -286,7 +286,7 @@ Bij het inladen van de dimensions bij het dimensioneel model, moeten er nooit be
 	\label{fig:DM_FG_dim}
 \end{figure}
 
-In figuur 8.2 wordt het ETL-proces voorgesteld bij het inladen van de data in de tabel DIM\_ARTICLE. Aangezien er enkel data moet ingeladen worden vanuit één enkele tabel, moet er geen JOIN gebeuren. Er kan dus onmiddellijk begonnen worden met het transformeren van de data in PROJECTION. 
+In figuur \ref{fig:DM_FG_dim}  wordt het ETL-proces voorgesteld bij het inladen van de data in de tabel DIM\_ARTICLE. Aangezien er enkel data moet ingeladen worden vanuit één enkele tabel, moet er geen JOIN gebeuren. Er kan dus onmiddellijk begonnen worden met het transformeren van de data in PROJECTION. 
 
 \begin{itemize}
 	\item \textbf{ARTICLE\_ID (PK):} In dit attribuut wordt PRODUCT\_ID overgenomen van de brondata.
@@ -305,7 +305,7 @@ Bij een fact tabel, wordt de key van elke dimension bijgehouden. Alle sleutels s
 	\label{fig:DM_FG_fac}
 \end{figure}
 
-In stap 1 (JOIN\_LEV\_STAT\_PROD\_STAFF) wordt de data van de tabellen Leverages, States, Products en Staff samengevoegd op basis van de aanwezige attributen in de source tabel Leverages. Alleen de benodigde data wordt meegenomen naar de volgende stap. Bij JOIN\_CUSTOMER wordt tussen de tabellen Customer\_Entities en Customer\_Groups een relatie gelegd. Om uiteindelijk alles samen te voegen tot één geheel, wordt er een finale join (JOIN\_ALL) aangelegd. Hierbij wordt de data van JOIN\_LEV\_STAT\_PROD\_STAFF, JOIN\_CUSTOMER en Warehouses gecombineerd die kan gebruikt worden in de volgende stappen.
+In de eerste stap van figuur \ref{fig:DM_FG_fac} (JOIN\_LEV\_STAT\_PROD\_STAFF) wordt de data van de tabellen Leverages, States, Products en Staff samengevoegd op basis van de aanwezige attributen in de source tabel Leverages. Alleen de benodigde data wordt meegenomen naar de volgende stap. Bij JOIN\_CUSTOMER wordt tussen de tabellen Customer\_Entities en Customer\_Groups een relatie gelegd. Om uiteindelijk alles samen te voegen tot één geheel, wordt er een finale join (JOIN\_ALL) aangelegd. Hierbij wordt de data van JOIN\_LEV\_STAT\_PROD\_STAFF, JOIN\_CUSTOMER en Warehouses gecombineerd die kan gebruikt worden in de volgende stappen.
 
 Vervolgens wordt de benodigde data berekend. Volgende transformaties worden toegepast:
 
@@ -330,7 +330,7 @@ Vervolgens wordt de benodigde data berekend. Volgende transformaties worden toeg
 Nadat alle transformaties en berekeningen zijn toegepast, worden de toegekomen waardes vergeleken met de huidige waardes van de destination table. Er wordt vergeleken op basis van de composite key. Indien de waarde al in de database aanwezig is, wordt deze overschreven, anders wordt deze toegevoegd aan de dataset.
 
 \subsection{Opbouw data mart}
-Nadat alle tabellen in het dimensioneel model zijn aangevuld, kan er een data mart aangemaakt worden voor de opgestelde KPI. Dit gebeurt gelijkaardig zoals bij het Data Vault model. Er zal een sterschema aangemaakt worden waarbij alle dimensions verbonden worden met de fact tabel. Hierop kan dan verbonden worden vanuit een rapporteringsomgeving. 
+Nadat alle tabellen in het dimensioneel model zijn aangevuld, kan er een data mart aangemaakt worden voor de opgestelde KPI. Dit gebeurt gelijkaardig zoals bij het Data Vault model. Er zal een sterschema aangemaakt worden waarbij alle dimensions verbonden worden (zie figuur \ref{fig:dmdmart}) met de fact tabel. Hierop kan dan verbonden worden vanuit een rapporteringsomgeving. 
 
 \begin{figure}[h]
 	\centering

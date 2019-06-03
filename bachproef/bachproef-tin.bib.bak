@@ -100,4 +100,11 @@
   year    = {2012},
 }
 
+@TechReport{Buneman1997,
+  author      = {Peter Buneman},
+  title       = {Semistructured data},
+  institution = {University of Pennsylvania},
+  year        = {1997},
+}
+
 @Comment{jabref-meta: databaseType:bibtex;}

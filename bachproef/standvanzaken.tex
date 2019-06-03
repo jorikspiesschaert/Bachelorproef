@@ -19,7 +19,7 @@ Veel moderne, digitale bedrijven genereren tegenwoordig enorme volumes data. Dez
 Om alles nog even samen te vatten: een data warehouse levert data aan een rapporteringsomgeving. Op basis van deze data worden beslissingen genomen.
 
 \subsection{Soorten data}
-Er kan een onderscheid gemaakt worden tussen verschillende soorten data. Voornamelijk kunnen we informatie opdelen in drie categorieën: gestructureerde, semi-gestructureerde en ongestructureerde data. Volgens  ~\textcite{Langseth2005}, bestaat 95\% van de globale informatie uit ongestructureerde data. 
+Er kan een onderscheid gemaakt worden tussen verschillende soorten data. Voornamelijk kunnen we informatie opdelen in drie categorieën: gestructureerde, semi-gestructureerde en ongestructureerde data ~\autocite{Buneman1997}. Volgens  ~\textcite{Langseth2005}, bestaat 95\% van de globale informatie uit ongestructureerde data. 
 
 \subsubsection{Gestructureerde data}
 Data afkomstig uit een relationele databank (RDBMS) is meestal gestructureerd. Deze data is meestal ingedeeld in categorieën, denk bijvoorbeeld maar aan postcode, naam, klantennummer, ... Hieruit volgt dat deze data heel gemakkelijk te doorzoeken is. 
@@ -28,7 +28,7 @@ Data afkomstig uit een relationele databank (RDBMS) is meestal gestructureerd. D
 Data afkomstig uit IoT-apparaten of XML-bestanden zijn meestal semi-gestructureerd. In deze data is een bepaalde structuur te herkennen, maar deze data zit niet in een bepaalde tabel-structuur.
 
 \subsubsection{Ongestructureerde data}
-Deze informatie kan niet gemakkelijk worden opgeslagen in relationele databanken (er kan hiervoor geen primair datatype gebruikt worden, maar bijvoorbeeld wel als een BLOB-type). Denk maar aan Excel-sheets, e-mails, muziek, ... Deze data bevat vaak ook heel nuttige informatie die organisaties graag willen gebruiken. Denk bijvoorbeeld maar aan emails: hoe gelukkig zijn klanten over een bepaald product? Hoeveel mails worden er maandelijks ontvangen met klachten?
+Deze informatie kan niet gemakkelijk worden opgeslagen in relationele databanken (er kan hiervoor geen primair datatype gebruikt worden, maar bijvoorbeeld wel als een BLOB-type). Denk maar aan Excel-sheets, e-mails, muziek, ... Deze data bevat vaak ook heel nuttige informatie die organisaties graag willen gebruiken ~\autocite{McAfee2012}. Denk bijvoorbeeld maar aan emails: hoe gelukkig zijn klanten over een bepaald product? Hoeveel mails worden er maandelijks ontvangen met klachten? 
 
 \subsection{Wat is een data warehouse?}
 De definitie van een data warehouse luidt als volgt: \textit{'een subject-georiënteerde, geïntegreerde, tijd-variante, niet-vluchtige collectie van gegevens die in eerste instantie gebruikt wordt bij organisaties om beslissingen te nemen'} ~\autocite{Inmon2005}.
@@ -146,7 +146,7 @@ Wie consultant Business Intelligence is, heeft ongetwijfeld al gehoord van dimen
 
 
 \subsection{Architectuur}
-Bij het dimensioneel modelleren wordt het proces opgedeeld in 2 soorten lagen: de staging area en de data warehouselaag. In de data warehouselaag worden de data marts opgebouwd. Rapporteringsomgevingen connecteren met de data marts om hun data op te halen.
+Bij het dimensioneel modelleren wordt het proces opgedeeld in 2 soorten lagen: de staging area en de data warehouselaag (voorgesteld in figuur \ref{fig:dimmodel}). In de data warehouselaag worden de data marts opgebouwd. Rapporteringsomgevingen connecteren met de data marts om hun data op te halen.
 
 \begin{figure}[h]
 	\centering
@@ -198,16 +198,16 @@ Drill down betekent dat de gegevens op een dieper detailniveau zullen bekeken wo
 \end{figure}
 \pagebreak
 \section{Modelleren via Data Vault 2.0}
-Data Vault 2.0 is een modelleertechniek die ontworpen is door Daniel Linstedt. Het model zorgt ervoor dat dimensies gemakkelijk uitgebreid kunnen worden en dat databronnen toevoegen vlot moet gaan. Linstedt is van mening dat business requirements vaak veranderen, dus moet het model waarin de data warehouse ontworpen is ook flexibel zijn. 
-~\autocite{Linstedt2016}
+Data Vault 2.0 is een modelleertechniek die ontworpen is door Daniel Linstedt. Het model zorgt ervoor dat dimensies gemakkelijk uitgebreid kunnen worden en dat databronnen toevoegen vlot moet gaan. Linstedt is van mening dat business requirements vaak veranderen, dus moet het model waarin de data warehouse ontworpen is ook flexibel zijn 
+~\autocite{Linstedt2016}.
 \subsection{Architectuur}
-Data vault maakt gebruik van een 3-lagen model. Dit heeft als voordeel dat processen duidelijk kunnen onderscheiden worden per laag en alles overzichtelijk blijft. Deze architectuur ondersteunt om data op halen via een batch, maar ook om live data op te halen. NoSQL kan ook gebruikt worden om de data warehouse te ontwerpen. Wanneer de data live opgehaald wordt, valt de staging area weg en wordt de data onmiddellijk in de raw data vault geladen.  ~\autocite{Linstedt2016}
+Data vault maakt gebruik van een 3-lagen model (zie figuur \ref{fig:dvarcht}). Dit heeft als voordeel dat processen duidelijk kunnen onderscheiden worden per laag en alles overzichtelijk blijft. Deze architectuur ondersteunt om data op halen via een batch, maar ook om live data op te halen. NoSQL kan ook gebruikt worden om de data warehouse te ontwerpen. Wanneer de data live opgehaald wordt, valt de staging area weg en wordt de data onmiddellijk in de raw data vault geladen ~\autocite{Krneta2014}.
 
 
 \begin{figure}[h]
 	\includegraphics[scale=0.63]{../images/DVArchitectuur.png}
 	\caption{Data Vault architectuur voorgesteld door \textcite{Stroobants2018}.}
-	\label{fig:dvarch}
+	\label{fig:dvarcht}
 \end{figure}
 
 \subsubsection{Staging area}
@@ -241,7 +241,7 @@ Een data vault model bestaat uit 3 soorten componenten: hubs, links en sattelite
  Hubs zijn vooral heel handig wanneer er meerdere databronnen zijn, zo kan je meerdere bronnen aan een hub hangen. In een hubs zit nooit andere data behalve een hash key, metadata en business keys.
 
 \subsubsection{Links}
-Wanneer we 2 hub-entiteiten willen verbinden, zullen we ze niet rechtstreeks met elkaar verbinden. Twee hub-entiteiten worden namelijk verbonden door middel van een link. Andere verantwoordelijkheden voor een link zijn hiërarchieën, redefinities of business termen. De bedoeling is om een zo laag mogelijke granulariteit te creëren. Links zorgen ervoor dat het data vault model heel flexibel wordt en makkelijk uitbreidbaar is. 
+Wanneer we 2 hub-entiteiten willen verbinden (zie figuur \ref{fig:link}), zullen we ze niet rechtstreeks met elkaar verbinden. Twee hub-entiteiten worden namelijk verbonden door middel van een link. Andere verantwoordelijkheden voor een link zijn hiërarchieën, redefinities of business termen. De bedoeling is om een zo laag mogelijke granulariteit te creëren. Links zorgen ervoor dat het data vault model heel flexibel wordt en makkelijk uitbreidbaar is. 
 
 \begin{figure}[h]
 	\centering
@@ -275,7 +275,7 @@ Bij een satellite vinden we minstens volgende attributen terug:
 Een satellite hoort bij een hub of een link. Een hub en een satellite vormen een bepaald business object. Hier is de primary key een composite key, dat bestaat uit een Parent Hashkey en een LoadDate. Deze combinatie is nodig om nieuwe versies van data te kunnen toevoegen.
 
 \subsubsection{Data Vault schema}
-Wanneer we zowel hubs, links als sattelites samengieten in één schema, bekomen we een data vault. Wel zijn er nog enkele belangrijke opmerkingen:
+Wanneer we zowel hubs, links als sattelites samengieten in één schema, bekomen we een Data Vault (zoals in figuur \ref{fig:dvmod}). Wel zijn er nog enkele belangrijke opmerkingen:
 
 \begin{itemize}
 	\item Hubs mogen nooit rechtstreeks verbonden met elkaar, dit moet altijd gebeuren via een link (anders verliest het model zijn flexibiliteit).
@@ -330,10 +330,10 @@ Alle KPI's samen vormen de rapporteringsnoden op strategisch niveau.
 	\item \textbf{Publiceren, delen en samenwerken: } kunnen gebruikers de inhoud publiceren, delen of samenwerken met anderen om visualisaties te realiseren of bekijken?
 	\item \textbf{Gebruiksgemak, visuele aantrekkelijkheid en de integratie van de workflow:} is het platvorm makkelijk te gebruiken en beheren? Kan de data visueel aantrekkelijk voorgesteld worden? Kan de tool makkelijk geïmplementeerd worden in huidige workflow?
 \end{itemize} 
+\newpage
+Op basis van deze features werden de verschillende Business Intelligence platvormen verdeeld in vier kwadranten naargelang hun visie en naar hoelang ze deze realiseren (zie figuur \ref{fig:dvmode}). De vier kwadranten zijn: niche-spelers, uitdagers, visionairs en marktleiders.
 
-Op basis van deze features werden de verschillende Business Intelligence platvormen verdeeld in vier kwadranten naargelang hun visie en naar hoelang ze deze realiseren. De vier kwadranten zijn: niche-spelers, uitdagers, visionairs en marktleiders.
-
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.7]{../images/gartner.png}
 	\caption{Het magische kwadrant over Selfservice BI opgesteld door \textcite{Gartner2019}.}
@@ -345,7 +345,7 @@ In deze literatuurstudie bekijken we enkel de mogelijkheden die 2 grootmachten i
 \subsection{SAP Analytics Cloud}
 Bij SAP Analytics Cloud kan er gebruik gemaakt worden van realtime analytics. Hiervoor is live data nodig en deze wordt opgehaald in het transactionele systeem. Indien gewenst, kan er toch nog steeds gewerkt worden met een batch die 's nachts geladen wordt. 
 
-Analytics cloud biedt heel veel mogelijkheden om interactieve dashboards te ontwerpen. Waar SAP Analytics Cloud zich onderscheidt met de andere spelers, is dat er in deze omgeving planning kan worden toegepast. Er kunnen budgetten opgesteld worden voor de komende jaren (bijvoorbeeld IT-kosten), en deze kunnen dan vergeleken worden met de actuele kosten op dat moment. 
+Analytics cloud biedt heel veel mogelijkheden om interactieve dashboards te ontwerpen (zoals in figuur \ref{fig:sac}). Waar SAP Analytics Cloud zich onderscheidt met de andere spelers, is dat er in deze omgeving planning kan worden toegepast. Er kunnen budgetten opgesteld worden voor de komende jaren (bijvoorbeeld IT-kosten), en deze kunnen dan vergeleken worden met de actuele kosten op dat moment. 
 
 \begin{figure}[h]
 	\centering
@@ -355,7 +355,7 @@ Analytics cloud biedt heel veel mogelijkheden om interactieve dashboards te ontw
 \end{figure}
 
 \subsection{Power BI}
-Power BI is het programma bij uitstek dat gebruikt wordt bij datavisualisatie van ontwikkelaar Microsoft. PowerBI is een uitstekende keuze wanneer bedrijven Office 365 en Microsoft Dynamics geïmplementeerd hebben in hun infrastructuur.
+Power BI is het programma bij uitstek dat gebruikt wordt bij datavisualisatie (voorbeeld in figuur \ref{fig:powerbi}) van ontwikkelaar Microsoft. PowerBI is een uitstekende keuze wanneer bedrijven Office 365 en Microsoft Dynamics geïmplementeerd hebben in hun infrastructuur.
 
 In tegenstelling tot SAP Analytics cloud kan je Power BI wel on-premise installeren. Maar indien gewenst, kan er steeds gebruik gemaakt worden van een cloud-omgeving.
 

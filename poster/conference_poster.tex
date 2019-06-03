@@ -51,15 +51,14 @@
 % The widths of these boxes can be easily edited to accommodate your content as you see fit
 
 \begin{minipage}[t]{0.75\linewidth}
-\VeryHuge \color{HoGentAccent1} \textbf{Titel van uw bachelorproef} \color{Black}\\ % Title
-\Huge\textit{Ondertitel (eventueel)}\\[2.4cm] % Subtitle
-\huge \textbf{Naam Voornaam, co-promotor, promotor}\\[0.5cm] % Author(s)
+\VeryHuge \color{HoGentAccent1} \textbf{Een vergelijkende studie tussen Data Vault 2.0 en het dimensioneel model bij het modelleren van een data warehouse.} \color{Black}\\ % Title
+\huge \textbf{Spiesschaert Jorik, Lievens Stijn, Stroobants Jochen}\\[0.5cm] % Author(s)
 \huge Hogeschool Gent, Valentin Vaerwyckweg 1, 9000 Gent\\[0.4cm] % University/organization
-\Large \texttt{voornaam.naam@hogent.be} \\
+\Large \texttt{jorik.spiesschaert.y9481@hogent.be} \\
 \end{minipage}
 %
 \begin{minipage}[t]{0.25\linewidth}
-\includegraphics[width=13cm,right]{figures/HG-woordmerk.jpg} 
+\includegraphics[width=13cm,right]{figures/HG-woordmerk.png} 
 
 \end{minipage}
 
@@ -76,9 +75,7 @@
 \color{HoGentAccent1} % Navy color for the abstract
 
 \begin{abstract}
-It's only a model.
-You don't vote for kings. Who's that then? We found them. Ni! Ni! Ni! Ni!
-The nose? On second thoughts, let's not go there. It is a silly place. Bloody Peasant! And the hat. She's a witch! Where'd you get the coconuts?
+Bij het modelleren van een data warehouse moet rekening gehouden worden met de noden van een organisatie. Afhankelijk van die noden, kan er beslist worden om een bepaald data model te kiezen.
 \end{abstract}
 %----------------------------------------------------------------------------------------
 %	INTRODUCTION
@@ -88,15 +85,10 @@ The nose? On second thoughts, let's not go there. It is a silly place. Bloody Pe
 \section*{Introductie}
 \color{black}
 \color{black}
-Be quiet! Found them? In Mercia?! The coconut's tropical! But you are dressed as one… Well, what do you want? Knights of Ni, we are but simple travelers who seek the enchanter who lives beyond these woods.
+DHL Pharma Logistics wil een data warehouse aanmaken om hun rapporteringen te automatiseren. De data warehouse wordt gemodelleerd via de Data Vault 2.0 methodologie. In deze paper wordt onderzocht of modelleren via deze manier wel degelijk de juiste keuze was ten opzichte van het dimensioneel model.
 
-Well, what do you want? It's only a model. Camelot! We found them. We shall say 'Ni' again to you, if you do not appease us.
+Deze paper kan nuttig zijn voor informatici die actief zijn of interesse hebben in Business Intelligence. Er is geen specifieke voorkennis rond Data Vault of het dimensioneel modelleren nodig om door deze paper te gaan. Dit vergelijkend onderzoek kan informatici helpen bij het beslissen van een data model methodologie.
 
-The nose? Shut up! Burn her! I am your king. You don't vote for kings.
-
-You can't expect to wield supreme power just 'cause some watery tart threw a sword at you! Well, we did do the nose. I don't want to talk to you no more, you empty-headed animal food trough water! I fart in your general direction! Your mother was a hamster and your father smelt of elderberries! Now leave before I am forced to taunt you a second time!
-
-Why do you think that she is a witch? We want a shrubbery!! I don't want to talk to you no more, you empty-headed animal food trough water! I fart in your general direction! Your mother was a hamster and your father smelt of elderberries! Now leave before I am forced to taunt you a second time!
 %----------------------------------------------------------------------------------------
 %	GEOLOGY
 %----------------------------------------------------------------------------------------
@@ -105,44 +97,71 @@ Why do you think that she is a witch? We want a shrubbery!! I don't want to talk
 \color{HoGentAccent1} 
 \section*{Experimenten}
 \color{black}
-A newt? Camelot! Why? No, no, no! Yes, yes. A bit. But she's got a wart.
+Voor er kan gestart worden met het onderzoek, moet er een data warehouse opgesteld worden zowel via de Data Vault methodologie als de methodologie voor het dimensioneel modelleren. In deze bachelorproef wordt de opbouw van van beide data warehouses uitgebreid uitgeschreven (ETL-processen van verschillende lagen). Bovendien wordt er ook een overzicht gegeven over de rapporteringsnood voor DHL Pharma Logistics, wat de betekenissen zijn van de gebruikte data in dit onderzoek en hoe een remote connectie moet opgezet worden voor SAP HANA.
 
-Shut up! I dunno. Must be a king. Who's that then? Look, my liege! On second thoughts, let's not go there. It is a silly place.
-
-Shut up! Will you shut up?! No, no, no! Yes, yes. A bit. But she's got a wart. He hasn't got shit all over him. It's only a model. It's only a model.
-
-Bring her forward! I don't want to talk to you no more, you empty-headed animal food trough water! I fart in your general direction! Your mother was a hamster and your father smelt of elderberries! Now leave 
-
-
+Op basis van de opgebouwde data warehouses worden dan vergelijkingen gemaakt op basis van performantie en schaalbaarheid door het uitvoeren van enkele queries verwerkt in procedures.
 
 \color{HoGentAccent1} 
-\section*{Sectie met figuur}
+\section*{Overzicht data modellen}
 \color{black}
 
-
+\color{HoGentAccent1} 
+\subsection*{Dimensioneel model}
+\color{black}
+Wie consultant Business Intelligence is, heeft ongetwijfeld al gehoord van dimensioneel modelleren. Over de jaren heen is het als het ware een standaard geworden wanneer men een data warehouse wil ontwerpen. Dimensioneel modelleren heeft als voordeel dat het model niet complex is, dus gemakkelijk te begrijpen, zelf voor niet IT-opgeleide personen. Ook is er vaak een snel resultaat beschikbaar. In deze paper zal het dimensioneel modelleren dieper bekeken worden. 
 \begin{center}\vspace{1cm}
-\includegraphics[width=1.0\linewidth]{grail}
-\captionof{figure}{\color{HoGentAccent5} He hasn't got shit all over him. The nose? Where'd you get the coconuts? What do you mean? We shall say 'Ni' again to you, if you do not appease us}
+	\includegraphics[width=1.0\linewidth]{DimensioneelModel.png}
+	\captionof{figure}{\color{HoGentAccent5} Voorstelling van een dimensioneel model (gemaakt via Lucidchart.com).}
+	\label{fig:dmdm}
 \end{center}\vspace{1cm}
 
-%------------------------------------------------
+In figuur \ref{fig:dmdm}  worden de dimensions voorgesteld als de blauwe entiteiten. Deze bevatten de beschrijvende data die iets meer vertellen over de ''facts''. De business key wordt gebruikt als attribuut die de relatie legt naar de facts-table (die wordt voorgesteld in het rood). In dit model worden geen gegevens opgeslagen die meer vertellen over de oorsprong van de data, tevens wordt de historiek van de data niet bijgehouden.
 
+\color{HoGentAccent1} 
+\subsection*{Data Vault}
+\color{black}
+Data Vault 2.0 is een modelleertechniek die ontworpen is door Daniel Linstedt. Het model zorgt ervoor dat dimensies gemakkelijk uitgebreid kunnen worden en dat databronnen toevoegen vlot moet gaan. Linstedt is van mening dat business requirements vaak veranderen, dus moet het model waarin de data warehouse ontworpen is ook flexibel zijn(D. Linstedt \& Olschimke, 2016).
+\begin{center}\vspace{1cm}
+\includegraphics[width=1.0\linewidth]{DataVaultModel.png}
+\captionof{figure}{\color{HoGentAccent5} Voorstelling van een Data Vault 2.0 model (gemaakt via Lucidchart.com).}
+\label{fig:dvm}
+\end{center}\vspace{1cm}
+Het model in figuur \ref{fig:dvm} is opgebouwd uit drie soorten tabellen: de rode entiteiten worden voorgesteld als sattelites, de blauwe entiteiten als hubs en de gele entiteiten vormen de links tussen de verschillende hubs. In de SAT\_DOCK\_TO\_STOCK worden de berekeningen opgeslagen die nodig zijn voor het berekenen van de KPI. Hash keys worden gebruikt als primary en foreign keys in dit model en worden opgeslagen onder het type ''binary''.
+
+%------------------------------------------------
+\color{HoGentAccent1} 
+\section*{Vergelijkende onderzoek}
+\color{black}
+In deze bachelorproef wordt Data Vault 2.0 vergeleken met het dimensioneel model. In dit vergelijkend onderzoek wordt voornamelijk gefocust op deze 5 pijlers:
+
+\begin{itemize}
+	\item \textbf{Performantie:} is er een significant verschil in het uitvoeren van leesopdrachten?
+	\item \textbf{Complexiteit:} zijn beide modellen makkelijk interpreteerbaar door IT \& business?
+	\item \textbf{Flexibiliteit:} hoe flexibel zijn beide modellen wanneer een business requirement gewijzigd wordt?
+	\item \textbf{Schaalbaarheid:} hoe gaan beide modellen overweg met het inladen van enorme hoeveelheid data?
+	\item \textbf{Audit:} is er metadata beschikbaar over de werkelijke data? Kunnen problemen makkelijk opgespoord worden?
+\end{itemize} 
 
 
 \color{HoGentAccent1} 
 \section*{Conclusies}
 \color{black}
-on't underestimate the Force. Oh God, my uncle. How am I ever gonna explain this? I suggest you try it again, Luke. This time, let go your conscious self and act on instinct. Don't be too proud of this technological terror you've constructed. The ability to destroy a planet is insignificant next to the power of the Force.
+Het onderzoek wijst uit dat het dimensioneel model een betere keuze was voor het modelleren van de data voor DHL Pharma Logistics. Dit is bovendien ook het resultaat dat ik verwacht had.
+
+Het dimensioneel model voert sneller leesresultaten uit in vergelijking met het Data Vault, dit omdat het Data Vault model meer relaties heeft. Hierdoor zullen veel meer joins moeten gebeuren wanneer alle data moet opgehaald worden. 
+
+Bij de Data Vault methodologie wordt er meer informatie (Hash keys, informatie over extractie, ..) en tabellen opgeslagen in een databank. Dit zorgt ervoor dat de volumes van data enorm stijgen. Bijgevolg zal er dus een hogere kostprijs zijn om deze data te stockeren. Aangezien dit geen requirement is voor DHL Pharma Logistics, zou dit leiden naar een onnodige meerkost voor dit project.
+
+De KPI's waarvoor een model moet opgesteld worden zijn gestandaardiseerd, en dienen niet flexibel te zijn. Indien de berekening voor de KPI's zouden gewijzigd worden, hoeven enkel sommige parameters uit het ETL-proces aangepast te worden en niet het datamodel zelf.
 %----------------------------------------------------------------------------------------
 %	FORTHCOMING RESEARCH
 %----------------------------------------------------------------------------------------
+
 \color{HoGentAccent1} 
 \section*{Toekomstig onderzoek}
 \color{black}
 
-I care. So, what do you think of her, Han? No! Alderaan is peaceful. We have no weapons. You can't possibly… I have traced the Rebel spies to her. Now she is my only link to finding their secret base.
-
-Kid, I've flown from one side of this galaxy to the other. I've seen a lot of strange stuff, but I've never seen anything to make me believe there's one all-powerful Force controlling everything. There's no mystical energy field that controls my destiny. It's all a lot of simple tricks and nonsense. You are a part of the Rebel Alliance and a traitor! Take her away! 
+Het onderzoek wijst uit dat Data Vault 2.0 een voordeel heeft bij het inladen van data ten opzichte van het dimensioneel model door gebruik te maken van hash keys en doordat tabellen in een Data Vault 2.0 niet afhankelijk zijn van elkaar, kunnen deze allemaal tegelijk ingeladen worden. Naar de toekomst toe kan er onderzocht worden of Data Vault 2.0 een juiste keuze kan zijn bij het opstellen van big data modellen aangezien het toevoegen van enorme volumes data snel en efficiënt kan gebeuren.
 
 
 %----------------------------------------------------------------------------------------

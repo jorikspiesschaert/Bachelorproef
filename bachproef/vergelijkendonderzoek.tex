@@ -17,7 +17,7 @@ In dit deel van het onderzoek zal er van de twee eerder opgebouwde datamodellen 
 Op basis van deze resultaten zal er kunnen opgemaakt worden of de keuze voor Data Vault wel de juiste keuze was voor dit project.
 
 \section{Performantie}
-In deze sectie wordt het vergelijkend onderzoek gestart door de performantie bij leesopdrachten te vergelijken tussen Data Vault en het dimensioneel model. Voor het verkrijgen van de resultaten wordt een procedure geschreven in SQL-code die de executietijd zal berekenen. Elke query zal 1000 keer uitgevoerd worden. Op basis van de verkregen resultaten kan er een correcte analyse opgemaakt worden. Deze queries worden uitgevoerd op een \textbf{SAP HANA databank}, door het gebruik te maken van deze technologie zal dit een invloed hebben op de snelheid van executie. Zowel voor Data Vault als voor het dimensioneel werden de leesopdrachten uitgevoerd met 2 verschillende hoeveelheden van data. De 1000 leesoperaties werden uitgevoerd op 1200 en 100.000 records.
+In deze sectie wordt het vergelijkend onderzoek gestart door de performantie bij leesopdrachten te vergelijken tussen Data Vault en het dimensioneel model. Voor het verkrijgen van de resultaten wordt een procedure geschreven in SQL-code die de executietijd zal berekenen. Elke query zal 1000 keer uitgevoerd worden. Op basis van de verkregen resultaten kan er een correcte analyse opgemaakt worden. Deze queries worden uitgevoerd op een \textbf{SAP HANA databank}, door het gebruik te maken van deze technologie zal dit een invloed hebben op de snelheid van executie. Zowel voor Data Vault als voor het dimensioneel werden de leesopdrachten uitgevoerd met 2 verschillende hoeveelheden van data. De 1000 leesoperaties werden uitgevoerd op 1200 en 100.000 records waarbij alle tabellen van ieder model opgevraagd worden. Al deze opgehaalde data zou dan kunnen gebruikt worden voor het opmaken van dashboards.
 
 \subsection{Procedure} 
 \lstset{breaklines=true,keywordstyle=\bfseries\color{blue!40!black}}
@@ -142,46 +142,32 @@ Na het doorlopen van de vorige procedure, kan er gestart worden met het vergelij
 	\renewcommand{\arraystretch}{2}%
 	\begin{longtable}{  l  p{4,5cm}  p{4,5cm} }
 	    \ & \textbf{Data Vault} & \textbf{Dimensioneel model} \\ \hline
-		\textbf{1200 records} & 5,2 MByte(s) & 2,5 MByte(s) \\
+		\textbf{1200 records} & 5,2 MByte(s) & 2,5 MByte(s) \\ \hline
 		\textbf{100.000 records} & 139,8 MByte(s) & 4,6 MByte(s) \\
 		\caption{Overzicht van het toegewezen werkgeheugen van beide select-statements (verkregen via het Execution plan in SAP HANA).}
 		\label{tab:mem}
 	\end{longtable}
 \end{center}
 
-In tabel \ref{tab:spg} wordt een overzicht getoont van het steekproefgemiddelde van de executietijd bij het uitvoeren van de leesopdracht bij beide modellen.
+In tabel \ref{tab:spg} wordt een overzicht getoont van het steekproefgemiddelde met de daarbijhorende standaardafwijking van de executietijd bij het uitvoeren van de leesopdracht bij beide modellen.
 
 \begin{center}
 	\renewcommand{\arraystretch}{2}%
 	\begin{longtable}{  l  p{4,5cm}  p{4,5cm} }
 		\ & \textbf{Data Vault} & \textbf{Dimensioneel model} \\ \hline
-		 \textbf{1200 records} & 15,29 ms & 5,466 ms \\
-		 \textbf{100.000 records} & 108,086 ms & 6,783 ms \\
+		 \textbf{1200 records} & 15,29 ms (\sigma = 0,772) & 5,466 ms (\sigma = 0,783) \\ \hline
+		 \textbf{100.000 records} & 108,086 ms (\sigma = 11,375)  & 6,783 ms (\sigma = 1,122) \\
 		\caption{Overzicht van het steekproefgemiddelde bij Data Vault en het dimensioneel model.}
 		\label{tab:spg}
 	\end{longtable}
 \end{center}
 
-In tabel \ref{tab:sa} wordt een overzicht getoont van de standaardafwijking bij de resultaten van de steekproef.
-
-\begin{center}
-	\renewcommand{\arraystretch}{2}%
-	\begin{longtable}{  l  p{4,5cm}  p{4,5cm} }
-		\ & \textbf{Data Vault} & \textbf{Dimensioneel model} \\ \hline
-		\textbf{1200 records} & 0,7723319 & 0,7832353 \\
-		\textbf{100.000 records} & 11,37488 & 1,122128 \\
-		\caption{Overzicht van de standaardafwijkingen van deze meting bij Data Vault en het dimensioneel model.}
-		\label{tab:sa}
-	\end{longtable}
-\end{center}
-
-
 
 In figuur \ref{fig:boxplotperf} wordt een boxplot weergegeven met de snelheid bij leesopdrachten van beide data modellen. 
 
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
-	\includegraphics[scale=0.7]{../images/Score_perf.png}
+	\includegraphics[scale=0.6]{../images/Score_perf.png}
 	\caption{Boxplot van de uitvoeringstijden bij leesopdrachten van Data Vault en het dimensioneel model. }
 	\label{fig:boxplotperf}
 \end{figure}
@@ -193,17 +179,19 @@ Uit deze boxplot kan afgeleid worden dat er een kleine spreiding is van de resul
 De resultaten die verkregen zijn zullen onderworpen worpen aan een statistische toets (t-toets aangezien de standaardafwijking van de populatie niet gekend is). Bij de resultaten tussen Data Vault en het dimensioneel model (bij een dataset van 1200 records) zijn volgende hypotheses bepaald:
 
 \[
-H_0 = \gamma_1 - \gamma_2 = 0
+H_0 = \mu_1 - \mu_2 = 0
 \]
 \[
-H_1 = \gamma_1 - \gamma_2 > 0
+H_1 = \mu_1 - \mu_2 > 0
 \]
 
 waarbij
-$\gamma_1$ = Executietijd bij Data Vault met 1.200 records \&
-$\gamma_2$ = Executietijd bij dimensioneel model met 1.200 records.
+$\mu_1$ = gemiddelde executietijd bij Data Vault met 1.200 records \&
+$\mu_2$ = gemiddelde executietijd bij dimensioneel model met 1.200 records.
 
-Het betrouwbaarheidsinterval dat zal gehanteerd worden in deze meting is 95\%. Dit betekent dat met 95\% zekerheid
+Er wordt een linkszijdige toets uitgevoerd omdat Data Vault veel meer joins bevat dan het dimensioneel model en dit zal een negatieve invloed hebben op het ophalen van de data. De vraag luidt of de resultaten significant zullen verschillen ten opzichte van het dimensioneel model.
+
+Het betrouwbaarheidsinterval dat zal gehanteerd worden in deze toets is 95\%. Dit betekent dat met 95\% zekerheid
 kan gezegd worden dat een bepaalde parameter binnen het
 betrouwbaarheidsinterval zal liggen.
 
@@ -223,7 +211,7 @@ Het uitvoeren van de Welch Two Sample t-test in RStudio geeft volgend resultaat:
 	\label{fig:ttest1200}
 \end{figure}
 
-Aangezien de p-value uit de Welch Two Sample t-test kleiner is dan $\alpha$ betekent dit dat de nullhypothese mag verworpen worden en dat de alternative hypothese mag aanvaard worden.
+Aangezien de p-value uit de Welch Two Sample t-test (figuur \ref{fig:ttest1200}) kleiner is dan $\alpha$ betekent dit dat de nullhypothese mag verworpen worden en dat de alternative hypothese mag aanvaard worden.
 
 Wanneer er dezelfde methodologie wordt toegepast voor het bepalen ofdat er een significant verschil aanwezig tussen Data Vault en het dimensioneel model bij een dataset van 100.000 records, bekomen we volgend resultaat:
 
@@ -234,7 +222,7 @@ Wanneer er dezelfde methodologie wordt toegepast voor het bepalen ofdat er een s
 	\label{fig:ttest100000}
 \end{figure}
 
-Na het uitvoeren van deze test is de p-value hier ook kleinder dan $\alpha$, ook hier betekent dit dat er een significant verschil aanwezig is tussen de performantie van beide data modellen.
+Na het uitvoeren van deze test (figuur \ref{fig:ttest100000}) is de p-value hier ook kleiner dan $\alpha$, ook hier betekent dit dat er een significant verschil aanwezig is tussen de performantie van beide data modellen.
 
 \subsubsection{Conclusie}
 Er kan geconcludeerd worden dat er toch wel degelijk een significant verschil zit tussen de gemiddelde executietijd van een leesopdracht bij Data Vault in vergelijking met het dimensioneel model. Niet alleen het data model, maar ook de hoeveelheid data aanwezig in de tabellen van een data model heeft een invloed op de snelheid van leesoperaties. Het dimensioneel model gaat hiermee duidelijk veel beter om dan het Data Vault model. 
@@ -248,9 +236,9 @@ De transactionele gegevens staan bij het dimensioneel model altijd gecentralisee
 
 Als een datamodel ontworpen wordt aan de hand van het dimensioneel modelleren, kan er snel en gemakkelijk tot een resultaat bekomen worden in vergelijking met Data Vault. Bij het ontwerpen van een dimensioneel model wordt er gestart vanuit de dimensions, die leiden naar één centraal punt, de fact. Wanneer een Data Vault model dient ontworpen te worden, kan dit op veel verschillende manieren gebeuren. Er wordt gestart vanuit hubs, die de pilaren vormen voor het model, daarna worden deze verbonden met elkaar aan de hand van links. Finaal wordt beslist welke sattelites zullen aangemaakt worden en aan welke hubs/links deze gekoppeld zullen worden.
 
-Wanneer historisatie een requirement is, dan heeft Data Vault een streepje voor op het dimensioneel modelleren. Bij Data Vault zit historisatie al in het model geïntegreerd, bij het dimensioneel modelleren niet. Er kan geopteerd worden voor historisatie bij het dimensioneel modelleren door gebruik te maken van slow changing dimensions, maar dit verhoogt wel aanzienlijk de complexiteit van het model.
+Wanneer historisatie van data een requirement is, dan heeft Data Vault een streepje voor op het dimensioneel modelleren. Bij Data Vault zit historisatie al in het model geïntegreerd, bij het dimensioneel modelleren niet. Er kan geopteerd worden voor historisatie bij het dimensioneel modelleren door gebruik te maken van slow changing dimensions, maar dit verhoogt wel aanzienlijk de complexiteit van het model.
 
-Op vlak van complexiteit, kan er geconcludeerd worden dat Data Vault een hogere complexiteit bevat dan in vergelijking met het dimensioneel model, zowel op het vlak van het model interpreteren als het opstellen van een nieuw model.
+Op vlak van complexiteit, kan er geconcludeerd worden dat Data Vault een hogere complexiteit bevat in vergelijking met het dimensioneel model, zowel op het vlak van interpreteren van het model als het opstellen van een nieuw model.
 
 \section{Flexibiliteit}
 Bij het toevoegen van nieuwe requirements, moet er bij Data Vault nieuwe hub(s) ontworpen en geïmplementeerd worden samen met de daarbij horende links/sattelites. Indien daarbij nieuwe businesslogica wordt bijgevoegd, kan deze in de nieuwe sattelites geplaatst worden. 
@@ -281,8 +269,6 @@ De structuur van een dimensioneel model ligt vast. Er is altijd een fact tabel d
 
 In een Data Vault model worden alleen maar many-to-many relaties gelegd door gebruik te maken van links. Dit is niet het geval bij het dimensioneel model. Door te werken met many-to-many relaties, verhoogt dit de flexibiliteit. Het nadeel door met many-to-many relaties te werken is dat het opvragen data langzamer zal verlopen.
 
-Gegevens inladen in een data warehouse ontworpen aan de hand van een dimensioneel model verloopt deels serieel. Vooraleer de fact tabel ingeladen kan worden, moeten alle dimensions aanwezig zijn. Dit is niet zo bij een Data Vault model, hierin kan alles parallel ingeladen worden (omdat het gebruikt maakt van de business keys die de basis vormen van de hash key).
-
 Het toevoegen van nieuwe bron gebeurt doorgaans ook eenvoudig bij Data Vault. Hiervoor moeten enkel nieuwe sattelites aangemaakt worden voor de benodigde data. Deze sattelites worden dan verbonden met de bijhoorende hubs. Opnieuw wordt het bestaande model niet aangepast. Bij het dimensioneel model moet hiervoor gebruik gemaakt worden van slow changing dimensions. Als dit principe niet van in het begin opgenomen is in het model, dan zal er heel wat moeite moeten gestopt worden in het toevoegen van een nieuwe databron (extra kolommen aanmaken, bestaande ETL aanpassen, ...).
 
 De conclusie bij de vergelijking van Data Vault en het dimensioneel op basis van flexibiliteit is zeer duidelijk. De grote winnaar bij flexibiliteit is Data Vault, dat op alle vlakken van dit aspect duidelijk de betere keuze is.
@@ -290,14 +276,153 @@ De conclusie bij de vergelijking van Data Vault en het dimensioneel op basis van
 \section{Schaalbaarheid}
 Data warehouses bevatten doorgaans enorme hoeveelheden data. Bij de vergelijking tussen Data Vault en het dimensioneel model is het belangrijk om de schaalbaarheid van beide modellen te bestuderen. 
 
-Het inladen van data in data warehouses kan bij enorme hoeveelheden data enorm veel tijd in beslag nemen. Bij sommige organisaties kan dit tot langer dan 12 uur duren. Daarom het een enorm voordeel indien er kan gebruik gemaakt worden van parallel inladen, wat het geval is bij Data Vault en niet bij het dimensioneel modelleren.
+Het inladen van data in data warehouses kan bij enorme hoeveelheden data enorm veel tijd in beslag nemen. Daarom is het een enorm voordeel indien er kan gebruik gemaakt worden van parallel inladen, wat het geval is bij Data Vault en niet bij het dimensioneel modelleren.
 
-Op termijn zullen de volumes data bij een Data Vault groter zijn, aangezien dit model standaard extra informatie opneemt over de afkomst en tijdstip van extractie uit de bron. Bij Data Vault zal er meer opslagcapaciteiten nodig zijn in vergelijking met het dimensioneel model.
+Bij het inladen van data in het Data Vault model zijn alle tabellen onafhankelijk, dit wil zeggen dat alle tabellen tegelijk kunnen worden ingeladen. Bij het dimensioneel model moeten eerst de dimensions ingeladen zijn vooraleer de fact tabel kan ingeladen/aangevuld worden.
 
-De conclusie bij de vergelijking rond schaalbaarheid is dat het Data Vault model enorm goed schaalt, maar als nadeel heeft dat er grotere opslagcapaciteiten nodig zijn.
+In deze sectie zullen 1000 keer 1 record ingeladen worden in alle tabellen van beide datamodellen. Hierbij worden de uitvoeringstijden van beide data modellen bijgehouden en vervolgens wordt een analyse opgemaakt op basis van de resultaten.
+
+\subsection{Procedure} 
+\begin{lstlisting}[frame=single] 
+ALTER PROCEDURE "TESTJORIK_BV"."ADDDATA" LANGUAGE SQLSCRIPT AS BEGIN
+DECLARE START_TIME_DV timestamp;
+DECLARE END_TIME_DV timestamp;
+DECLARE TIME_DIFF_DV int;
+DECLARE START_TIME_DM timestamp;
+DECLARE END_TIME_DM timestamp;
+DECLARE TIME_DIFF_DM int;
+DECLARE EXEC_ID int;
+DECLARE AANTAL int;
+
+EXEC_ID = 1002;
+DELETE FROM "TESTJORIK_BV"."UITVOERINGSTIJDEN";
+WHILE :EXEC_ID < 2002 DO
+INSERT INTO "TESTJORIK_BV"."UITVOERINGSTIJDEN" ("EXEC_ID") VALUES (:EXEC_ID);
+
+UPDATE "TESTJORIK_BV"."UITVOERINGSTIJDEN" SET "START_TIME_DV" = CURRENT_TIMESTAMP
+WHERE "EXEC_ID" = :EXEC_ID;
+
+--add
+BEGIN PARALLEL EXECUTION
+
+UPSERT "BP_DHLPL_RAWDATAVAULT"."LINK_DOCK_TO_STOCK" VALUES (HASH_SHA256(TO_BINARY(:EXEC_ID)),CURRENT_TIMESTAMP,'dummy','1B3E2CAC1E858C5C078BE89E8DB166CA019A 2C281C1971925C6AC7CFFFCE1EBC', '92F061FC6C9BC77EBAB163C6 3118347701E3825928FF6A8FE75736DBCB0A4CB1',
+'27BADC983DF1780B60C2B3FA 9D3A19A00E46AAC798451F0FEBDCA52920FAADDF','7902699BE42C8A8E46FBBB45017 26517E86B22C56A189F7625A6DA49081B2451', '4E07408562BEDB8B60CE05C1DECF E3AD16B72230967DE01F640B7E4729B49FCE');
+UPSERT "BP_DHLPL_RAWDATAVAULT"."SAT_DOCK_TO_STOCK" VALUES (HASH_SHA256(TO_BINARY(:EXEC_ID)),CURRENT_TIMESTAMP,CURRENT_TIMESTAMP,'dummy','1',1,1,1,1,1,1,1,1,1);
+UPSERT "BP_DHLPL_RAWDATAVAULT"."SAT_LABO_ENTITY" VALUES (HASH_SHA256(TO_BINARY(:EXEC_ID)),CURRENT_TIMESTAMP,CURRENT_TIMESTAMP,'dummy','1','naam');
+UPSERT "BP_DHLPL_RAWDATAVAULT"."SAT_LABO_GROUP" VALUES (HASH_SHA256(TO_BINARY(:EXEC_ID)),CURRENT_TIMESTAMP,CURRENT_TIMESTAMP,'dummy','1','naam');
+UPSERT "BP_DHLPL_RAWDATAVAULT"."SAT_STATUS" VALUES (HASH_SHA256(TO_BINARY(:EXEC_ID)),CURRENT_TIMESTAMP,CURRENT_TIMESTAMP,'dummy','1','naam');
+UPSERT "BP_DHLPL_RAWDATAVAULT"."SAT_STAFF" VALUES (HASH_SHA256(TO_BINARY(:EXEC_ID)),CURRENT_TIMESTAMP,CURRENT_TIMESTAMP,'dummy','1','naam');
+UPSERT "BP_DHLPL_RAWDATAVAULT"."SAT_WAREHOUSE" VALUES (HASH_SHA256(TO_BINARY(:EXEC_ID)),CURRENT_TIMESTAMP,CURRENT_TIMESTAMP,'dummy','1','naam');
+UPSERT "BP_DHLPL_RAWDATAVAULT"."SAT_ORDERLINE" VALUES (HASH_SHA256(TO_BINARY(:EXEC_ID)),CURRENT_TIMESTAMP,CURRENT_TIMESTAMP,'dummy','1',1);
+UPSERT "BP_DHLPL_RAWDATAVAULT"."SAT_ARTICLE" VALUES (HASH_SHA256(TO_BINARY(:EXEC_ID)),CURRENT_TIMESTAMP,CURRENT_TIMESTAMP,'dummy','1','naam');
+UPSERT "BP_DHLPL_RAWDATAVAULT"."HUB_LABO_ENTITY" VALUES (HASH_SHA256(TO_BINARY(:EXEC_ID)),:EXEC_ID,CURRENT_TIMESTAMP,'dummy');
+UPSERT "BP_DHLPL_RAWDATAVAULT"."HUB_LABO_GROUP" VALUES (HASH_SHA256(TO_BINARY(:EXEC_ID)),:EXEC_ID,CURRENT_TIMESTAMP,'dummy');
+UPSERT "BP_DHLPL_RAWDATAVAULT"."HUB_STATUS" VALUES (HASH_SHA256(TO_BINARY(:EXEC_ID)),:EXEC_ID,CURRENT_TIMESTAMP,'dummy');
+UPSERT "BP_DHLPL_RAWDATAVAULT"."HUB_STAFF" VALUES (HASH_SHA256(TO_BINARY(:EXEC_ID)),:EXEC_ID,CURRENT_TIMESTAMP,'dummy');
+UPSERT "BP_DHLPL_RAWDATAVAULT"."HUB_WAREHOUSE" VALUES (HASH_SHA256(TO_BINARY(:EXEC_ID)),:EXEC_ID,CURRENT_TIMESTAMP,'dummy');
+UPSERT "BP_DHLPL_RAWDATAVAULT"."HUB_ARTICLE" VALUES (HASH_SHA256(TO_BINARY(:EXEC_ID)),:EXEC_ID,CURRENT_TIMESTAMP,'dummy');
+UPSERT "BP_DHLPL_RAWDATAVAULT"."HUB_PALLET" VALUES (HASH_SHA256(TO_BINARY(:EXEC_ID)),:EXEC_ID,CURRENT_TIMESTAMP,'dummy');
+UPSERT "BP_DHLPL_RAWDATAVAULT"."HUB_DELIVERY" VALUES (HASH_SHA256(TO_BINARY(:EXEC_ID)),:EXEC_ID,CURRENT_TIMESTAMP,'dummy');
+UPSERT "BP_DHLPL_RAWDATAVAULT"."HUB_DOCK" VALUES (HASH_SHA256(TO_BINARY(:EXEC_ID)),:EXEC_ID,:EXEC_ID,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP, 'dummy');
+UPSERT "BP_DHLPL_RAWDATAVAULT"."HUB_STOCK" VALUES (HASH_SHA256(TO_BINARY(:EXEC_ID)),:EXEC_ID,:EXEC_ID,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP, 'dummy');
+UPSERT "BP_DHLPL_RAWDATAVAULT"."LINK_ORDERLINE" VALUES (HASH_SHA256(TO_BINARY(:EXEC_ID)),CURRENT_TIMESTAMP,'dummy','1','1');
+UPSERT "BP_DHLPL_RAWDATAVAULT"."LINK_LABO_ENTITY_GROUP" VALUES (HASH_SHA256(TO_BINARY(:EXEC_ID)),CURRENT_TIMESTAMP,'dummy','1','1');
+UPSERT "BP_DHLPL_RAWDATAVAULT"."LINK_TRANSPORT" VALUES (HASH_SHA256(TO_BINARY(:EXEC_ID)),CURRENT_TIMESTAMP,'dummy','1','1','1');
+UPSERT "BP_DHLPL_RAWDATAVAULT"."LINK_WAREHOUSE_STAFF" VALUES (HASH_SHA256(TO_BINARY(:EXEC_ID)),CURRENT_TIMESTAMP,'dummy','1','1');
+END;
+
+UPDATE "TESTJORIK_BV"."UITVOERINGSTIJDEN" SET "END_TIME_DV" = CURRENT_TIMESTAMP
+WHERE "TESTJORIK_BV"."UITVOERINGSTIJDEN"."EXEC_ID" = :EXEC_ID;
+UPDATE "TESTJORIK_BV"."UITVOERINGSTIJDEN" SET "START_TIME_DM" = CURRENT_TIMESTAMP
+WHERE "TESTJORIK_BV"."UITVOERINGSTIJDEN"."EXEC_ID" = :EXEC_ID;
+
+--dimmodel
+BEGIN PARALLEL EXECUTION
+UPSERT "BP_DHLPL_DATAWAREHOUSELAAG"."DIM_LABO_GROUP" VALUES (:EXEC_ID,'x');
+UPSERT "BP_DHLPL_DATAWAREHOUSELAAG"."DIM_LABO_ENTITY" VALUES (:EXEC_ID,'x');
+UPSERT "BP_DHLPL_DATAWAREHOUSELAAG"."DIM_STAFF" VALUES (:EXEC_ID,'x');
+UPSERT "BP_DHLPL_DATAWAREHOUSELAAG"."DIM_WAREHOUSE" VALUES (:EXEC_ID,'x');
+UPSERT "BP_DHLPL_DATAWAREHOUSELAAG"."DIM_ARTICLE" VALUES (:EXEC_ID,'x');
+UPSERT "BP_DHLPL_DATAWAREHOUSELAAG"."DIM_STATUS" VALUES (:EXEC_ID,'x');
+UPSERT "BP_DHLPL_DATAWAREHOUSELAAG"."DIM_DELIVERY" VALUES (:EXEC_ID,:EXEC_ID,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP);
+END;
+UPSERT "BP_DHLPL_DATAWAREHOUSELAAG"."FACT_DOCKTOSTOCK" VALUES (1,1,1,1,1,1,:EXEC_ID,1,1,1,1,1,1,1,1);
+
+UPDATE "TESTJORIK_BV"."UITVOERINGSTIJDEN" SET "END_TIME_DM" = CURRENT_TIMESTAMP
+WHERE "TESTJORIK_BV"."UITVOERINGSTIJDEN"."EXEC_ID" = :EXEC_ID;
+
+UPDATE "TESTJORIK_BV"."UITVOERINGSTIJDEN" SET "DIFF_TIME_DV" = (NANO100_BETWEEN(START_TIME_DV,END_TIME_DV) / 10000)
+WHERE "TESTJORIK_BV"."UITVOERINGSTIJDEN"."EXEC_ID" = :EXEC_ID;
+
+UPDATE "TESTJORIK_BV"."UITVOERINGSTIJDEN" SET "DIFF_TIME_DM" = (NANO100_BETWEEN(START_TIME_DM,END_TIME_DM) / 10000)
+WHERE "TESTJORIK_BV"."UITVOERINGSTIJDEN"."EXEC_ID" = :EXEC_ID;
+EXEC_ID = :EXEC_ID + 1;
+END WHILE;
+END;
+\end{lstlisting}
+
+\subsection{Resultaten}
+In tabel \ref{tab:spgups} wordt een overzicht weergegeven van de steekproefgemiddelden met de daarbijhorende standaardafwijking van de executietijd bij het uitvoeren van de UPSERT-operatie bij beide modellen.
+
+\begin{center}
+	\renewcommand{\arraystretch}{2}%
+	\begin{longtable}{  l  p{4,5cm}  p{4,5cm} }
+		\ & \textbf{Data Vault} & \textbf{Dimensioneel model} \\ \hline
+		\textbf{1 record / tabel} & 3.109 ms (\sigma = 1.438) & 3.411 ms (\sigma = 0.781) \\
+		\caption{Overzicht van het steekproefgemiddelde bij Data Vault en het dimensioneel model bij het wegschrijven van data naar elke tabel.}
+		\label{tab:spgups}
+	\end{longtable}
+\end{center}
+
+Het verschil tussen de gemiddelde executietijden voor het invoegen van data is niet erg groot. Deze waarden zullen moeten onderworpen worden aan een statistische toets om te bepalen of er een significant verschil is.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.6]{../images/Score_upsert.png}
+	\caption{Boxplot van de uitvoeringstijden bij UPSERT-operaties van Data Vault en het dimensioneel model. }
+	\label{fig:boxplotupsert}
+\end{figure}
+
+In figuur \ref{fig:boxplotupsert} wordt een boxplot weergegeven. Op deze figuur merken we op dat er een kleine spreiding is van de data bij beide data modellen, op enkele uitschieters na. De gemiddelde executietijd ligt dicht bij elkaar.
+
+\subsection{Analyse van de resultaten}
+Ook in deze subsectie zullen de resultaten die verkregen zijn onderworpen worpen aan een statistische toets (t-toets aangezien de standaardafwijking van de populatie niet gekend is). Volgende hypothesen worden opgemaakt:
+
+\[
+H_0 = \mu_1 - \mu_2 = 0
+\]
+\[
+H_1 = \mu_1 - \mu_2 \neq 0
+\]
+
+waarbij
+$\mu_1$ = gemiddelde executietijd bij Data Vault voor het toevoegen van een record bij elke tabel van het model \&
+$\mu_2$ = gemiddelde executietijd bij dimensioneel model voor het toevoegen van een record bij elke tabel van het model.
+
+Het betrouwbaarheidsinterval dat zal gehanteerd worden in deze toets is ook 95\%.
+
+\[
+\alpha = 1 - 0.95 = 0.05
+\]
+
+
+Het uitvoeren van de Welch Two Sample t-test in RStudio geeft volgend resultaat:
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.7]{../images/Ttestupsert.png}
+	\caption{Resultaat van de Welch Two Sample t-test in Rstudio voor het verschil in uitvoeringstijden bij een UPSERT-operatie. }
+	\label{fig:ttestups}
+\end{figure}
+
+Aangezien de p-value uit figuur \ref{fig:ttestups} kleiner is dan $\alpha$ betekent dit dat ook deze nullhypothese mag verworpen worden en dat de alternative hypothese mag aanvaard worden. Er is dus een significant verschil aanwezig tussen beide data modellen bij het inladen van data.
+
+\subsection{Conclusie} 
+
+Bij Data Vault kan de data significant sneller in het model geladen worden dan bij het dimensioneel model. Dit heeft te maken met het feit dat er bij het dimensioneel model eerst de dimensions moeten ingeladen zijn vooraleer de fact tabel kan ingeladen worden. Data Vault maakt gebruik van hash keys, hierdoor kan er sneller gecontroleerd worden of een bepaalde record al aanwezig is.
 
 \section{Audit}
-Het bijhouden van historisatie en extra informatie over gegevens is voor sommige organisaties van groot belang. Denk maar bijvoorbeeld aan de bankensector, indien er iets fout is gelopen met een bepaalde transactie of indien men wilt te weten komen van waar bepaalde data opgehaald wordt, moet er hiervoor extra informatie aangeleverd kunnen worden. Historisatie wordt voornamelijk gebruikt bij gevoelige data. Andere voorbeelden van sectoren zijn: medische sector, overheden, verzekeringen, ....
+Het bijhouden van historisatie en extra informatie over gegevens is voor sommige organisaties van groot belang. Denk maar bijvoorbeeld aan de banksector, indien er iets fout is gelopen met een bepaalde transactie of indien men wil te weten komen van waar bepaalde data opgehaald wordt, moet er hiervoor extra informatie aangeleverd kunnen worden. Historisatie wordt voornamelijk gebruikt bij gevoelige data. Andere voorbeelden van sectoren zijn: medische sector, overheden, verzekeringen, ....
 
 In de Data Vault methodologie zit historisatie verwerkt. Er wordt extra informatie bijgehouden over waar de data exact vandaan komt (RECORD\_SOURCE), en wanneer de extractie van die data uit de bron gebeurd is (LOAD\_DATE). De reden waarom het tijdstip van extractie wordt bijgehouden en niet het tijdstip van het inladen van de gegevens in de data warehouse is omdat het ETL proces zeer lang kan duren en in de tussentijd de data in het bronsysteem al gewijzigd kan zijn. Via de Data Vault methodologie worden er in principe geen rijen gewijzigd (enkel de kolom LOAD\_END\_DATE), en worden nieuwere versies van data gewoon toegevoegd in de databank.
 
@@ -305,16 +430,17 @@ Bij het dimensioneel model wordt standaard noch de historisatie van data, noch e
 
 Er kan geconcludeerd worden dat Data Vault standaard historisatie toepast in hun model en dat er extra informatie (audit data) opgeslaan wordt over de data. Bij het dimensioneel model worden historisatie en het bijhouden van audit data niet opgenomen, maar het kan wel geïmplementeerd worden indien gewenst.
 
-
+\newpage
 \section{Overzicht}
+In tabel \ref{tab:overzicht} wordt een overzicht weergegeven van de verschillen op basis van de 5 pijlers.
 \begin{center}
 	\renewcommand{\arraystretch}{2}%
 	\begin{longtable}{  l  p{5,5cm}  p{5,5cm} }
 		\ & \textbf{Data Vault} & \textbf{Dimensioneel model} \\ \hline
-		Performantie & Data inladen gebeurt efficiënter, data opvragen gebeurt langzamer door de vele joins in het model. & Data lezen gebeurt vlot door een beperkt aantal joins, data inladen gebeurt langzamer door de afhankelijkheid van de fact tabel ten opzichte van de dimensions. \\ \hline
+		Performantie & Data opvragen gebeurt significant langzamer door de vele joins in het model. & Data lezen gebeurt vlot door een beperkt aantal joins. \\ \hline
 		Complexiteit & Hoge complexiteit, kennis nodig rond Data Vault. & Lage complexiteit, overzichtelijk. \\ \hline
 		Flexibiliteit & Zeer hoge flexibiliteit, mogelijk om via de agile methode te werken. & Zeer lage flexibiliteit, vaste structuur. \\ \hline
-		Schaalbaarheid & Goede schaalbaarheid door parallel inladen van de data. & Data inladen kan aanzienlijk langer duren doordat de fact tabel afhankelijk is van de dimensions en er niet parallel kan ingeladen worden.  \\ \hline
+		Schaalbaarheid & Goede schaalbaarheid door parallel inladen van de data. & Data inladen kan significant langer duren doordat de fact tabel afhankelijk is van de dimensions en er niet parallel kan ingeladen worden.  \\ \hline
 		Audit & Extra informatie aanwezig en de historiek van de data wordt bijgehouden. & Extra informatie niet aanwezig, indien gewenst kan dit wel toegevoegd worden. \\
 		\caption{Overzicht van het vergelijkend onderzoek.}
 		\label{tab:overzicht}
